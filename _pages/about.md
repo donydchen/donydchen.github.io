@@ -2,7 +2,7 @@
 layout: page
 permalink: /
 title: <strong>Yuedong Chen (Donald)</strong>
-description: Research Associate at Nanyang Technological University
+description: Research Associate at Nanyang Technological University (NTU)
 
 news: false
 social: true
