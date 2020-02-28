@@ -1,17 +1,5 @@
-# Yuedong Chen's Homepage
+# Yuedong Chen's Home Page
 
-My personal homepage for academics.
 
-Based on [al-folio](https://github.com/alshedivat/al-folio). 
+Kindly check: [https://donydchen.github.io/](https://donydchen.github.io/)
 
-Use the following command to deploy 
- 
-```
-./bin/deploy --user
-```
-
-Run the following command for offline debug
-
-```
-bundle exec jekyll serve
-```
