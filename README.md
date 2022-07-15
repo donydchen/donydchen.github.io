@@ -1,5 +1,5 @@
-# Yuedong Chen's Home Page
+# Yuedong CHEN's Homepage
 
 
-Kindly check: [https://donydchen.github.io/](https://donydchen.github.io/)
+Kindly check: [https://donydchen.github.io/](https://donydchen.github.io/).
 

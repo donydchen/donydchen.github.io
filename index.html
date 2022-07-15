@@ -1,74 +1,196 @@
-<HTML>
-
-
-<head>
-    <TITLE>Yuedong Chen's Home Page</TITLE>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="https://avatars1.githubusercontent.com/u/5866866">
-    <style type="text/css">
-    footer { background-color: #424242; border-top: thin solid #424242; color: #ccc; font-size: 0.75rem; font-weight: 300; padding: 0.5rem; position: fixed; left: 0px; bottom: 0px; width: 100%; text-align: center; display: block;}
-    footer a { color: #fff; }
-    body a:hover { color: #B509AC; }
-    </style>
-</head>
+    <title>Yuedong CHEN</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+
+    <!-- idea: have a javascript animated loss function converging in the header? :p -->
+    <div id="dhead" class="container">
+      <div class="row">
+        <div id="dpic">
+          <img src="https://avatars1.githubusercontent.com/u/5866866" class="ppic" />
+        </div>
+        <div id="ddesc">
+          <h1>Yuedong CHEN</h1>
+          <h2>I prefer simple yet interesting ideas 🤖🧠👌🏼</h2>
+          <div id="dico">
+            <a href="https://twitter.com/donydchen"><img src="assets/ctwitter.svg" class="iico" /></a>
+            <a href="https://github.com/donydchen"><img src="assets/cgithub.svg" class="iico"/></a>
+            <a href="https://donydchen.github.io"><img src="assets/crss.svg" class="iico" /></a>
+            <img src="assets/cemail.svg" style="cursor: pointer;" class="iico" id="iemail" title="click to reveal" />
+          </div>
+          <div id="demail"></div> <!-- will reveal email -->
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div id="history" class="container">
+      <div class="entry row">
+        <div class="timespan">
+          2021
+        </div>
+        <div class="ico">
+          <div class="entry-dot"></div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Arms_of_Monash_University.svg/220px-Arms_of_Monash_University.svg.png" />
+        </div>
+        <div class="desc">
+          <div class="htxt">
+            I am a PhD candidate with <a href="https://www.monash.edu">Monash University</a>,
+            supervised by Prof. <a href='https://research.monash.edu/en/persons/jianfei-cai'>Jianfei Cai</a> and A/Prof. <a
+              href='https://personal.ntu.edu.sg/astjcham/'>Tat-Jen Cham</a>. 
+            Currently I am very much interested in inferring and manipulating 3D scenes by leveraging simply 2D data, 
+            therefore I choose my PhD research topic as generating and editing 3D scenes with 2D observations. 
+          </div>
+        </div>
+      </div>
+
+      <div class="entry row">
+        <div class="timespan">
+          2019 - 2021
+        </div>
+        <div class="ico">
+          <div class="entry-dot"></div>
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Nanyang_Technological_University_coat_of_arms_vector.svg/150px-Nanyang_Technological_University_coat_of_arms_vector.svg.png" />
+        </div>
+        <div class="desc">
+          I was a Research Assistant at <a href="https://imi.ntu.edu.sg/Pages/Home.aspx">IMI NTU</a>, supervised
+          by Prof. <a href='https://research.monash.edu/en/persons/jianfei-cai'>Jianfei Cai</a> and A/Prof. <a
+            href='https://personal.ntu.edu.sg/astjcham/'>Tat-Jen Cham</a>. This is where I started building up basic skills for doing research.
+            At that time my research topic centered around enhancing emotion recognition with human prior knowledge. 
+            <br/>
+            <br/>
+          I had my ups and downs in Singapore. Work got rejected thousand times, nightmare of AU visa, covid-19 circuit breaker, 
+          friendly Chinese Malaysian flatmates, travelled around The Red Dot...
+        </div>
+      </div>
+
+      <div class="entry row">
+        <div class="timespan">
+          2018 - 2019
+        </div>
+        <div class="ico">
+          <div class="entry-dot"></div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Lenovo_logo_%282015_onwards%29_2.svg/220px-Lenovo_logo_%282015_onwards%29_2.svg.png" />
+        </div>
+        <div class="desc">
+          I was a Research Intern at <a
+            href="http://research.lenovo.com/webapp/view_English/researchField.html">Lenovo Research</a> working with <a
+            href="https://www.cs.ox.ac.uk/people/jianfeng.wang/">Jianfeng Wang</a> on facial expression recognition applications.
+          </div>
+      </div>
+
+      <div class="entry row">
+        <div class="timespan">
+          2016 - 2018
+        </div>
+        <div class="ico">
+          <div class="entry-dot"></div>
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/Sun_Yat-sen_University_Logo.png/180px-Sun_Yat-sen_University_Logo.png" style="max-width: 50px;"/>
+        </div>
+        <div class="desc">
+          MEng at <a href="https://www.isee-ai.cn/">iSEE SYSU</a>, supervised by A/Prof. <a
+            href="https://scholar.google.com/citations?user=5YZ3kvoAAAAJ&hl=en">Xiaohua Xie</a>. Those two years passed by very quickly 
+            and I mainly explored somethings related to motion deblur with deep learning.
+        </div>
+      </div>
+
+      <div class="entry row">
+        <div class="timespan">
+          2012 - 2016
+        </div>
+        <div class="ico">
+          <div class="entry-dot"></div>
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/Sun_Yat-sen_University_Logo.png/180px-Sun_Yat-sen_University_Logo.png" style="max-width: 50px;"/>
+        </div>
+        <div class="desc">
+          BEng at <a href='http://www.sysu.edu.cn/2012/en/index.htm'>Sun Yat-sen University</a>. This is the place where I know what is ''coding'' for the first time, 
+          and I managed to get a degree of Software Engineering from it at the end.
+          I also spent a wonderful semester as an exchange student at <a href="https://eng.ncnu.edu.tw/">National Chi Nan University</a> in 2014.
+        </div>
+      </div>
+    </div>
 
 
-<body>
-<center>
-<b><big> <big> <big>Yuedong CHEN</big> </big></big> </b> 
+    <!-- <div style="background-color: #eee; padding-bottom: 8px; margin-top: 10px;"> -->
+    <div class="container">
+      <div class="ctitle">publications</div>
 
-<br>
-<br>
+      <div class="pub">
+        <div class="pub-title">Sem2NeRF: Converting Single-View Semantic Masks to Neural Radiance Fields</div>
+        <div class="pub-venue">ECCV 2022</div>
+        <div class="pub-authors">Yuedong Chen, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, and Jianfei Cai</div>
+        <div>[<a href="https://arxiv.org/abs/2203.10821">arXiv</a>] [<a href="https://github.com/donydchen/sem2nerf">code</a>] [<a href="https://donydchen.github.io/sem2nerf/">project
+          page</a>] [<a href="https://www.youtube.com/watch?v=cYr3Dz8N_9E">demo video</a>] </div>
+      </div>
 
+      <div class="pub">
+        <div class="pub-title">Towards Unbiased Visual Emotion Recognition via Causal Intervention</div>
+        <div class="pub-venue">ACM Multimedia 2022</div>
+        <div class="pub-authors">Yuedong Chen, Xu Yang, Tat-Jen Cham, and Jianfei Cai</div>
+        <div>[<a href="https://arxiv.org/abs/2107.12096">arXiv</a>] [<a href="#">code (coming soon)</a>]
+        </div>
+      </div>
 
+      <div class="pub">
+        <div class="pub-title">GeoConv: Geodesic Guided Convolution for Facial Action Unit Recognition</div>
+        <div class="pub-venue">Pattern Recognition 2022</div>
+        <div class="pub-authors">Yuedong Chen, Guoxian Song, Zhiwen Shao, Jianfei Cai, Tat-Jen Cham, and Jianmin Zheng</div>
+        <div>[<a href="https://arxiv.org/abs/2003.03055">arXiv</a>] [<a href="#">code (coming soon)</a>]
+        </div>
+      </div>
 
-<!-- <p>Add new experience here.</p> -->
-
-
-<p>
-  He is a PhD student with <a href="https://www.monash.edu">Monash University</a> since 07.2021,
-  supervised by Prof. <a href='https://research.monash.edu/en/persons/jianfei-cai'>Jianfei Cai</a> and Prof. <a
-    href='https://personal.ntu.edu.sg/astjcham/'>Tat-Jen Cham</a>
-</p>
-
-<p>
-He was a Research Assistant (01.2019-04.2021) at <a href="https://imi.ntu.edu.sg/Pages/Home.aspx">IMI NTU</a>, supervised by Prof. <a href='https://research.monash.edu/en/persons/jianfei-cai'>Jianfei Cai</a> and Prof. <a href='https://personal.ntu.edu.sg/astjcham/'>Tat-Jen Cham</a> 
-</p>
-  
-<p>
-Before that, he was a Research Intern (07.2018-12.2018) at <a href="http://research.lenovo.com/webapp/view_English/researchField.html">Lenovo Research</a>, supervised by <a href="https://www.cs.ox.ac.uk/people/jianfeng.wang/">Jianfeng Wang</a>
-</p>
-
-<p>
-And before that, he was a master student (2016-2018) at <a href="https://www.isee-ai.cn/">iSEE SYSU</a>, supervised by Prof. <a href="https://scholar.google.com/citations?user=5YZ3kvoAAAAJ&hl=en">Xiaohua Xie</a> and Prof. <a href="https://www.isee-ai.cn/~zhwshi/">Wei-Shi Zheng</a> 
-</p>
-
-<p>
-And before that, he was an exchange student (09.2014-01.2015) at <a href="https://eng.ncnu.edu.tw/">National Chi Nan University</a>
-</p>
-
-<p>
-And in the beginning, he was a undergraduate (2012-2016) at <a href='http://www.sysu.edu.cn/2012/en/index.htm'>Sun Yat-sen University</a>
-</p>
-
-<br>
-
-<p>His email address is {first_name}.{last_name}@monash.edu</p>
-
-<br>
-
-<p><a href="pubs.html">Projects</a></p>
-<p><a href="https://github.com/donydchen">Github</a></p>
-
-</center>
+      <div class="pub">
+        <div class="pub-title">Facial Motion Prior Networks for Facial Expression Recognition</div>
+        <div class="pub-venue">VCIP 2019 (Oral)</div>
+        <div class="pub-authors">Yuedong Chen, Jianfeng Wang, Shikai Chen, Zhongchao Shi, and Jianfei Cai</div>
+        <div>[<a href="https://arxiv.org/abs/1902.08788">arXiv</a>] [<a href="https://github.com/donydchen/FMPN-FER">code</a>]</div>
+      </div>
 
 
-<footer>
-  <div>
-    &copy; Copyright 2019-2021 Yuedong Chen's Home Page. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-    <br>Last updated: Jul 25, 2021.
-  </div>
-</footer>
 
 
-</body>
+
+      <div>
+        <br>
+        Also on <a href="https://scholar.google.com.sg/citations?user=GqgGZlQAAAAJ&hl=en">Google Scholar</a>
+      </div>
+    </div>
+    <!-- </div> -->
+
+    <div class="container">
+      <div class="ctitle">misc unsorted</div>
+      <ul style="padding-left: 10px;">
+        <li> This homepage is borrowed from <a href="https://karpathy.ai/">karpathy.ai</a>, which is mainly inspired by the <a href="https://motherfuckingwebsite.com/">500-pound websites</a>. </li>
+      </ul>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <footer>
+      <div>
+        &copy; Copyright 2019-2022 Yuedong CHEN. Hosted by <a href="https://pages.github.com/"
+          target="_blank">GitHub Pages</a>.
+        <br>Last updated: Jul, 2022.
+      </div>
+    </footer>
+
+    <!-- attempt hiding from spambots :p -->
+    <script type="text/javascript">
+      var e_is_shown = false;
+      document.getElementById('iemail').addEventListener("click", function(){
+        let demail = document.getElementById('demail');
+        demail.innerHTML = '{first_name}.{last_name}' + ' _at_ ' + 'monash' + '.edu';
+        demail.style.opacity = e_is_shown ? 0 : 1;
+        e_is_shown = !e_is_shown;
+      })
+    </script>
+  </body>
 </html>
