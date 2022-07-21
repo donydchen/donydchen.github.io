@@ -19,10 +19,10 @@
           <h1>Yuedong CHEN</h1>
           <h2>🤖🧠👌🏼 I prefer simple and interesting ideas</h2>
           <div id="dico">
-            <a href="https://github.com/donydchen"><img src="assets/cgithub.svg" class="iico"/></a>
-            <a href="https://donydchen.github.io"><img src="assets/crss.svg" class="iico" /></a>
-            <a href="https://twitter.com/donydchen"><img src="assets/ctwitter.svg" class="iico" /></a>
-            <img src="assets/cemail.svg" style="cursor: pointer;" class="iico" id="iemail" title="click to reveal" />
+            <a href="https://github.com/donydchen" title="Github"><img src="https://simpleicons.org/icons/github.svg" class="iico"/></a>
+            <a href="https://scholar.google.com.sg/citations?user=GqgGZlQAAAAJ" title="Google Scholar"><img src="https://simpleicons.org/icons/googlescholar.svg" class="iico" /></a>
+            <!-- <a href="https://twitter.com/donydchen"><img src="assets/ctwitter.svg" class="iico" /></a> -->
+            <img src="https://simpleicons.org/icons/maildotru.svg" style="cursor: pointer;" class="iico" id="iemail" title="click to reveal email" />
           </div>
           <div id="demail"></div> <!-- will reveal email -->
         </div>
@@ -57,7 +57,7 @@
         </div>
         <div class="ico">
           <div class="entry-dot"></div>
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Nanyang_Technological_University_coat_of_arms_vector.svg/150px-Nanyang_Technological_University_coat_of_arms_vector.svg.png" />
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Nanyang_Technological_University_coat_of_arms_vector.svg/150px-Nanyang_Technological_University_coat_of_arms_vector.svg.png" style="border-radius: 0"/>
         </div>
         <div class="desc">
           I was a Research Assistant at <a href="https://imi.ntu.edu.sg/Pages/Home.aspx">IMI NTU</a>, supervised
@@ -108,6 +108,7 @@
         <div class="ico">
           <div class="entry-dot"></div>
           <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/Sun_Yat-sen_University_Logo.png/180px-Sun_Yat-sen_University_Logo.png" style="max-width: 50px;"/>
+          <img src="https://upload.wikimedia.org/wikipedia/en/b/bd/Ncnu_logo.png" style="max-width: 49px;" />
         </div>
         <div class="desc">
           BEng at <a href='http://www.sysu.edu.cn/2012/en/index.htm'>Sun Yat-sen University</a>. This is the place where I know what is ''coding'' for the first time, 
@@ -186,14 +187,15 @@
 
     <footer>
       <div>
-        &copy; Copyright 2019-2022 Yuedong CHEN. Hosted by <a href="https://pages.github.com/"
+        &copy; Copyright <span id="cr_from"></span>-<span id="cr_end"></span> <span id="cr_title"></span>. Hosted by <a href="https://pages.github.com/"
           target="_blank">GitHub Pages</a>.
-        <br>Last updated: Jul, 2022.
+        <br><div id="last_update"> </div>
       </div>
     </footer>
 
-    <!-- attempt hiding from spambots :p -->
+    
     <script type="text/javascript">
+      // attempt hiding email information from spambots
       var e_is_shown = false;
       document.getElementById('iemail').addEventListener("click", function(){
         let demail = document.getElementById('demail');
@@ -201,6 +203,30 @@
         demail.style.opacity = e_is_shown ? 0 : 1;
         e_is_shown = !e_is_shown;
       })
+      // automatically set footer information
+      document.getElementById("cr_title").innerHTML = document.title;
+      var dd = new Date()
+      document.getElementById("cr_end").innerHTML = dd.getUTCFullYear();
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          let repos = JSON.parse(this.responseText);
+          repos.forEach((repo) => {
+            if (repo.name == "donydchen.github.io") {
+              // console.log(repo)
+              var lastUpdated = new Date(repo.pushed_at).toLocaleString("en-US", { 
+                    timeZone: "Australia/Sydney", day: "2-digit", month: "short", year: "numeric",
+                    hour: "2-digit", minute: "2-digit", timeZoneName: "short"});
+              document.getElementById("last_update").innerHTML = 'Last updated: ' + lastUpdated
+              var createDate = new Date(repo.created_at);
+              document.getElementById("cr_from").innerHTML = createDate.getUTCFullYear();
+            }
+          });
+        }
+      };
+      xhttp.open("GET", "https://api.github.com/users/donydchen/repos", true);
+      xhttp.send();
+
     </script>
   </body>
 </html>
