@@ -262,6 +262,10 @@ hr {
     padding-left: 0;
 }
 
+#views-container {
+    margin: 40px auto;
+}
+
 footer {
     background-color: #424242;
     border-top: thin solid #424242;
