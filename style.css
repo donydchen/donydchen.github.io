@@ -12,6 +12,17 @@ body a:hover {
     color: #B509AC;
 }
 
+.banner {
+    max-width: 100%;
+    width: 999999px;
+}
+@media (max-width: 991px) {
+    .banner {
+        max-width: 100%;
+        height: 90px;
+    }
+}
+
 /* Layout */
 .container {
     margin-left: auto;
