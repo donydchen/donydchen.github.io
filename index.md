@@ -34,6 +34,14 @@ His academic journey began with the completion of both his MEng and BEng degrees
 <p class='hl-sen'> 🤖🧠👌🏼 He prefers simple yet effective ways </p>
 
 <div class="pub">
+  <div class="pub-title">MuRF: Multi-Baseline Radiance Fields</div>
+  <div class="pub-venue">arXiv 2023</div>
+  <div class="pub-authors">Haofei Xu, Anpei Chen, Yuedong Chen, Christos Sakaridis, Yulun Zhang, Marc Pollefeys, Andreas Geiger, and Fisher Yu</div>
+  <div>[<a href="https://arxiv.org/abs/2312.04565">arXiv</a>] [<a href="https://github.com/autonomousvision/murf">code</a>] [<a href="https://haofeixu.github.io/murf/">project
+    page</a>] </div>
+</div>
+
+<div class="pub">
   <div class="pub-title">Explicit Correspondence Matching for Generalizable Neural Radiance Fields</div>
   <div class="pub-venue">arXiv 2023</div>
   <div class="pub-authors">Yuedong Chen, Haofei Xu, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, and Jianfei Cai</div>
