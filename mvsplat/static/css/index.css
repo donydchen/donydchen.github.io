@@ -1,0 +1,49 @@
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.title {
+  text-align: center;
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* .teaser {
+  width: 75%;
+} */
+
+.container {
+  max-width: 900px;
+}
+
+.tldr {
+  font-size: 1.1rem;
+}
+
+.main-contain {
+  max-width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#teaser-caption {
+  text-align: center;
+}
+
+#abstract {
+  text-align: justify;
+}
+
+footer {
+  text-align: center;
+}
