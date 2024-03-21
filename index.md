@@ -35,7 +35,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <div class="pub">
   <div class="pub-title">MuRF: Multi-Baseline Radiance Fields</div>
-  <div class="pub-venue">arXiv 2023</div>
+  <div class="pub-venue">CVPR 2024</div>
   <div class="pub-authors">Haofei Xu, Anpei Chen, Yuedong Chen, Christos Sakaridis, Yulun Zhang, Marc Pollefeys, Andreas Geiger, and Fisher Yu</div>
   <div>[<a href="https://arxiv.org/abs/2312.04565">arXiv</a>] [<a href="https://github.com/autonomousvision/murf">code</a>] [<a href="https://haofeixu.github.io/murf/">project
     page</a>] </div>
