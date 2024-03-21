@@ -27,7 +27,8 @@ h3 {
 }
 
 .tldr {
-  font-size: 1.1rem;
+  text-align: justify;
+  font-size: 1.2rem;
   /* alter-success color from bootstrap v4.0 */
   color: #155724;
   background-color: #d4edda;

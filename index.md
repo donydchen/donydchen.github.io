@@ -34,6 +34,14 @@ His academic journey began with the completion of both his MEng and BEng degrees
 <p class='hl-sen'> 🤖🧠👌🏼 He prefers simple yet effective ways </p>
 
 <div class="pub">
+  <div class="pub-title">MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images</div>
+  <div class="pub-venue">arXiv 2024</div>
+  <div class="pub-authors">Yuedong Chen, Haofei Xu, Chuanxia Zheng, Bohan Zhuang, Marc Pollefeys, Andreas Geiger, Tat-Jen Cham, and Jianfei Cai</div>
+  <div>[<a href="#">arXiv</a>] [<a href="https://github.com/donydchen/mvsplat">code</a>] [<a href="https://donydchen.github.io/mvsplat">project
+    page</a>] </div>
+</div>
+
+<div class="pub">
   <div class="pub-title">MuRF: Multi-Baseline Radiance Fields</div>
   <div class="pub-venue">CVPR 2024</div>
   <div class="pub-authors">Haofei Xu, Anpei Chen, Yuedong Chen, Christos Sakaridis, Yulun Zhang, Marc Pollefeys, Andreas Geiger, and Fisher Yu</div>
