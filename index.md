@@ -122,10 +122,9 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <div style="margin-bottom: 40px;">
   <ul>
-    <li>Conference Reviewer: CVPR('23,'24), ICCV('23), ACMMM('21,'22,'23), ISMAR('23), IEEEVR('24)</li>
-    <li>Journal Reviewer: IJCV, TIP, TMM, TCSVT, TOMM, TVCJ, Computers & Graphics, The Visual Computer</li>
-    <li>He is a native speaker of <a href="https://en.wikipedia.org/wiki/Teochew_dialect">Teochew</a>, fluent in
-      English, Mandarin, <a href="https://en.wikipedia.org/wiki/Cantonese">Cantonese</a>, and also familiar with <a href="https://en.wikipedia.org/wiki/Singlish">Singlish</a>.
+    <li>Conference Reviewer: ECCV('24), CVPR('23,'24), ICCV('23), ACMMM('21,'22,'23,'24), ISMAR('23), IEEEVR('24)</li>
+    <li>Journal Reviewer: TPAMI, IJCV, TIP, TMM, TCSVT, TOMM, TVCJ, Computers & Graphics, The Visual Computer</li>
+    <li>He is a native speaker of <a href="https://en.wikipedia.org/wiki/Teochew_dialect">Teochew</a>, fluent in English, Mandarin, <a href="https://en.wikipedia.org/wiki/Cantonese">Cantonese</a>, and also familiar with <a href="https://en.wikipedia.org/wiki/Singlish">Singlish</a>.
     </li>
   </ul>
 </div>
