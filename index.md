@@ -21,7 +21,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
 <div class="body-social sidebar-social">
   <ul>
     <li> <a href="mailto:yuedong.chen@monash.edu" title="yuedong.chen@monash.edu" class="no-mark-external" target="_blank"> <span class="icon-mail"></span> <span aria-hidden="true">Email </span><span class="sr-only">Donald's Email Address</span></a></li>
-    <li> <a href="https://scholar.google.com/citations?user=PefHCMUAAAAJ&hl=en" title="Google Scholar" class="no-mark-external" target="_blank"> <span class="icon-googlescholar"></span> <span aria-hidden="true">Google Scholar </span><span class="sr-only">Donald's Google Scholar profile</span></a></li>
+    <li> <a href="https://scholar.google.com/citations?user=GqgGZlQAAAAJ" title="Google Scholar" class="no-mark-external" target="_blank"> <span class="icon-googlescholar"></span> <span aria-hidden="true">Google Scholar </span><span class="sr-only">Donald's Google Scholar profile</span></a></li>
     <li> <a href="https://github.com/donydchen" title="GitHub" class="no-mark-external" target="_blank"> <span class="icon-github"></span> <span aria-hidden="true">GitHub </span><span class="sr-only">Donald's Github</span></a></li>
     <li> <a href="https://www.linkedin.com/in/donydchen" title="LinkedIn" class="no-mark-external" target="_blank"> <span class="icon-linkedin2"></span> <span aria-hidden="true">LinkedIn </span><span class="sr-only">Donald's LinkedIn</span></a></li>
     <li> <a href="https://twitter.com/donydchen" title="Twitter" class="no-mark-external" target="_blank"> <span class="icon-twitter"></span> <span aria-hidden="true">Twitter </span><span class="sr-only">Donald's Twitter</span></a></li>
@@ -130,7 +130,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <div style="margin-bottom: 40px;">
   <ul>
-    <li>Conference Reviewer: ECCV('24), CVPR('23,'24), ICCV('23), ACMMM('21,'22,'23,'24), ISMAR('23), IEEEVR('24)</li>
+    <li>Conference Reviewer: ECCV('24), CVPR('23,'24), ICCV('23), ACMMM('21,'22,'23,'24), ISMAR('23,'24), IEEEVR('24)</li>
     <li>Journal Reviewer: TPAMI, IJCV, TIP, TMM, TCSVT, TOMM, TVCJ, Computers & Graphics, The Visual Computer</li>
     <li>He is a native speaker of <a href="https://en.wikipedia.org/wiki/Teochew_dialect">Teochew</a>, fluent in English, Mandarin, <a href="https://en.wikipedia.org/wiki/Cantonese">Cantonese</a>, and also familiar with <a href="https://en.wikipedia.org/wiki/Singlish">Singlish</a>.
     </li>
