@@ -13,6 +13,8 @@ gem 'faraday-retry'
 # gem "github-pages", group: :jekyll_plugins
 # gem "jekyll-include-cache", group: :jekyll_plugins
 
+gem "nokogiri", ">= 1.16.5"
+
 # A JavaScript runtime for ruby that helps with running the katex gem above.
 gem "duktape"
 
