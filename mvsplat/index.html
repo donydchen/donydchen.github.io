@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
@@ -32,111 +31,261 @@
   <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon/favicon-16x16.png">
   <link rel="manifest" href="static/images/favicon/site.webmanifest">
 
-  <link rel="stylesheet" href="static/css/bootstrap.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
+  <!-- Bootstrap -->
+  <link href="static/css/bootstrap-4.4.1.css" rel="stylesheet">
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bootstrap.bundle.min.js"></script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
+
+<!--   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet"> -->
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
 </head>
-
 <body>
-  <div class="container">
-    <!-- Title -->
-    <h1 class="pt-5 title mb-4">MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images</h1>
 
-    <!-- <div class="mb-4" style="text-align: center; font-size: 1.5rem;">
-      arXiv 2024
-    </div> -->
 
-    <div class="mb-2" style="font-size: larger; text-align: center;">
-      <span class="author-block">
-        <a href="https://donydchen.github.io/">Yuedong Chen</a><sup>1</sup></span>,&nbsp;
-      <span class="author-block">
-        <a href="https://haofeixu.github.io/">Haofei Xu</a><sup>2,3</sup></span>,&nbsp;
-      <span class="author-block">
-        <a href="https://www.chuanxiaz.com/">Chuanxia Zheng</a><sup>4</sup></span>,&nbsp;
-      <span class="author-block">
-        <a href="https://bohanzhuang.github.io/">Bohan Zhuang</a><sup>1</sup></span>,&nbsp;<br>
-      <span class="author-block">
-        <a href="https://people.inf.ethz.ch/marc.pollefeys/">Marc Pollefeys</a><sup>2,5</sup></span>,&nbsp;
-      <span class="author-block">
-        <a href="http://www.cvlibs.net/">Andreas Geiger</a><sup>3</sup></span>,&nbsp;
-      <span class="author-block">
-        <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a><sup>6</sup></span>,&nbsp;
-      <span class="author-block">
-        <a href="https://jianfei-cai.github.io/">Jianfei Cai</a><sup>1</sup></span>
-    </div>
-    <div class="mb-4" style="text-align: center;">
-      <span><sup>1</sup>Monash University</span>,&nbsp;
-      <span><sup>2</sup>ETH Zurich</span>,&nbsp;
-      <span><sup>3</sup>University of Tübingen, Tübingen AI Center</span>,&nbsp;<br>
-      <span><sup>4</sup>University of Oxford</span>,&nbsp;
-      <span><sup>5</sup>Microsoft</span>,&nbsp;
-      <span><sup>6</sup>Nanyang Technological University</span>
-    </div>
-
-    <div class="w-100 d-flex flex-row justify-content-center mt-4 gap-2">
-      <!-- Paper PDF -->
-      <a href="https://arxiv.org/abs/2403.14627" target="_blank" class="btn btn-dark" role="button">
-        <span class="icon">
-          <i class="fas fa-file-pdf"></i>
-        </span>
-        <span>Paper</span>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://donydchen.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
       </a>
-    
-      <!-- Code -->
-      <a href="https://github.com/donydchen/mvsplat" target="_blank" class="btn btn-dark" role="button">
-        <span class="icon">
-          <i class="fab fa-github"></i>
-        </span>
-        <span>Code</span>
-      </a>
-      
-      <!-- Pre-trained Models -->
-      <!-- <a href="https://drive.google.com/drive/folders/14_E_5R6ojOWnLSrSVLVEMHnTiKsfddjU" target="_blank"
-        class="btn btn-dark" role="button">
-        <span class="icon">
-          <i class="fas fa-database"></i>
-        </span>
-        <span>Pre-trained Models</span>
-      </a> -->
-    </div>
 
-    <!-- Teaser -->
-    <div class="w-100 my-4">
-      <video class="w-100 d-block" autoplay controls muted loop>
-        <source src="static/videos/teaser.mp4" type="video/mp4">
-      </video>
-    </div>
-
-
-    <div class="main-contain">
-      <!-- TL;DR -->
-      <h2>TL;DR</h2>
-      <div class="alert alert-success tldr mb-4">
-        MVSplat builds a cost volume representation to efficiently predict 3D Gaussians from sparse
-        multi-view images in a single forward pass.
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Related Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://donydchen.github.io/matchnerf/" target="_blank">
+            MatchNeRF
+          </a>
+          <a class="navbar-item" href="https://haofeixu.github.io/murf/" target="_blank">
+            MuRF
+          </a>
+        </div>
       </div>
+    </div>
 
-      <!-- Abstract -->
-      <h2>Abstract</h2>
-      <p class="mb-4" id="abstract">
-        We propose MVSplat, an efficient feed-forward 3D Gaussian Splatting model learned from sparse multi-view images. To
-        accurately localize the Gaussian centers, we propose to build a cost volume representation via plane sweeping in the 3D
-        space, where the cross-view feature similarities stored in the cost volume can provide valuable geometry cues to the
-        estimation of depth. We learn the Gaussian primitives' opacities, covariances, and spherical harmonics coefficients
-        jointly with the Gaussian centers while only relying on photometric supervision. We demonstrate the importance of the
-        cost volume representation in learning feed-forward Gaussian Splatting models via extensive experimental evaluations. On
-        the large-scale RealEstate10K and ACID benchmarks, our model achieves state-of-the-art performance with the fastest
-        feed-forward inference speed (22 fps). <b>Compared to the latest state-of-the-art method pixelSplat, our model uses 10&times; 
-        fewer parameters and infers more than 2&times; faster while providing higher appearance and geometry quality as
-        well as better cross-dataset generalization.</b>
-      </p>
+  </div>
+</nav>
 
-      <h2>Architecture</h2>
-      <figure class="mb-4">
-        <img src="static/images/architecture.png" class="img-fluid teaser" alt="architecture" />
+
+<section class="hero">
+  <div class="hero-body" style="padding-top: 1em; padding-bottom: 0;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="margin-bottom: 0; width: 102%">MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images</h1>
+
+          <div class="column is-full_width">
+          </div>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://donydchen.github.io/">Yuedong Chen</a><sup>1</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="https://haofeixu.github.io/">Haofei Xu</a><sup>2,3</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="https://www.chuanxiaz.com/">Chuanxia Zheng</a><sup>4</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="https://bohanzhuang.github.io/">Bohan Zhuang</a><sup>1</sup>,</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://people.inf.ethz.ch/marc.pollefeys/">Marc Pollefeys</a><sup>2,5</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="http://www.cvlibs.net/">Andreas Geiger</a><sup>3</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="https://personal.ntu.edu.sg/astjcham/">Tat-Jen Cham</a><sup>6</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="https://jianfei-cai.github.io/">Jianfei Cai</a><sup>1,6</sup></span>
+          </div>
+
+          <div class="column is-full_width">
+            <h2 class="title is-4">ECCV 2024</h2>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Monash University,&nbsp;</span>
+            <span class="author-block"><sup>2</sup>ETH Zurich,&nbsp;</span>
+            <span class="author-block"><sup>3</sup>University of Tübingen, Tübingen AI Center,&nbsp;</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>4</sup>VGG, University of Oxford,&nbsp;</span>
+            <span class="author-block"><sup>5</sup>Microsoft,&nbsp;</span>
+            <span class="author-block"><sup>6</sup>Nanyang Technological University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2403.14627" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Slides Link. -->
+              <!-- <span class="link-block">
+                <a href="https://haofeixu.github.io/slides/20221228_synced_unimatch.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                   <span class="icon">
+                    <img width="18" alt="Colab logo" src="./static/images/slides.png"/>
+                </span>
+                  <span>Slides</span>
+                </a>
+              </span> -->
+
+              <!-- Bilibili Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.bilibili.com/video/BV1uG4y1y7ms"
+                   class="external-link button is-normal is-rounded is-dark disabled">
+                  <span class="icon">
+                    <img width="20" alt="Bilibili logo" src="https://www.bilibili.com/favicon.ico?v=1"/>
+                  </span>
+                  <span>Video</span>
+                  </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/donydchen/mvsplat" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark disabled">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- Colab Link. -->
+              <!-- <span class="link-block">
+                <a href="https://colab.research.google.com/drive/1r5m-xVy3Kw60U-m5VB-aQ98oqqg_6cab?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark disabled">
+                  <span class="icon">
+                      <img width="20" alt="Colab logo" src="./static/images/colab.png"/>
+                  </span>
+                  <span>Colab</span>
+                  </a>
+              </span> -->
+              <!-- HuggingFace Link. -->
+              <!-- <span class="link-block">
+                <a href="https://huggingface.co/spaces/haofeixu/unimatch"
+                   class="external-link button is-normal is-rounded is-dark disabled">
+                  <span class="icon">
+                      <img width="20" alt="HuggingFace logo" src="./static/images/huggingface.png"/>
+                  </span>
+                  <span>Demo</span>
+                  </a>
+              </span> -->
+            </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="replay-video"
+                 autoplay
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 loop
+                 width="100%"
+                 style="margin-bottom: -20px;"
+                 >
+            <source src="static/videos/teaser.mp4"
+                    type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+        <b>TL;DR:</b> MVSplat builds a cost volume representation to efficiently predict 3D Gaussians from sparse
+        multi-view images in a single forward pass.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+    <!-- Highlights -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          We propose MVSplat, an efficient feed-forward 3D Gaussian Splatting model learned from sparse multi-view images. To
+          accurately localize the Gaussian centers, we propose to build a cost volume representation via plane sweeping in the 3D
+          space, where the cross-view feature similarities stored in the cost volume can provide valuable geometry cues to the
+          estimation of depth. We learn the Gaussian primitives' opacities, covariances, and spherical harmonics coefficients
+          jointly with the Gaussian centers while only relying on photometric supervision. We demonstrate the importance of the
+          cost volume representation in learning feed-forward Gaussian Splatting models via extensive experimental evaluations. On
+          the large-scale RealEstate10K and ACID benchmarks, our model achieves state-of-the-art performance with the fastest
+          feed-forward inference speed (22 fps). <b>Compared to the latest state-of-the-art method pixelSplat, our model uses 10&times; 
+          fewer parameters and infers more than 2&times; faster while providing higher appearance and geometry quality as
+          well as better cross-dataset generalization.</b>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview</h2>
+
+        <img src="static/images/architecture.png" class="center">
         <figcaption style="font-size: smaller;text-align: justify;"><b>Overview of MVSplat.</b> Given multiple posed images as input, we first extract
         multi-view image features with a multi-view Transformer, which contains self- and
         cross-attention layers to exchange information across views. Next, we construct per-view 
@@ -147,68 +296,156 @@
         Gaussian centers. The opacity, covariance and color Gaussian parameters are predicted
         jointly with the depth maps. Finally, novel views are rendered from the predicted 3D
         Gaussians with the splatting operation.</figcaption>
-      </figure>
 
-      <!-- Comparisons -->
-      <h2>Comparisons with the State-of-the-art</h2>
-      <p>We present qualitative comparisons with the following state-of-the-art models:</p>
-      <ul>
-        <li><a href="https://davidcharatan.com/pixelsplat/">pixelSplat</a>: The latest feed-forward 3D Gaussians model
-          that utilies data-driven regression architecture to predict Gaussian centers, leading to 
-          poor geometry reconstruction and limited ability of cross-dataset generalization.</li>
-        <li><a href="https://haofeixu.github.io/murf/">MuRF</a>: The latest feed-forward NeRF model that leverages 
-          3D volume and (2+1)D CNN, which is expensive to train and renders comparably slowly.</li>
-      </ul>
-      <img src="static/images/sota_comparisons.png" class="img-fluid w-100 mt-2 mb-3" alt="comparison on Real Estate 10k and ACID dataset" />
-      <div class="border w-100 mb-4">
-        <video class="w-100 d-block" autoplay controls muted loop>
-          <source src="static/videos/sota_comparisons.mp4" type="video/mp4">
-        </video>
       </div>
+    </div>
 
-      <!-- Geometry -->
-      <h2>Comparisons of Geometry Reconstruction</h2>
-      <p>Our MVSplat produces significantly higher-quality 3D Gaussian primitives than the latest state-of-the-art
+  </div>
+</section>
+
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Comparisons with the State-of-the-art</h2>
+
+        <div class="content has-text-justified">
+          <p>We present qualitative comparisons with the following state-of-the-art models:</p>
+          <ul>
+            <li><a href="https://davidcharatan.com/pixelsplat/">pixelSplat</a>: The latest feed-forward 3D Gaussians model
+              that utilies data-driven regression architecture to predict Gaussian centers, leading to 
+              poor geometry reconstruction and limited ability of cross-dataset generalization.</li>
+            <li><a href="https://haofeixu.github.io/murf/">MuRF</a>: The latest feed-forward NeRF model that leverages 
+              3D volume and (2+1)D CNN, which is expensive to train and renders comparably slowly.</li>
+          </ul>
+        </div>
+
+        <img src="static/images/sota_comparisons.png" class="center" alt="comparison on Real Estate 10k and ACID dataset" />
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 autoplay
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 loop
+                 width="100%"
+                 >
+            <source src="static/videos/sota_comparisons.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Comparisons of Geometry Reconstruction</h2>
+
+        <div class="content has-text-justified">
+          <p>Our MVSplat produces significantly higher-quality 3D Gaussian primitives than the latest state-of-the-art
         pixelSplat. The readers are invited to view the corresponding ".ply" files of the 3D Gaussians exported from
         both models provided at <b><a href="https://drive.google.com/drive/folders/1nBpUQnBvAIL7oLODElhIiLkW9x5gAuWs" target="_blank">HERE</a></b>.
         We recommend viewing them with online viewers, <i>e.g.</i>,
         <a href="https://projects.markkellogg.org/threejs/demo_gaussian_splats_3d.php?art=1&cu=0,0,1&cp=0,1,0&cla=1,0,0"
           target="_blank">3D Gaussian Splatting with Three.js</a>
-        (camera up should be set to "0,0,1").
-      </p>
-      <img src="static/images/point_clouds.png" class="img-fluid w-100 mt-2 mb-4" alt="point clouds and depth maps" />
+        (camera up should be set to "0,0,1").</p>
+        </div>
 
-      <!-- cross-dataset -->
-      <h2>Comparisons of Cross-dataset Generalization</h2> 
-      <p>Our MVSplat is inherently superior in generalizing to <em>out-of-distribution</em> novel scenes, primarily due to the fact that the
+        <img src="static/images/point_clouds.png" class="center" alt="point clouds and depth maps" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Comparisons of Cross-dataset Generalization</h2>
+
+        <div class="content has-text-justified">
+          <p>Our MVSplat is inherently superior in generalizing to <em>out-of-distribution</em> novel scenes, primarily due to the fact that the
       cost volume captures the <em>relative similarity</em> between features, which remains <em>invariant</em> compared to the absolute scale of
       features. Here, we present cross-dataset generalization by training models solely on RealEstate10K (indoor scenes), and directly 
       test them on DTU (object-centric scenes) and ACID (outdoor scenes).</p>
-      <img src="static/images/re10k_generalization.png" class="img-fluid w-100 mt-2 mb-3"
-        alt="trained on RealEstate10K, and tested on DTU and ACID" />
-      <div class="border w-100 mb-4">
-        <video class="w-100 d-block" autoplay controls muted loop>
-          <source src="static/videos/re10k_generalization.mp4" type="video/mp4">
-        </video>
-      </div>
+        </div>
 
-    <h2>BibTeX</h2>
-    <pre class="mb-4"><code>@article{chen2024mvsplat,
+        <img src="static/images/re10k_generalization.png" class="center" alt="trained on RealEstate10K, and tested on DTU and ACID" />
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 autoplay
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 loop
+                 width="100%"
+                 >
+            <source src="static/videos/re10k_generalization.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Acknowledgements</h2>
+    This research is supported by the Monash FIT Start-up Grant. Dr. Chuanxia Zheng is supported by EPSRC SYN3D EP/Z001811/1.
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title" style="margin-top: -60px">BibTeX</h2>
+    <pre><code>@article{chen2024mvsplat,
     title   = {MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images},
     author  = {Chen, Yuedong and Xu, Haofei and Zheng, Chuanxia and Zhuang, Bohan and Pollefeys, Marc and Geiger, Andreas and Cham, Tat-Jen and Cai, Jianfei},
     journal = {arXiv preprint arXiv:2403.14627},
     year    = {2024},
 }</code></pre>
-
-    </div>
-
-    <!-- Footer -->
-    <footer class="border-top mt-5 py-4">
-      This page's code uses elements from this <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-        target="_blank">Academic Project Page
-        Template</a>.
-    </footer>
+</code></pre>
   </div>
-</body>
+</section>
 
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+  <tr>
+    <td>
+      <br>
+      <p align="center">
+        <font size="2">
+          <a href="https://github.com/nerfies/nerfies.github.io">
+            <font size="2" color="lightgray">awesome webpage template</font>
+          </a>
+          <br>
+        </font>
+      </p>
+      <br>
+    </td>
+  </tr>
+</table>
+
+</body>
 </html>
