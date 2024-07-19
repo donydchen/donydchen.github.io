@@ -159,9 +159,9 @@
                 <a href="https://arxiv.org/abs/2403.14627" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
+                      <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>arXiv</span>
                 </a>
               </span>
               <!-- Slides Link. -->
@@ -253,7 +253,7 @@
 </section>
 
 
-<section class="section" style="padding-top: 0;">
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <!-- Highlights -->
     <div class="columns is-centered has-text-centered">
@@ -269,7 +269,7 @@
 </section>
 
 
-<section class="section" style="padding-top: 0;">
+<section class="section">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered has-text-centered">
@@ -277,7 +277,7 @@
         <h2 class="title is-3">Overview</h2>
 
         <img src="static/images/architecture.png" class="center">
-        <figcaption style="font-size: smaller;text-align: justify;"><b>Overview of MVSplat.</b> Given multiple posed images as input, we first extract
+        <figcaption class="has-text-justified"><b>Overview of MVSplat.</b> Given multiple posed images as input, we first extract
         multi-view image features with a multi-view Transformer, which contains self- and
         cross-attention layers to exchange information across views. Next, we construct per-view 
         cost volumes using plane sweeping. The Transformer features and cost volumes
@@ -421,22 +421,35 @@
   </div>
 </section>
 
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-  <tr>
-    <td>
-      <br>
-      <p align="center">
-        <font size="2">
-          <a href="https://github.com/nerfies/nerfies.github.io">
-            <font size="2" color="lightgray">awesome webpage template</font>
-          </a>
-          <br>
-        </font>
-      </p>
-      <br>
-    </td>
-  </tr>
-</table>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="static/pdfs/chen2024mvsplat.pdf" target="_blank" style="text-decoration : none">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/donydchen/mvsplat" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            Template was borrowed from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+          under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>Please contact <a href="https://donydchen.github.io">Yuedong Chen</a> for feedback and questions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
 </body>
 </html>
