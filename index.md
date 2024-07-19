@@ -14,9 +14,9 @@ Yuedong Donald Chen is currently enrolled as a Ph.D. student at [Monash Universi
 
 Previously, he was a Research Assistant at [IMI NTU](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), where he honed his foundational research skills under the guidance of Prof. [Jianfei Cai](https://jianfei-cai.github.io) and A/Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge.
 
-Before that, he was a Research Intern at [Lenovo Research (Beijing)](http://research.lenovo.com/webapp/view_English/researchField.html), collaborating with [Jianfeng Wang](https://jianf-wang.github.io/personal/) on applications related to facial expression recognition.
+<!-- Before that, he was a Research Intern at [Lenovo Research (Beijing)](http://research.lenovo.com/webapp/view_English/researchField.html), collaborating with [Jianfeng Wang](https://jianf-wang.github.io/personal/) on applications related to facial expression recognition. -->
 
-His academic journey began with the completion of both his MEng and BEng degrees at [Sun Yat-sen University (SYSU)](http://www.sysu.edu.cn/2012/en/index.htm), where he majored in Software Engineering. Additionally, he had the enriching experience of spending a semester as an exchange student at [National Chi Nan University (NCNU)](https://eng.ncnu.edu.tw/) during his BEng studies.
+His academic journey began with the completion of both his MEng and BEng degrees at [Sun Yat-sen University (SYSU)](https://www.sysu.edu.cn/sysuen/), where he majored in Software Engineering. Additionally, he also spent a semester as an exchange student at [National Chi Nan University (NCNU)](https://www.ncnu.edu.tw/?Lang=en) during his BEng studies.
 
 <div class="body-social sidebar-social">
   <ul>
