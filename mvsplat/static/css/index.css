@@ -11,12 +11,27 @@ body {
 .link-block a {
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-decoration: none;
+    background-color: #331400 !important;
+}
+
+.link-block a:hover {
+  text-decoration: none;
 }
 
 .dnerf {
   font-variant: small-caps;
 }
 
+#hn-badge {
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 3px;
+  margin-left: 3px;
+}
 
 .teaser .hero-body {
   padding-top: 0;
