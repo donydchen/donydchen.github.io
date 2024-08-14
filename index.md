@@ -35,7 +35,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <div class="pub">
   <div class="pub-title">MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images</div>
-  <div class="pub-venue">ECCV 2024</div>
+  <div class="pub-venue">ECCV 2024 (Oral)</div>
   <div class="pub-authors">Yuedong Chen, Haofei Xu, Chuanxia Zheng, Bohan Zhuang, Marc Pollefeys, Andreas Geiger, Tat-Jen Cham, and Jianfei Cai</div>
   <div>[<a href="https://arxiv.org/abs/2403.14627">arXiv</a>] [<a href="https://github.com/donydchen/mvsplat">code</a>] [<a href="https://donydchen.github.io/mvsplat">project
     page</a>] </div>
