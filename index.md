@@ -4,11 +4,12 @@ name: index
 title: 
 description: >
   Personal homepage of Yuedong Donald CHEN, a Ph.D. student at Monash University, working on 3D vision.
-hide_description: false
-cover: true
+hide_description: true
+cover: false
 ---
 
 <h2 class="h1 index-header" id="about">Short Bio </h2>
+
 
 Yuedong Donald Chen is currently enrolled as a Ph.D. student at [Monash University](https://www.monash.edu), under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io) and A/Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). His doctoral research revolves around the inference and manipulation of 3D scenes through the utilization of 2D data. He is particularly captivated by the rapid advancements in the 3D computer vision community in recent years and finds great pleasure in contributing to this dynamic field.
 
@@ -17,6 +18,11 @@ Previously, he was a Research Assistant at [IMI NTU](http://web.archive.org/web/
 <!-- Before that, he was a Research Intern at [Lenovo Research (Beijing)](http://research.lenovo.com/webapp/view_English/researchField.html), collaborating with [Jianfeng Wang](https://jianf-wang.github.io/personal/) on applications related to facial expression recognition. -->
 
 His academic journey began with the completion of both his MEng and BEng degrees at [Sun Yat-sen University (SYSU)](https://www.sysu.edu.cn/sysuen/), where he majored in Software Engineering. Additionally, he also spent a semester as an exchange student at [National Chi Nan University (NCNU)](https://www.ncnu.edu.tw/?Lang=en) during his BEng studies.
+
+
+<p style="color: red;font-weight: bold;">Expected graduation in Spring / Summer 2025. <br/>
+Actively seeking Research Scientist and Postdoctoral positions (<a href="mailto:donydchen@gmail.com">Email</a>, <a href="assets/pdf/Resume_CHEN.pdf">CV</a>)</p>
+
 
 <div class="body-social sidebar-social">
   <ul>
