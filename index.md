@@ -21,7 +21,9 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 
 <p style="color: red;font-weight: bold;">Expected graduation in Spring / Summer 2025. <br/>
-Actively seeking Research Scientist and Postdoctoral positions (<a href="mailto:donydchen@gmail.com">Email</a>, <a href="assets/pdf/Resume_CHEN.pdf">CV</a>)</p>
+Actively seeking Research Scientist and Postdoctoral positions (<a href="mailto:yuedong.chen@monash.edu">Email</a>, <a href="assets/pdf/Resume_CHEN.pdf">CV</a>) <br /> <br />
+I will present MVSplat on-site at ECCV 2024. Let us meet and chat if you are interested in my research.
+</p>
 
 
 <div class="body-social sidebar-social">
