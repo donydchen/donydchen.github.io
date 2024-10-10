@@ -3,7 +3,7 @@ layout: plain
 name: index
 title: 
 description: >
-  Personal homepage of Yuedong Donald CHEN, a Ph.D. student at Monash University, working on 3D vision.
+  Personal homepage of Yuedong (Donny) CHEN, a Ph.D. student at Monash University, working on 3D vision.
 hide_description: true
 cover: false
 ---
@@ -11,9 +11,9 @@ cover: false
 <h2 class="h1 index-header" id="about">Short Bio </h2>
 
 
-Yuedong Donald Chen is currently enrolled as a Ph.D. student at [Monash University](https://www.monash.edu), under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io) and A/Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). His doctoral research revolves around the inference and manipulation of 3D scenes through the utilization of 2D data. He is particularly captivated by the rapid advancements in the 3D computer vision community in recent years and finds great pleasure in contributing to this dynamic field.
+Yuedong (Donny) Chen is currently enrolled as a Ph.D. student at [Monash University](https://www.monash.edu), under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io) and Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). His doctoral research revolves around the inference and manipulation of 3D scenes through the utilization of 2D data. He is particularly captivated by the rapid advancements in the 3D computer vision community in recent years and finds great pleasure in contributing to this field.
 
-Previously, he was a Research Assistant at [IMI NTU](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), where he honed his foundational research skills under the guidance of Prof. [Jianfei Cai](https://jianfei-cai.github.io) and A/Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge.
+Previously, he was a Research Assistant at [IMI NTU](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), where he honed his research skills under the guidance of Prof. [Jianfei Cai](https://jianfei-cai.github.io) and Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge.
 
 <!-- Before that, he was a Research Intern at [Lenovo Research (Beijing)](http://research.lenovo.com/webapp/view_English/researchField.html), collaborating with [Jianfeng Wang](https://jianf-wang.github.io/personal/) on applications related to facial expression recognition. -->
 
@@ -21,18 +21,18 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 
 <p style="color: red;font-weight: bold;">Expected graduation in Spring / Summer 2025. <br/>
-Actively seeking Research Scientist and Postdoctoral positions (<a href="mailto:yuedong.chen@monash.edu">Email</a>, <a href="assets/pdf/Resume_CHEN.pdf">CV</a>) <br /> <br />
-I will present MVSplat on-site at ECCV 2024. Let us meet and chat if you are interested in my research.
+Actively seeking Research Scientist position (<a href="mailto:yuedong.chen@monash.edu">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br />
+<!-- I will present MVSplat on-site at ECCV 2024. Let us meet and chat if you are interested in my research. -->
 </p>
 
 
 <div class="body-social sidebar-social">
   <ul>
-    <li> <a href="mailto:yuedong.chen@monash.edu" title="yuedong.chen@monash.edu" class="no-mark-external" target="_blank"> <span class="icon-mail"></span> <span aria-hidden="true">Email </span><span class="sr-only">Donald's Email Address</span></a></li>
-    <li> <a href="https://scholar.google.com/citations?user=GqgGZlQAAAAJ" title="Google Scholar" class="no-mark-external" target="_blank"> <span class="icon-googlescholar"></span> <span aria-hidden="true">Google Scholar </span><span class="sr-only">Donald's Google Scholar profile</span></a></li>
-    <li> <a href="https://github.com/donydchen" title="GitHub" class="no-mark-external" target="_blank"> <span class="icon-github"></span> <span aria-hidden="true">GitHub </span><span class="sr-only">Donald's Github</span></a></li>
-    <li> <a href="https://www.linkedin.com/in/donydchen" title="LinkedIn" class="no-mark-external" target="_blank"> <span class="icon-linkedin2"></span> <span aria-hidden="true">LinkedIn </span><span class="sr-only">Donald's LinkedIn</span></a></li>
-    <li> <a href="https://twitter.com/donydchen" title="Twitter" class="no-mark-external" target="_blank"> <span class="icon-twitter"></span> <span aria-hidden="true">Twitter </span><span class="sr-only">Donald's Twitter</span></a></li>
+    <li> <a href="mailto:yuedong.chen@monash.edu" title="yuedong.chen@monash.edu" class="no-mark-external" target="_blank"> <span class="icon-mail"></span> <span aria-hidden="true">Email </span><span class="sr-only">Donny's Email Address</span></a></li>
+    <li> <a href="https://scholar.google.com/citations?user=GqgGZlQAAAAJ" title="Google Scholar" class="no-mark-external" target="_blank"> <span class="icon-googlescholar"></span> <span aria-hidden="true">Google Scholar </span><span class="sr-only">Donny's Google Scholar profile</span></a></li>
+    <li> <a href="https://github.com/donydchen" title="GitHub" class="no-mark-external" target="_blank"> <span class="icon-github"></span> <span aria-hidden="true">GitHub </span><span class="sr-only">Donny's Github</span></a></li>
+    <li> <a href="https://www.linkedin.com/in/donydchen" title="LinkedIn" class="no-mark-external" target="_blank"> <span class="icon-linkedin2"></span> <span aria-hidden="true">LinkedIn </span><span class="sr-only">Donny's LinkedIn</span></a></li>
+    <li> <a href="https://twitter.com/donydchen" title="Twitter" class="no-mark-external" target="_blank"> <span class="icon-twitter"></span> <span aria-hidden="true">Twitter </span><span class="sr-only">Donny's Twitter</span></a></li>
   </ul>
 </div>
 
@@ -40,6 +40,14 @@ I will present MVSplat on-site at ECCV 2024. Let us meet and chat if you are int
 
 <h2 class="h1 index-header" id="publications">Selected Publications </h2>
 <p class='hl-sen'> 🤖🧠👌🏼 He prefers simple yet effective ways </p>
+
+<!-- <div class="pub">
+  <div class="pub-title">MVSplat360: Feed‑Forward 360 Scene Synthesis from Sparse Views</div>
+  <div class="pub-venue">NeurIPS 2024</div>
+  <div class="pub-authors">Yuedong Chen, Chuanxia Zheng, Haofei Xu, Bohan Zhuang, Andrea Vedaldi, Tat‑Jen Cham, and Jianfei Cai</div>
+  <div> TL;DR: MVSplat + SVD on DL3DV-10K achieves stunning feed-forward visual results. <br />
+        Paper and code will be released soon! </div>
+</div> -->
 
 <div class="pub">
   <div class="pub-title">MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images</div>
@@ -113,9 +121,30 @@ I will present MVSplat on-site at ECCV 2024. Let us meet and chat if you are int
 
 ---
 
-<h2 class="h1 index-header" id="projects">Demo & Projects </h2>
+<h2 class="h1 index-header" id="projects">Projects & Talks</h2>
 
 <div class="demo-proj-row">
+  <div class="card">
+    <a href="https://eccv2024.ecva.net/virtual/2024/poster/1231" target="_blank">
+      <div><img src="assets/img/eccv24_oral.jpeg" /></div>
+    </a>
+    <div class="cdesc">Oral presentation at ECCV 2024</div>
+  </div>
+
+  <div class="card">
+    <a href="https://cepoca.cn/lectureHall/lectureRoomDetail/?liveUid=cd40fae9992618669ccf17e09efa7b76" target="_blank">
+      <div><img src="assets/img/talk_szhy.jpeg" /></div>
+    </a>
+    <div class="cdesc">Invited talk at SHUZIHUANYU</div>
+  </div>
+
+  <div class="card">
+    <a href="https://www.bilibili.com/video/BV1sAWhe1ENw/" target="_blank">
+      <div><img src="assets/img/talk_3dcver.jpeg" /></div>
+    </a>
+    <div class="cdesc">Invited talk at 3DCVer</div>
+  </div>  
+
   <div class="card">
     <a href="https://github.com/lyndonzheng/Pluralistic-Inpainting#gui" target="_blank">
       <div><img src="assets/img/openday22_demo.jpeg" /></div>
@@ -138,7 +167,7 @@ I will present MVSplat on-site at ECCV 2024. Let us meet and chat if you are int
 
 <div style="margin-bottom: 40px;">
   <ul>
-    <li>Conference Reviewer: ECCV('24), CVPR('23,'24), ICCV('23), ACMMM('21,'22,'23,'24), ISMAR('23,'24), IEEEVR('24)</li>
+    <li>Conference Reviewer: ECCV('24), CVPR('23,'24), ICCV('23), NeurIPS(’24), ICLR(’24), 3DV(’24), AAAI(’24), ACMMM(’21‑’24), ACCV(’24), ISMAR(’23,’24), IEEEVR(’24)</li>
     <li>Journal Reviewer: TPAMI, IJCV, TIP, TMM, TCSVT, TOMM, TVCJ, Computers & Graphics, The Visual Computer</li>
     <li>He is a native speaker of <a href="https://en.wikipedia.org/wiki/Teochew_dialect">Teochew</a>, fluent in English, Mandarin, <a href="https://en.wikipedia.org/wiki/Cantonese">Cantonese</a>, and also familiar with <a href="https://en.wikipedia.org/wiki/Singlish">Singlish</a>.
     </li>
