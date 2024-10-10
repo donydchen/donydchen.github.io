@@ -19,18 +19,18 @@ baseurl: ""
 lang: en
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title: Yuedong Donald CHEN
+title: Yuedong (Donny) CHEN
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description: >
-  Yuedong Donald CHEN - Ph.D. Student at Monash University
+  Yuedong CHEN - Ph.D. Student at Monash University
 
 # A shorter description for the sidebar.
 tagline: Ph.D. Student at Monash University
 
 # A list of keywords for your blog
-keywords: [Yuedong Donald CHEN, Ph.D. Student, Monash Uni]
+keywords: [Yuedong (Donny) CHEN, Ph.D. Student, Monash Uni]
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
@@ -40,7 +40,7 @@ logo: /assets/img/profile.jpg
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name: Yuedong Donald CHEN
+  name: Yuedong (Donny) CHEN
   email: yuedong.chen@monash.edu
   # google-scholar: GqgGZlQAAAAJ
   # username: donydchen
@@ -58,7 +58,7 @@ menu:
     url: /#about
   - title: Publications
     url: /#publications
-  - title: Demo & Projects
+  - title: Projects & Talks
     url: /#projects
   - title: Miscellanies
     url: /#misc
