@@ -117,7 +117,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title" style="margin-bottom: 0;width: 120%;margin-left: -10%;">MVSplat360: Feed-Forward 360 Scene Synthesis from Sparse Views</h1>
+          <h1 class="title is-1 publication-title" style="margin-bottom: 0;width: 120%;margin-left: -10%;"><span class="text-hl">MVSplat360</span>: Feed-Forward 360 Scene Synthesis from Sparse Views</h1>
 
           <div class="column is-full_width">
           </div>
@@ -270,9 +270,9 @@
     <!-- Highlights -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3" style="color: #B03B12;">Abstract</h2>
         <div class="content has-text-justified">
-       We introduce MVSplat360, a feed-forward approach for 360°novel view synthesis (NVS) of diverse real-world scenes, using only sparse observations. This setting is inherently ill-posed due to minimal overlap among input views and insufficient visual information provided, making it challenging for conventional methods to achieve high-quality results. Our MVSplat360 addresses this by effectively combining geometry-aware 3D reconstruction with temporally consistent video generation. Specifically, it refactors a feed-forward 3D Gaussian Splatting (3DGS) model to render features directly into the latent space of a pre-trained Stable Video Diffusion (SVD) model, where these features then act as pose and visual cues to guide the denoising process and produce photorealistic 3D-consistent views. Our model is end-to-end trainable and supports rendering arbitrary views with as few as 5 sparse input views. To evaluate MVSplat360’s performance, we introduce a new benchmark using the challenging DL3DV-10K dataset, where MVSplat360 achieves superior visual quality compared to state-of-the-art methods on wide-sweeping or even 360°NVS tasks. Experiments on the existing benchmark RealEstate10K also confirm the effectiveness of our model.
+       We introduce MVSplat360, a feed-forward approach for 360° novel view synthesis (NVS) of diverse real-world scenes, using only sparse observations. This setting is inherently ill-posed due to minimal overlap among input views and insufficient visual information provided, making it challenging for conventional methods to achieve high-quality results. Our MVSplat360 addresses this by effectively combining geometry-aware 3D reconstruction with temporally consistent video generation. Specifically, it refactors a feed-forward 3D Gaussian Splatting (3DGS) model to render features directly into the latent space of a pre-trained Stable Video Diffusion (SVD) model, where these features then act as pose and visual cues to guide the denoising process and produce photorealistic 3D-consistent views. Our model is end-to-end trainable and supports rendering arbitrary views with as few as 5 sparse input views. To evaluate MVSplat360’s performance, we introduce a new benchmark using the challenging DL3DV-10K dataset, where MVSplat360 achieves superior visual quality compared to state-of-the-art methods on wide-sweeping or even 360° NVS tasks. Experiments on the existing benchmark RealEstate10K also confirm the effectiveness of our model.
         </div>
       </div>
     </div>
@@ -286,10 +286,10 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Overview</h2>
+        <h2 class="title is-3 text-hl">Overview</h2>
 
         <img src="static/images/architecture.png" class="center">
-        <figcaption class="has-text-justified"><b>Overview of our MVSplat360.</b> (a) Given sparse posed images as input, we first match and fuse the multi-view information using a multi-view Transformer and cost volume-based encoder. (b) Next, a 3DGS representation is constructed to represent the coarse geometry of the entire scene. (c) Considering such coarse reconstruction is imperfect, we further adapt a pre-trained SVD, using features rendered from the 3DGS representation as conditions to achieve 360°novel view synthesis.</figcaption>
+        <figcaption class="has-text-justified"><b>Overview of our MVSplat360.</b> (a) Given sparse posed images as input, we first match and fuse the multi-view information using a multi-view Transformer and cost volume-based encoder. (b) Next, a 3DGS representation is constructed to represent the coarse geometry of the entire scene. (c) Considering such coarse reconstruction is imperfect, we further adapt a pre-trained SVD, using features rendered from the 3DGS representation as conditions to achieve 360° novel view synthesis.</figcaption>
       </div>
     </div>
 
@@ -302,36 +302,32 @@
 
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered">More Visual Results</h2>
+        <h2 class="title is-3 has-text-centered text-hl">Comparisions on DL3DV-10K</h2>
 
-        will be updated soon.
-
-<!--         <div class="content has-text-justified">
+        <div class="content has-text-justified">
           <p>We present qualitative comparisons with the following state-of-the-art models:</p>
           <ul>
-            <li><a href="https://davidcharatan.com/pixelsplat/">pixelSplat</a>: The latest feed-forward 3D Gaussians model
-              that utilies data-driven regression architecture to predict Gaussian centers, leading to 
-              poor geometry reconstruction and limited ability of cross-dataset generalization.</li>
-            <li><a href="https://haofeixu.github.io/murf/">MuRF</a>: The latest feed-forward NeRF model that leverages 
-              3D volume and (2+1)D CNN, which is expensive to train and renders comparably slowly.</li>
+            <li><a href="https://davidcharatan.com/pixelsplat/">pixelSplat [Charatan et. al CVPR 2024]</a>: The pioneering feed-forward 3D Gaussians model that uses a data-driven regression architecture to predict Gaussian centers, which produces poor visual quality in large-scale scenes.</li>
+            <li><a href="https://donydchen.github.io/mvsplat/">MVSplat [Chen et. al ECCV 2024]</a>: The latest published feed-forward 3DGS model that leverages a multi-view transformer and cost volume, performing well on small-scale scenes. However, it lacks generative capability, limiting its ability to handle disoccluded or unobserved regions in sparse-view large-scale scenes..</li>
+            <li><a href="https://geometric-rl.mpi-inf.mpg.de/latentsplat/">latentSpalt [Wewer et. al ECCV 2024]</a>: Another latest published feed-forward novel view synthesis approach that combines 3DGS with a VAE-GAN decoder. Its GAN-based framework improves visual quality, though only to a limited extent.</li>
           </ul>
         </div>
 
-        <img src="static/images/sota_comparisons.png" class="center" alt="comparison on Real Estate 10k and ACID dataset" />
+        <img src="static/images/sota_comparisons.png" class="center" alt="comparison on DL3DV-10K dataset" />
         <div class="content has-text-centered">
           <video id="replay-video"
                  autoplay
-                 controls
                  muted
                  preload
                  playsinline
                  loop
                  width="100%"
+                 style="margin-top: 20px;" 
                  >
-            <source src="static/videos/sota_comparisons.mp4"
+            <source src="static/videos/dl3dv_comparisons.mp4"
                     type="video/mp4">
           </video>
-        </div> -->
+        </div> 
 
       </div>
     </div>
@@ -340,29 +336,32 @@
 </section>
 
 
-<!-- <section class="section" style="padding-top: 0;">
+<section class="section" style="padding-top: 0;">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered">Comparisons of Geometry Reconstruction</h2>
+        <h2 class="title is-3 has-text-centered text-hl">Concurrent Related Works</h2>
 
-        <div class="content has-text-justified">
-          <p>Our MVSplat produces significantly higher-quality 3D Gaussian primitives than the latest state-of-the-art
-        pixelSplat. The readers are invited to view the corresponding ".ply" files of the 3D Gaussians exported from
-        both models provided at <b><a href="https://drive.google.com/drive/folders/1nBpUQnBvAIL7oLODElhIiLkW9x5gAuWs" target="_blank">HERE</a></b>.
-        We recommend viewing them with online viewers, <i>e.g.</i>,
-        <a href="https://projects.markkellogg.org/threejs/demo_gaussian_splats_3d.php?art=1&cu=0,0,1&cp=0,1,0&cla=1,0,0"
-          target="_blank">3D Gaussian Splatting with Three.js</a>
-        (camera up should be set to "0,0,1").</p>
+        <div class="content">
+          Since submitting our work, we’ve seen a growing number of similar studies focused on novel view synthesis for large-scale scenes. Below, we list several concurrent works closely related to our MVSplat360. We encourage you to also explore them.
+          <ul>
+            <li><a href="https://cat3d.github.io/">CAT3D: Create Anything in 3D with Multi-View Diffusion Models</a></li>
+            <li><a href="https://liuff19.github.io/ReconX/">ReconX: Reconstruct Any Scene from Sparse Views with Video Diffusion Model</a></li>
+            <li><a href="https://drexubery.github.io/ViewCrafter/">ViewCrafter: Taming Video Diffusion Models for High-fidelity Novel View Synthesis</a></li>
+            <li><a href="https://runningneverstop.github.io/lm-gaussian.github.io/">LM-Gaussian: Boost Sparse-view 3D Gaussian Splatting with Large Model Priors</a></li>
+            <li><a href="https://xiliu8006.github.io/3DGS-Enhancer-project/">3DGS-Enhancer: Enhancing Unbounded 3D Gaussian Splatting with View-consistent 2D Diffusion Priors</a></li>
+            <li><a href="https://arthurhero.github.io/projects/llrm/?trk=public_post_comment-text">Long-LRM: Long-sequence Large Reconstruction Model for Wide-coverage Gaussian Splats</a></li>
+            <li><a href="https://haofeixu.github.io/depthsplat/">DepthSplat: Connecting Gaussian Splatting and Depth</a></li>
+          </ul>
         </div>
 
-        <img src="static/images/point_clouds.png" class="center" alt="point clouds and depth maps" />
+
       </div>
     </div>
 
   </div>
-</section> -->
+</section>
 
 <!-- 
 
