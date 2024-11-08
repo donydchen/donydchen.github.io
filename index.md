@@ -44,7 +44,7 @@ I will present MVSplat360 on-site at AJCAI24 (Encore track, Melbourne) and NeurI
   <div class="pub-title">MVSplat360: Feed‑Forward 360 Scene Synthesis from Sparse Views</div>
   <div class="pub-venue">NeurIPS 2024</div>
   <div class="pub-authors">Yuedong Chen, Chuanxia Zheng, Haofei Xu, Bohan Zhuang, Andrea Vedaldi, Tat‑Jen Cham, and Jianfei Cai</div>
-  <div>[<a href="https://arxiv.org/abs/">arXiv</a>] [<a href="https://github.com/donydchen/mvsplat360">code</a>] [<a href="https://donydchen.github.io/mvsplat360">project page</a>] </div>
+  <div>[<a href="https://arxiv.org/abs/2411.04924">arXiv</a>] [<a href="https://github.com/donydchen/mvsplat360">code</a>] [<a href="https://donydchen.github.io/mvsplat360">project page</a>] </div>
   <!-- <div> TL;DR: MVSplat360 is a feed‑forward model that combines 3DGS with SVD to achieve 360° NVS for complex scenes with less than 5 input views. </div>  -->
 </div>
 
