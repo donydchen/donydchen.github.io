@@ -11,18 +11,17 @@ cover: false
 <h2 class="h1 index-header" id="about">Short Bio </h2>
 
 
-Yuedong (Donny) Chen is currently enrolled as a Ph.D. student at [Monash University](https://www.monash.edu), under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io) and Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). His doctoral research revolves around the inference and manipulation of 3D scenes through the utilization of 2D data. He is particularly captivated by the rapid advancements in the 3D computer vision community in recent years and finds great pleasure in contributing to this field.
+Yuedong (Donny) Chen is currently enrolled as a Ph.D. student at [Monash University](https://www.monash.edu), under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io) and Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). His PhD research focuses on inferring and manipulating 3D scenes from 2D data using feed-forward solutions.
 
-Previously, he was a Research Assistant at [IMI NTU](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), where he honed his research skills under the guidance of Prof. [Jianfei Cai](https://jianfei-cai.github.io) and Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge.
-
-<!-- Before that, he was a Research Intern at [Lenovo Research (Beijing)](http://research.lenovo.com/webapp/view_English/researchField.html), collaborating with [Jianfeng Wang](https://jianf-wang.github.io/personal/) on applications related to facial expression recognition. -->
+Previously, he was a Research Assistant at [IMI NTU](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), where he honed his research skills under the guidance of Prof. [Jianfei Cai](https://jianfei-cai.github.io) and Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge. He also interned at [Lenovo Research (Beijing)](http://research.lenovo.com/webapp/view_English/researchField.html), collaborating closely with [Dr. Jianfeng Wang](https://jianf-wang.github.io/personal/).
 
 His academic journey began with the completion of both his MEng and BEng degrees at [Sun Yat-sen University (SYSU)](https://www.sysu.edu.cn/sysuen/), where he majored in Software Engineering. Additionally, he also spent a semester as an exchange student at [National Chi Nan University (NCNU)](https://www.ncnu.edu.tw/?Lang=en) during his BEng studies.
 
 
-<p style="color: red;font-weight: bold;">Expected graduation in Spring / Summer 2025. <br/>
+<p style="color: red;font-weight: bold;">
+  <!-- Expected graduation in Spring / Summer 2025. <br/> -->
 Actively seeking Research Scientist position (<a href="mailto:yuedong.chen@monash.edu">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br />
-<!-- I will present MVSplat on-site at ECCV 2024. Let us meet and chat if you are interested in my research. -->
+I will present MVSplat360 on-site at AJCAI24 (Encore track, Melbourne) and NeurIPS24 (Vancouver). Let's connect!
 </p>
 
 
@@ -39,15 +38,15 @@ Actively seeking Research Scientist position (<a href="mailto:yuedong.chen@monas
 ---
 
 <h2 class="h1 index-header" id="publications">Selected Publications </h2>
-<p class='hl-sen'> 🤖🧠👌🏼 He prefers simple yet effective ways </p>
+<p class='hl-sen'> 🤖🧠👌🏼 He prefers simple yet effective solutions </p>
 
-<!-- <div class="pub">
+<div class="pub">
   <div class="pub-title">MVSplat360: Feed‑Forward 360 Scene Synthesis from Sparse Views</div>
   <div class="pub-venue">NeurIPS 2024</div>
   <div class="pub-authors">Yuedong Chen, Chuanxia Zheng, Haofei Xu, Bohan Zhuang, Andrea Vedaldi, Tat‑Jen Cham, and Jianfei Cai</div>
-  <div> TL;DR: MVSplat + SVD on DL3DV-10K achieves stunning feed-forward visual results. <br />
-        Paper and code will be released soon! </div>
-</div> -->
+  <div>[<a href="https://arxiv.org/abs/">arXiv</a>] [<a href="https://github.com/donydchen/mvsplat360">code</a>] [<a href="https://donydchen.github.io/mvsplat360">project page</a>] </div>
+  <!-- <div> TL;DR: MVSplat360 is a feed‑forward model that combines 3DGS with SVD to achieve 360° NVS for complex scenes with less than 5 input views. </div>  -->
+</div>
 
 <div class="pub">
   <div class="pub-title">MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images</div>
@@ -167,7 +166,7 @@ Actively seeking Research Scientist position (<a href="mailto:yuedong.chen@monas
 
 <div style="margin-bottom: 40px;">
   <ul>
-    <li>Conference Reviewer: ECCV('24), CVPR('23,'24), ICCV('23), NeurIPS(’24), ICLR(’24), 3DV(’24), AAAI(’24), ACMMM(’21‑’24), ACCV(’24), ISMAR(’23,’24), IEEEVR(’24)</li>
+    <li>Conference Reviewer: ECCV('24), CVPR('23-'25), ICCV('23), NeurIPS(’24), ICLR(’25), 3DV(’24), AAAI(’24), ACMMM(’21‑’24), ACCV(’24), ISMAR(’23,’24), IEEEVR(’24)</li>
     <li>Journal Reviewer: TPAMI, IJCV, TIP, TMM, TCSVT, TOMM, TVCJ, Computers & Graphics, The Visual Computer</li>
     <li>He is a native speaker of <a href="https://en.wikipedia.org/wiki/Teochew_dialect">Teochew</a>, fluent in English, Mandarin, <a href="https://en.wikipedia.org/wiki/Cantonese">Cantonese</a>, and also familiar with <a href="https://en.wikipedia.org/wiki/Singlish">Singlish</a>.
     </li>
