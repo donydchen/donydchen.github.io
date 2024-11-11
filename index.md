@@ -123,6 +123,14 @@ I will present MVSplat360 on-site at AJCAI24 (Encore track, Melbourne) and NeurI
 <h2 class="h1 index-header" id="projects">Projects & Talks</h2>
 
 <div class="demo-proj-row">
+
+  <div class="card">
+    <a href="https://wayve.ai" target="_blank">
+      <div style="margin: 25px 0;"><img src="assets/img/talk_wayve_uk.png" /></div>
+    </a>
+    <div class="cdesc">Invited talk at WAYVE(London)</div>
+  </div>
+
   <div class="card">
     <a href="https://eccv2024.ecva.net/virtual/2024/poster/1231" target="_blank">
       <div><img src="assets/img/eccv24_oral.jpeg" /></div>
