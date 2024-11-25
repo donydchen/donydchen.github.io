@@ -20,8 +20,8 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <p style="color: red;font-weight: bold;">
   <!-- Expected graduation in Spring / Summer 2025. <br/> -->
-Actively seeking Research Scientist position (<a href="mailto:yuedong.chen@monash.edu">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br />
-I will present MVSplat360 on-site at AJCAI24 (Encore track, Melbourne) and NeurIPS24 (Vancouver). Let's connect!
+<!-- Actively seeking Research Scientist position (<a href="mailto:yuedong.chen@monash.edu">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br /> -->
+I will present MVSplat360 on-site at AJCAI24 (26/11 at Melbourne) and NeurIPS24 (13/12 at Vancouver). Let's connect!
 </p>
 
 
