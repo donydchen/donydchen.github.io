@@ -21,7 +21,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
 <p style="color: red;font-weight: bold;">
   <!-- Expected graduation in Spring / Summer 2025. <br/> -->
 <!-- Actively seeking Research Scientist position (<a href="mailto:yuedong.chen@monash.edu">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br /> -->
-I will present MVSplat360 on-site at AJCAI24 (26/11 at Melbourne) and NeurIPS24 (13/12 at Vancouver). Let's connect!
+I will present MVSplat360 on-site at NeurIPS24 (13/12 at Vancouver). Let's connect!
 </p>
 
 
@@ -59,7 +59,7 @@ I will present MVSplat360 on-site at AJCAI24 (26/11 at Melbourne) and NeurIPS24 
 <div class="pub">
   <div class="pub-title">MuRF: Multi-Baseline Radiance Fields</div>
   <div class="pub-venue">CVPR 2024</div>
-  <div class="pub-authors">Haofei Xu, Anpei Chen, Yuedong Chen, Christos Sakaridis, Yulun Zhang, Marc Pollefeys, Andreas Geiger, and Fisher Yu</div>
+  <div class="pub-authors">Haofei Xu, Anpei Chen, Yuedong Chen, Christos Sakaridis, Yulun Zhang, Marc Pollefeys, Andreas Geiger, <i>et al.</i></div>
   <div>[<a href="https://arxiv.org/abs/2312.04565">arXiv</a>] [<a href="https://github.com/autonomousvision/murf">code</a>] [<a href="https://haofeixu.github.io/murf/">project
     page</a>] </div>
 </div>
@@ -125,6 +125,13 @@ I will present MVSplat360 on-site at AJCAI24 (26/11 at Melbourne) and NeurIPS24 
 <div class="demo-proj-row">
 
   <div class="card">
+    <a href="https://ajcai2024.org/files/AJCAI_Booklet.pdf#page=15.09" target="_blank">
+      <div><img src="assets/img/talk_ajcai2024.png" /></div>
+    </a>
+    <div class="cdesc">Invited talk at <a href="https://ajcai2024.org" target="_blank">AJCAI 2024</a></div>
+  </div>
+
+  <div class="card">
     <a href="https://wayve.ai" target="_blank">
       <div style="margin: 25px 0;"><img src="assets/img/talk_wayve_uk.png" /></div>
     </a>
@@ -156,14 +163,14 @@ I will present MVSplat360 on-site at AJCAI24 (26/11 at Melbourne) and NeurIPS24 
     <a href="https://github.com/lyndonzheng/Pluralistic-Inpainting#gui" target="_blank">
       <div><img src="assets/img/openday22_demo.jpeg" /></div>
     </a>
-    <div class="cdesc">Demo at Monash Uni. <a href="https://www.monash.edu/open-day">Open Day 2022</a> with <a href="https://chuanxiaz.com/">Chuanxia Zheng</a></div>
+    <div class="cdesc">Demo at Monash Uni. <a href="https://www.monash.edu/open-day">Open Day 2022</a></div>
   </div>
   
   <div class="card">
     <a href="https://github.com/donydchen/ganimation_replicate" target="_blank">
       <div><img src="assets/img/ganimation_proj.png" /></div>
     </a>
-    <div class="cdesc">A Well-Structured Replication of <a href="https://github.com/albertpumarola/GANimation">GANimation</a></div>
+    <div class="cdesc">A popular replication of <a href="https://github.com/albertpumarola/GANimation">GANimation</a></div>
   </div>
 </div>
 
