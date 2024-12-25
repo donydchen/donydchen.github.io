@@ -15,7 +15,7 @@ Yuedong (Donny) Chen is a final year PhD student at [Monash University](https://
 
 Previously, he was a Research Assistant at [IMI NTU](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), where he worked closely with Prof. [Jianfei Cai](https://jianfei-cai.github.io) and Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge. He also interned at [Lenovo Research (Beijing)](http://research.lenovo.com/webapp/view_English/researchField.html), collaborating closely with Dr. [Jianfeng Wang](https://jianf-wang.github.io/personal/).
 
-His academic journey began with the completion of both his MEng and BEng degrees at [Sun Yat-sen University (SYSU)](https://www.sysu.edu.cn/sysuen/), where he majored in Software Engineering. Additionally, he also spent a semester as an exchange student at [National Chi Nan University (NCNU)](https://www.ncnu.edu.tw/?Lang=en) during his BEng studies.
+His academic journey began with the completion of both his MEng and BEng degrees at [Sun Yat-sen University (SYSU)](https://www.sysu.edu.cn/sysuen/), where he majored in Software Engineering. Additionally, he also spent a semester as an exchange student at [National Chi Nan University (NCNU), Taiwan](https://www.ncnu.edu.tw/?Lang=en) during his BEng studies.
 
 
 <p style="color: red;font-weight: bold;">
@@ -181,7 +181,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <div style="margin-bottom: 40px;">
   <ul>
-    <li>Conference Reviewer: ECCV('24), CVPR('23-'25), ICCV('23), NeurIPS(’24), ICLR(’25), 3DV(’24), AAAI(’24), ACMMM(’21‑’24), ACCV(’24), ISMAR(’23,’24), IEEEVR(’24)</li>
+    <li>Conference Reviewer: ECCV('24), CVPR('23-'25), ICCV('23), NeurIPS(’24), ICLR(’25), ICML('25), 3DV(’24), AAAI(’24), ACMMM(’21‑’24), ACCV(’24), ISMAR(’23,’24), IEEEVR(’24)</li>
     <li>Journal Reviewer: TPAMI, IJCV, TIP, TMM, TCSVT, TOMM, TVCJ, Computers & Graphics, The Visual Computer</li>
     <li>He is a native speaker of <a href="https://en.wikipedia.org/wiki/Teochew_dialect">Teochew</a>, fluent in English, Mandarin, <a href="https://en.wikipedia.org/wiki/Cantonese">Cantonese</a>, and also familiar with <a href="https://en.wikipedia.org/wiki/Singlish">Singlish</a>.
     </li>
