@@ -11,7 +11,7 @@ cover: true
 <h2 class="h1 index-header" id="about">Short Bio </h2>
 
 
-Yuedong (Donny) Chen is a final year PhD student at [Monash University](https://www.monash.edu), under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io), Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and Dr. [Bohan Zhuang](https://bohanzhuang.github.io/). He is a member of [ZIP Lab](https://ziplab.github.io/). His PhD research focuses on inferring and manipulating 3D scenes from 2D data using feed-forward solutions. During his PhD, he has been fortunate to collaborate closely with [Haofei Xu](https://haofeixu.github.io/), Prof. [Marc Pollefeys](https://people.inf.ethz.ch/marc.pollefeys/), Prof. [Andreas Geiger](http://www.cvlibs.net/), Dr. [Chuanxia Zheng](https://www.chuanxiaz.com/), Prof. [Andrea Vedaldi](https://www.robots.ox.ac.uk/~vedaldi/) and [Qianyi Wu](https://wuqianyi.top/).
+Yuedong (Donny) Chen is a PhD student at [Monash University](https://www.monash.edu), under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io), Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and Dr. [Bohan Zhuang](https://bohanzhuang.github.io/). He is a member of [ZIP Lab](https://ziplab.github.io/). His PhD research focuses on inferring and manipulating 3D scenes from 2D data using feed-forward solutions. During his PhD, he has been fortunate to collaborate closely with [Haofei Xu](https://haofeixu.github.io/), Prof. [Marc Pollefeys](https://people.inf.ethz.ch/marc.pollefeys/), Prof. [Andreas Geiger](http://www.cvlibs.net/), Dr. [Chuanxia Zheng](https://www.chuanxiaz.com/), Prof. [Andrea Vedaldi](https://www.robots.ox.ac.uk/~vedaldi/) and [Qianyi Wu](https://wuqianyi.top/).
 
 Previously, he was a Research Assistant at [IMI NTU](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), where he worked closely with Prof. [Jianfei Cai](https://jianfei-cai.github.io) and Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge. He also interned at [Lenovo Research (Beijing)](http://research.lenovo.com/webapp/view_English/researchField.html), collaborating closely with Dr. [Jianfeng Wang](https://jianf-wang.github.io/personal/).
 
@@ -122,6 +122,13 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <h2 class="h1 index-header" id="projects">Projects & Talks</h2>
 
+<div style="padding-top: 20px; margin-bottom: -15px">
+  <ul>
+    <li>28-01-2025, Invited talk "Feed-forward NVS from Sparse Inputs​" at <i>Amazon, Tel Aviv</i>, hosted by <a href="https://www.linkedin.com/in/lior-fritz-6457a796">Lior Fritz</a>.</li>
+    <li>08-11-2024, Invited talk "Feed-forward Novel View Synthesis" at <i>Wayve, London</i>, hosted by <a href="https://www.linkedin.com/in/joepolin">Joe Polin</a>.</li>
+  </ul>
+</div>
+
 <div class="demo-proj-row">
 
   <div class="card">
@@ -131,12 +138,12 @@ His academic journey began with the completion of both his MEng and BEng degrees
     <div class="cdesc">Invited talk at <a href="https://ajcai2024.org" target="_blank">AJCAI 2024</a></div>
   </div>
 
-  <div class="card">
+  <!-- <div class="card">
     <a href="https://wayve.ai" target="_blank">
       <div style="margin: 25px 0;"><img src="assets/img/talk_wayve_uk.png" /></div>
     </a>
     <div class="cdesc">Invited talk at WAYVE(London)</div>
-  </div>
+  </div> -->
 
   <div class="card">
     <a href="https://eccv2024.ecva.net/virtual/2024/poster/1231" target="_blank">
