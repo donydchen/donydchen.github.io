@@ -31,7 +31,8 @@ His academic journey began with the completion of both his MEng and BEng degrees
     <li> <a href="https://scholar.google.com/citations?user=GqgGZlQAAAAJ" title="Google Scholar" class="no-mark-external" target="_blank"> <span class="icon-googlescholar"></span> <span aria-hidden="true">Google Scholar </span><span class="sr-only">Donny's Google Scholar profile</span></a></li>
     <li> <a href="https://github.com/donydchen" title="GitHub" class="no-mark-external" target="_blank"> <span class="icon-github"></span> <span aria-hidden="true">GitHub </span><span class="sr-only">Donny's Github</span></a></li>
     <li> <a href="https://www.linkedin.com/in/donydchen" title="LinkedIn" class="no-mark-external" target="_blank"> <span class="icon-linkedin2"></span> <span aria-hidden="true">LinkedIn </span><span class="sr-only">Donny's LinkedIn</span></a></li>
-    <li> <a href="https://twitter.com/donydchen" title="Twitter" class="no-mark-external" target="_blank"> <span class="icon-twitter"></span> <span aria-hidden="true">Twitter </span><span class="sr-only">Donny's Twitter</span></a></li>
+    <li><a href="https://bsky.app/profile/donydchen.bsky.social" title="Bluesky" class="no-mark-external" target="_blank"> <span><svg xmlns="http://www.w3.org/2000/svg" width="15.2" height="15.5" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2c42.1-31.6 110.3-56 110.3 21.8c0 15.5-8.9 130.5-14.1 149.2C478.2 298 412 314.6 353.1 304.5c102.9 17.5 129.1 75.5 72.5 133.5c-107.4 110.2-154.3-27.6-166.3-62.9l0 0c-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8l0 0c-12 35.3-59 173.1-166.3 62.9c-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1C10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"/></svg></span> <span aria-hidden="true">Bluesky </span><span class="sr-only">Donny's Bluesky</span></a></li>
+    <li> <a href="https://twitter.com/donydchen" title="Twitter" class="no-mark-external" target="_blank"> <span><svg xmlns="http://www.w3.org/2000/svg" width="15.2" height="15.5" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg></span> <span aria-hidden="true">Twitter </span><span class="sr-only">Donny's Twitter</span></a></li>
   </ul>
 </div>
 
@@ -132,6 +133,13 @@ His academic journey began with the completion of both his MEng and BEng degrees
 <div class="demo-proj-row">
 
   <div class="card">
+    <a href="https://bsky.app/profile/donydchen.bsky.social/post/3lldtgeyitc2h" target="_blank">
+      <div><img src="assets/img/talk_3dv25.png" /></div>
+    </a>
+    <div class="cdesc">Invited talk at <a href="https://3dvconf.github.io/2025/call-for-nectar-track" target="_blank">3DV25 Nectar Track</a></div>
+  </div>
+
+  <div class="card">
     <a href="https://ajcai2024.org/files/AJCAI_Booklet.pdf#page=15.09" target="_blank">
       <div><img src="assets/img/talk_ajcai2024.png" /></div>
     </a>
@@ -188,7 +196,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <div style="margin-bottom: 40px;">
   <ul>
-    <li>Conference Reviewer: ECCV('24), CVPR('23-'25), ICCV('23), NeurIPS(’24), ICLR(’25), ICML('25), 3DV(’24), AAAI(’24), ACMMM(’21‑’24), ACCV(’24), ISMAR(’23,’24), IEEEVR(’24)</li>
+    <li>Conference Reviewer: ECCV('24), CVPR('23-'25), ICCV('23), NeurIPS(’24), ICLR(’25), ICML('25), 3DV(’24-’25), AAAI(’24), ACMMM(’21‑’24), ACCV(’24), ISMAR(’23,’24), IEEEVR(’24)</li>
     <li>Journal Reviewer: TPAMI, IJCV, TIP, TMM, TCSVT, TOMM, TVCJ, Computers & Graphics, The Visual Computer</li>
     <li>He is a native speaker of <a href="https://en.wikipedia.org/wiki/Teochew_dialect">Teochew</a>, fluent in English, Mandarin, <a href="https://en.wikipedia.org/wiki/Cantonese">Cantonese</a>, and also familiar with <a href="https://en.wikipedia.org/wiki/Singlish">Singlish</a>.
     </li>
