@@ -55,7 +55,7 @@ body {
 
 .container {
     max-width: 1200px;
-    margin: 0 20%;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
@@ -397,7 +397,7 @@ footer {
 .homebtn, .dropbtn {
     background: transparent;
     color: white;
-    cursor: pointer;
+    /*cursor: pointer;*/
     transition: var(--transition);
     text-decoration: none;
 }
