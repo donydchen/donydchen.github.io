@@ -42,6 +42,14 @@ His academic journey began with the completion of both his MEng and BEng degrees
 <p class='hl-sen'> 🤖🧠👌🏼 He prefers simple yet effective solutions </p>
 
 <div class="pub">
+  <div class="pub-title">Explicit Correspondence Matching for Generalizable Neural Radiance Fields</div>
+  <div class="pub-venue">TPAMI 2025</div>
+  <div class="pub-authors">Yuedong Chen, Haofei Xu, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, and Jianfei Cai</div>
+  <div>[<a href="http://arxiv.org/abs/2304.12294">arXiv</a>] [<a href="https://github.com/donydchen/matchnerf">code</a>] [<a href="https://donydchen.github.io/matchnerf/">project
+    page</a>] </div>
+</div>
+
+<div class="pub">
   <div class="pub-title">MVSplat360: Feed‑Forward 360 Scene Synthesis from Sparse Views</div>
   <div class="pub-venue">NeurIPS 2024</div>
   <div class="pub-authors">Yuedong Chen, Chuanxia Zheng, Haofei Xu, Bohan Zhuang, Andrea Vedaldi, Tat‑Jen Cham, and Jianfei Cai</div>
@@ -62,14 +70,6 @@ His academic journey began with the completion of both his MEng and BEng degrees
   <div class="pub-venue">CVPR 2024</div>
   <div class="pub-authors">Haofei Xu, Anpei Chen, Yuedong Chen, Christos Sakaridis, Yulun Zhang, Marc Pollefeys, Andreas Geiger, <i>et al.</i></div>
   <div>[<a href="https://arxiv.org/abs/2312.04565">arXiv</a>] [<a href="https://github.com/autonomousvision/murf">code</a>] [<a href="https://haofeixu.github.io/murf/">project
-    page</a>] </div>
-</div>
-
-<div class="pub">
-  <div class="pub-title">Explicit Correspondence Matching for Generalizable Neural Radiance Fields</div>
-  <div class="pub-venue">arXiv 2023</div>
-  <div class="pub-authors">Yuedong Chen, Haofei Xu, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, and Jianfei Cai</div>
-  <div>[<a href="http://arxiv.org/abs/2304.12294">arXiv</a>] [<a href="https://github.com/donydchen/matchnerf">code</a>] [<a href="https://donydchen.github.io/matchnerf/">project
     page</a>] </div>
 </div>
 
