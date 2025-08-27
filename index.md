@@ -3,31 +3,35 @@ layout: plain
 name: index
 title: 
 description: >
-  Personal homepage of Yuedong (Donny) CHEN, a Ph.D. student at Monash University, working on 3D vision.
+  Homepage of Donny Chen, a Research Scientist at ByteDance Seed (Singapore), working on 3D/4D vision. Views are his own.
 hide_description: true
-cover: true
+cover: false # true
 ---
 
 <h2 class="h1 index-header" id="about">Short Bio </h2>
 
+Donny (Yuedong) Chen is currently a Research Scientist at [ByteDance Seed (Singapore)](https://seed.bytedance.com/en/), where he is building 3D & 4D foundation models as part of the [Depth Anything Team](https://github.com/DepthAnything).
 
-Yuedong (Donny) Chen is a PhD student at [Monash University](https://www.monash.edu), under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io) and Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). His PhD research focuses on inferring and manipulating 3D scenes from 2D data using feed-forward solutions. During his PhD, he has been fortunate to collaborate closely with [Haofei Xu](https://haofeixu.github.io/), Prof. [Marc Pollefeys](https://people.inf.ethz.ch/marc.pollefeys/), Prof. [Andreas Geiger](http://www.cvlibs.net/), Dr. [Chuanxia Zheng](https://www.chuanxiaz.com/), Prof. [Andrea Vedaldi](https://www.robots.ox.ac.uk/~vedaldi/) and [Qianyi Wu](https://wuqianyi.top/).
+Before this, Donny obtained his PhD degree at [Monash University](https://www.monash.edu), under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io), Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and Dr. [Bohan Zhuang](https://bohanzhuang.github.io/). His PhD research focused on [Feed-Forward Novel View Synthesis from Sparse Observations](https://bridges.monash.edu/articles/thesis/Feed-Forward_Novel_View_Synthesis_from_Sparse_Observations/29123996). During his PhD, he was fortunate to collaborate closely with [Haofei Xu](https://haofeixu.github.io/), Prof. [Marc Pollefeys](https://people.inf.ethz.ch/marc.pollefeys/), Prof. [Andreas Geiger](http://www.cvlibs.net/), Dr. [Chuanxia Zheng](https://physicalvision.github.io/people/~chuanxia), Prof. [Andrea Vedaldi](https://www.robots.ox.ac.uk/~vedaldi/) and Dr. [Qianyi Wu](https://wuqianyi.top/).
 
-Previously, he was a Research Assistant at [IMI NTU](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), where he worked closely with Prof. [Jianfei Cai](https://jianfei-cai.github.io) and Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge. He also interned at [Lenovo Research (Beijing)](http://research.lenovo.com/webapp/view_English/researchField.html), collaborating closely with Dr. [Jianfeng Wang](https://jianf-wang.github.io/personal/).
+Previously, he was a Research Assistant at [IMI NTU (Singapore)](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), where he worked closely with Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and Prof. [Jianfei Cai](https://jianfei-cai.github.io). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge. He also interned at [Lenovo Research](https://research.lenovo.com/webapp/view_English/researchField.html), collaborating closely with Dr. [Jianfeng Wang](https://jianf-wang.github.io/personal/).
 
-His academic journey began with the completion of both his MEng and BEng degrees at [Sun Yat-sen University (SYSU)](https://www.sysu.edu.cn/sysuen/), where he majored in Software Engineering. Additionally, he also spent a semester as an exchange student at [National Chi Nan University (NCNU), Taiwan](https://www.ncnu.edu.tw/?Lang=en) during his BEng studies.
+His academic journey began with the completion of both his MEng and BEng degrees at [Sun Yat-sen University](https://www.sysu.edu.cn/sysuen/), where he majored in Software Engineering. Additionally, he spent a semester as an exchange student at [National Chi Nan University (Taiwan)](https://www.ncnu.edu.tw/?Lang=en) during his BEng study, collaborating closely with [David Cheng](https://www.linkedin.com/in/hui-sheng-cheng/).
 
 
-<p style="color: red;font-weight: bold;">
-  <!-- Expected graduation in Spring / Summer 2025. <br/> -->
-<!-- Actively seeking Research Scientist position (<a href="mailto:yuedong.chen@monash.edu">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br /> -->
+<!-- <p style="color: red;font-weight: bold;"> -->
+<p style="color: #B63732;">
+<br><br>
+Our team has openings for both full-time and internship positions from time to time. If you are interested in conducting 3D/4D vision research with us, please feel free to reach out to me via my <a href="mailto:donny.chen@bytedance.com">company email</a>.
+<!-- Actively seeking Research Scientist position (<a href="mailto:donny.chen@outlook.sg">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br /> -->
 <!-- I will present MVSplat360 on-site at NeurIPS24 (13/12 at Vancouver). Let's connect! -->
 </p>
 
 
+
 <div class="body-social sidebar-social">
   <ul>
-    <li> <a href="mailto:yuedong.chen@monash.edu" title="yuedong.chen@monash.edu" class="no-mark-external" target="_blank"> <span class="icon-mail"></span> <span aria-hidden="true">Email </span><span class="sr-only">Donny's Email Address</span></a></li>
+    <li> <a href="mailto:donny.chen@outlook.sg" title="donny.chen@outlook.sg" class="no-mark-external" target="_blank"> <span class="icon-mail"></span> <span aria-hidden="true">Email </span><span class="sr-only">Donny's Email Address</span></a></li>
     <li> <a href="https://scholar.google.com/citations?user=GqgGZlQAAAAJ" title="Google Scholar" class="no-mark-external" target="_blank"> <span class="icon-googlescholar"></span> <span aria-hidden="true">Google Scholar </span><span class="sr-only">Donny's Google Scholar profile</span></a></li>
     <li> <a href="https://github.com/donydchen" title="GitHub" class="no-mark-external" target="_blank"> <span class="icon-github"></span> <span aria-hidden="true">GitHub </span><span class="sr-only">Donny's Github</span></a></li>
     <li> <a href="https://www.linkedin.com/in/donydchen" title="LinkedIn" class="no-mark-external" target="_blank"> <span class="icon-linkedin2"></span> <span aria-hidden="true">LinkedIn </span><span class="sr-only">Donny's LinkedIn</span></a></li>
@@ -196,8 +200,8 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <div style="margin-bottom: 40px;">
   <ul>
-    <li>Conference Reviewer: ECCV('24), CVPR('23-'25), ICCV('23), NeurIPS(’24), ICLR(’25), ICML('25), 3DV(’24-’25), AAAI(’24), ACMMM(’21‑’24), ACCV(’24), ISMAR(’23,’24), IEEEVR(’24)</li>
-    <li>Journal Reviewer: TPAMI, IJCV, TIP, TMM, TCSVT, TOMM, TVCJ, Computers & Graphics, The Visual Computer</li>
+    <li>Conference Reviewer: ECCV('24), CVPR('23-'25), ICCV('23), NeurIPS('24-'25), ICLR('25), ICML('25), 3DV('24-'25), AAAI('24-'26), ACMMM('21‑'24), ACCV('24), ISMAR('23-'24), IEEEVR('24)</li>
+    <li>Journal Reviewer: TPAMI, IJCV, TIP, TVCG, TMM, TCSVT, TOMM, TVCJ, Computers & Graphics, The Visual Computer</li>
     <li>He is a native speaker of <a href="https://en.wikipedia.org/wiki/Teochew_dialect">Teochew</a>, fluent in English, Mandarin, <a href="https://en.wikipedia.org/wiki/Cantonese">Cantonese</a>, and also familiar with <a href="https://en.wikipedia.org/wiki/Singlish">Singlish</a>.
     </li>
   </ul>
