@@ -2,8 +2,8 @@
 # Must be the same as `author` in `_config.yml`.
 # Change `author1` to your shortname.
 author1:
-  name: Yuedong (Donny) CHEN
-  email: yuedong.chen@monash.edu
+  name: Donny Y. Chen
+  email: donny.chen@outlook.sg
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
@@ -26,7 +26,7 @@ author1:
   # Comment/uncommet to show/hide
   # Rearrange to change the order in which they appear
   social:
-    email:             yuedong.chen@monash.edu
+    email:             donny.chen@outlook.sg
     google-scholar:    GqgGZlQAAAAJ
     github:            donydchen
     linkedin:          donydchen  

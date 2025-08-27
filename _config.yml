@@ -19,18 +19,18 @@ baseurl: ""
 lang: en
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title: Yuedong (Donny) CHEN
+title: Donny Y. Chen
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description: >
-  Yuedong CHEN - Ph.D. Student at Monash University
+  Donny Chen - Research Scientist at ByteDance Seed (Singapore)
 
 # A shorter description for the sidebar.
-tagline: Ph.D. Student at Monash University
+tagline: Research Scientist at ByteDance Seed (Singapore)
 
 # A list of keywords for your blog
-keywords: [Yuedong (Donny) CHEN, Ph.D. Student, Monash Uni]
+keywords: [Donny Chen, Donny Y. Chen, Research Scientist, ByteDance Seed (Singapore), Monash University]
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
@@ -40,8 +40,8 @@ logo: /assets/img/profile.jpg
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name: Yuedong (Donny) CHEN
-  email: yuedong.chen@monash.edu
+  name: Donny Chen
+  email: donny.chen@outlook.sg
   # google-scholar: GqgGZlQAAAAJ
   # username: donydchen
 
