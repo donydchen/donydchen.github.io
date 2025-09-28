@@ -48,7 +48,7 @@ Our team has openings for both full-time and internship positions from time to t
 <div class="pub">
   <div class="pub-title">ZPressor: Bottleneck-Aware Compression for Scalable Feed-Forward 3DGS</div>
   <div class="pub-venue">NeurIPS 2025</div>
-  <div class="pub-authors">Weijie Wang, <b>Donny Y. Chen</b>, Zeyu Zhang, Duochao Shi, Akide Liu, Bohan Zhuang</div>
+  <div class="pub-authors">Weijie Wang, <b>Donny Y. Chen</b>, Zeyu Zhang, Duochao Shi, Akide Liu, and Bohan Zhuang</div>
   <div>[<a href="https://arxiv.org/abs/2505.23734">arXiv</a>] [<a href="https://github.com/ziplab/ZPressor">code</a>] [<a href="https://lhmd.top/zpressor/">project
     page</a>] </div>
 </div>
