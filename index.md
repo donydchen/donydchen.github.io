@@ -46,9 +46,17 @@ Our team has openings for both full-time and internship positions from time to t
 <p class='hl-sen'> 🤖🧠👌🏼 He prefers simple yet effective solutions </p>
 
 <div class="pub">
+  <div class="pub-title">ZPressor: Bottleneck-Aware Compression for Scalable Feed-Forward 3DGS</div>
+  <div class="pub-venue">NeurIPS 2025</div>
+  <div class="pub-authors">Weijie Wang, <b>Donny Y. Chen</b>, Zeyu Zhang, Duochao Shi, Akide Liu, Bohan Zhuang</div>
+  <div>[<a href="https://arxiv.org/abs/2505.23734">arXiv</a>] [<a href="https://github.com/ziplab/ZPressor">code</a>] [<a href="https://lhmd.top/zpressor/">project
+    page</a>] </div>
+</div>
+
+<div class="pub">
   <div class="pub-title">Explicit Correspondence Matching for Generalizable Neural Radiance Fields</div>
   <div class="pub-venue">TPAMI 2025</div>
-  <div class="pub-authors">Yuedong Chen, Haofei Xu, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, and Jianfei Cai</div>
+  <div class="pub-authors"><b>Yuedong Chen</b>, Haofei Xu, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, and Jianfei Cai</div>
   <div>[<a href="http://arxiv.org/abs/2304.12294">arXiv</a>] [<a href="https://github.com/donydchen/matchnerf">code</a>] [<a href="https://donydchen.github.io/matchnerf/">project
     page</a>] </div>
 </div>
@@ -56,7 +64,7 @@ Our team has openings for both full-time and internship positions from time to t
 <div class="pub">
   <div class="pub-title">MVSplat360: Feed‑Forward 360 Scene Synthesis from Sparse Views</div>
   <div class="pub-venue">NeurIPS 2024</div>
-  <div class="pub-authors">Yuedong Chen, Chuanxia Zheng, Haofei Xu, Bohan Zhuang, Andrea Vedaldi, Tat‑Jen Cham, and Jianfei Cai</div>
+  <div class="pub-authors"><b>Yuedong Chen</b>, Chuanxia Zheng, Haofei Xu, Bohan Zhuang, Andrea Vedaldi, Tat‑Jen Cham, and Jianfei Cai</div>
   <div>[<a href="https://arxiv.org/abs/2411.04924">arXiv</a>] [<a href="https://github.com/donydchen/mvsplat360">code</a>] [<a href="https://donydchen.github.io/mvsplat360">project page</a>] </div>
   <!-- <div> TL;DR: MVSplat360 is a feed‑forward model that combines 3DGS with SVD to achieve 360° NVS for complex scenes with less than 5 input views. </div>  -->
 </div>
@@ -64,7 +72,7 @@ Our team has openings for both full-time and internship positions from time to t
 <div class="pub">
   <div class="pub-title">MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images</div>
   <div class="pub-venue">ECCV 2024 (Oral)</div>
-  <div class="pub-authors">Yuedong Chen, Haofei Xu, Chuanxia Zheng, Bohan Zhuang, Marc Pollefeys, Andreas Geiger, Tat-Jen Cham, and Jianfei Cai</div>
+  <div class="pub-authors"><b>Yuedong Chen</b>, Haofei Xu, Chuanxia Zheng, Bohan Zhuang, Marc Pollefeys, Andreas Geiger, Tat-Jen Cham, and Jianfei Cai</div>
   <div>[<a href="https://arxiv.org/abs/2403.14627">arXiv</a>] [<a href="https://github.com/donydchen/mvsplat">code</a>] [<a href="https://donydchen.github.io/mvsplat">project
     page</a>] </div>
 </div>
@@ -72,7 +80,7 @@ Our team has openings for both full-time and internship positions from time to t
 <div class="pub">
   <div class="pub-title">MuRF: Multi-Baseline Radiance Fields</div>
   <div class="pub-venue">CVPR 2024</div>
-  <div class="pub-authors">Haofei Xu, Anpei Chen, Yuedong Chen, Christos Sakaridis, Yulun Zhang, Marc Pollefeys, Andreas Geiger, <i>et al.</i></div>
+  <div class="pub-authors">Haofei Xu, Anpei Chen, <b>Yuedong Chen</b>, Christos Sakaridis, Yulun Zhang, Marc Pollefeys, Andreas Geiger, <i>et al.</i></div>
   <div>[<a href="https://arxiv.org/abs/2312.04565">arXiv</a>] [<a href="https://github.com/autonomousvision/murf">code</a>] [<a href="https://haofeixu.github.io/murf/">project
     page</a>] </div>
 </div>
@@ -80,7 +88,7 @@ Our team has openings for both full-time and internship positions from time to t
 <div class="pub">
   <div class="pub-title">Sem2NeRF: Converting Single-View Semantic Masks to Neural Radiance Fields</div>
   <div class="pub-venue">ECCV 2022</div>
-  <div class="pub-authors">Yuedong Chen, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, and Jianfei Cai</div>
+  <div class="pub-authors"><b>Yuedong Chen</b>, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, and Jianfei Cai</div>
   <div>[<a href="https://arxiv.org/abs/2203.10821">arXiv</a>] [<a href="https://github.com/donydchen/sem2nerf">code</a>] [<a href="https://donydchen.github.io/sem2nerf/">project
     page</a>] [<a href="https://www.youtube.com/watch?v=cYr3Dz8N_9E">demo video</a>] </div>
 </div>
@@ -88,24 +96,24 @@ Our team has openings for both full-time and internship positions from time to t
 <div class="pub">
   <div class="pub-title">Object-Compositional Neural Implicit Surfaces</div>
   <div class="pub-venue">ECCV 2022</div>
-  <div class="pub-authors">Qianyi Wu, Xian Liu, Yuedong Chen, Kejie Li, Chuanxia Zheng, Jianfei Cai, and Jianmin Zheng</div>
+  <div class="pub-authors">Qianyi Wu, Xian Liu, <b>Yuedong Chen</b>, Kejie Li, Chuanxia Zheng, Jianfei Cai, and Jianmin Zheng</div>
   <div>[<a href="https://arxiv.org/abs/2207.09686">arXiv</a>] [<a href="https://github.com/QianyiWu/objsdf">code</a>]
     [<a href="https://wuqianyi.top/objectsdf/">project
       page</a>] [<a href="https://youtu.be/23vxOV19bEw">demo video</a>] </div>
 </div>
 
-<div class="pub">
+<!-- <div class="pub">
   <div class="pub-title">Towards Unbiased Visual Emotion Recognition via Causal Intervention</div>
   <div class="pub-venue">ACM Multimedia 2022</div>
   <div class="pub-authors">Yuedong Chen, Xu Yang, Tat-Jen Cham, and Jianfei Cai</div>
   <div>[<a href="https://arxiv.org/abs/2107.12096">arXiv</a>] [<a href="https://github.com/donydchen/causal_emotion">code</a>]
   </div>
-</div>
+</div> -->
 
 <div class="pub">
   <div class="pub-title">GeoConv: Geodesic Guided Convolution for Facial Action Unit Recognition</div>
   <div class="pub-venue">Pattern Recognition 2022</div>
-  <div class="pub-authors">Yuedong Chen, Guoxian Song, Zhiwen Shao, Jianfei Cai, Tat-Jen Cham, and Jianmin Zheng</div>
+  <div class="pub-authors"><b>Yuedong Chen</b>, Guoxian Song, Zhiwen Shao, Jianfei Cai, Tat-Jen Cham, and Jianmin Zheng</div>
   <div>[<a href="https://arxiv.org/abs/2003.03055">arXiv</a>] 
     <!-- [<a href="#">code (coming soon)</a>] -->
   </div>
@@ -114,7 +122,7 @@ Our team has openings for both full-time and internship positions from time to t
 <div class="pub">
   <div class="pub-title">Facial Motion Prior Networks for Facial Expression Recognition</div>
   <div class="pub-venue">VCIP 2019 (Oral)</div>
-  <div class="pub-authors">Yuedong Chen, Jianfeng Wang, Shikai Chen, Zhongchao Shi, and Jianfei Cai</div>
+  <div class="pub-authors"><b>Yuedong Chen</b>, Jianfeng Wang, Shikai Chen, Zhongchao Shi, and Jianfei Cai</div>
   <div>[<a href="https://arxiv.org/abs/1902.08788">arXiv</a>] [<a href="https://github.com/donydchen/FMPN-FER">code</a>]</div>
 </div>
 
