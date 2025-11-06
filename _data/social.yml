@@ -41,7 +41,7 @@ telegram:
 twitter:
   name: Twitter
   icon: icon-twitter
-  prepend: "https://twitter.com/"
+  prepend: "https://x.com/"
 vine:
   name: Vine
   icon: icon-vine
