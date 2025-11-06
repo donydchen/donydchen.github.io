@@ -107,7 +107,7 @@ Example code for using Matamo as alternative analytics solution.
 {% endcomment %}
 
 
-<script type="text/javascript">
+<script>
   (function () {
     const REPO = 'donydchen/donydchen.github.io';
     const API_URL = `https://api.github.com/repos/${REPO}`;
@@ -160,16 +160,14 @@ Example code for using Matamo as alternative analytics solution.
 
     document.addEventListener('DOMContentLoaded', scheduleUpdate);
 
-    // Attach to the <hy-push-state> element directly
     function attachPushStateListeners() {
       const hyEl = document.querySelector('hy-push-state');
-      if (!hyEl) return; // nothing yet, maybe not loaded
+      if (!hyEl) return;
       ['hy-push-state-after', 'hy-push-state-ready'].forEach(ev =>
         hyEl.addEventListener(ev, () => scheduleUpdate(400))
       );
     }
 
-    // Try immediately and again when DOM ready
     attachPushStateListeners();
     document.addEventListener('DOMContentLoaded', attachPushStateListeners);
   })();
