@@ -107,37 +107,70 @@ Example code for using Matamo as alternative analytics solution.
 {% endcomment %}
 
 
-<!--
-Code for hacking footer information.
--->
 <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function () {
-    var hostInfo = '<small>; Modified from <a href="https://bo-zhang.me/" target="_blank">HERE</a>; ' +
-      'Hosted at <a  href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</small>';
-    var footerParas = document.querySelectorAll("#_main > footer > p");
-    footerParas[footerParas.length - 1].innerHTML += hostInfo;
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        let repos = JSON.parse(this.responseText);
-        repos.forEach((repo) => {
-          if (repo.name == "donydchen.github.io") {
-            var lastUpdated = new Date(repo.pushed_at).toLocaleString("en-US", {
-              timeZone: "Asia/Singapore", day: "2-digit", month: "short", year: "numeric",
-              hour: "2-digit", minute: "2-digit", timeZoneName: "short"
-            });
-            var updatedInfo = 'Last updated: ' + lastUpdated;
-            var createDate = new Date(repo.created_at).getUTCFullYear();
-            var endDate = new Date().getUTCFullYear();
-            var siteTitle = document.title.split('|')[0].trim() + ". ";
-            var footerInfo = "<p>&copy; Copyright " + createDate + "-" + endDate + " " + siteTitle + "</p>"
-              + "<p>" + updatedInfo + "</p>";
-            document.getElementById("footer-info").innerHTML = footerInfo;
-          }
+  (function () {
+    const REPO = 'donydchen/donydchen.github.io';
+    const API_URL = `https://api.github.com/repos/${REPO}`;
+    const FOOTER_ID = 'footer-info';
+    let footerUpdated = false;
+    let updateTimeout = null;
+
+    async function fetchRepo() {
+      const cached = sessionStorage.getItem('repo-data');
+      if (cached) return JSON.parse(cached);
+      const res = await fetch(API_URL);
+      if (!res.ok) throw new Error('GitHub API error ' + res.status);
+      const data = await res.json();
+      sessionStorage.setItem('repo-data', JSON.stringify(data));
+      return data;
+    }
+
+    async function updateFooter() {
+      if (footerUpdated) return;
+      footerUpdated = true;
+
+      try {
+        const repo = await fetchRepo();
+        const lastUpdated = new Date(repo.pushed_at).toLocaleString('en-GB', {
+          timeZone: 'Asia/Singapore',
+          day: '2-digit', month: 'short', year: 'numeric',
+          hour: '2-digit', minute: '2-digit', timeZoneName: 'short'
         });
+        const createdYear = new Date(repo.created_at).getUTCFullYear();
+        const currentYear = new Date().getUTCFullYear();
+        const siteTitle = (document.title.split('|')[0] || '').trim() + '.';
+
+        const html = `
+                <p>&copy; Copyright ${createdYear}-${currentYear} ${siteTitle}</p>
+                <p>Last updated: ${lastUpdated}</p>
+            `;
+
+        const target = document.getElementById(FOOTER_ID);
+        if (target) target.innerHTML = html;
+      } catch (e) {
+        console.warn('Footer update failed:', e);
       }
-    };
-    xhttp.open("GET", "https://api.github.com/users/donydchen/repos", true);
-    xhttp.send();
-  });
+    }
+
+    function scheduleUpdate(delay = 250) {
+      footerUpdated = false;
+      clearTimeout(updateTimeout);
+      updateTimeout = setTimeout(updateFooter, delay);
+    }
+
+    document.addEventListener('DOMContentLoaded', scheduleUpdate);
+
+    // Attach to the <hy-push-state> element directly
+    function attachPushStateListeners() {
+      const hyEl = document.querySelector('hy-push-state');
+      if (!hyEl) return; // nothing yet, maybe not loaded
+      ['hy-push-state-after', 'hy-push-state-ready'].forEach(ev =>
+        hyEl.addEventListener(ev, () => scheduleUpdate(400))
+      );
+    }
+
+    // Try immediately and again when DOM ready
+    attachPushStateListeners();
+    document.addEventListener('DOMContentLoaded', attachPushStateListeners);
+  })();
 </script>
