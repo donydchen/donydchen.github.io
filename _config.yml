@@ -89,7 +89,7 @@ permalink: /:categories/:year-:month-:day-:title/
 
 # theme: jekyll-theme-hydejack
 # remote_theme: hydecorp/hydejack@v9.0.0-rc.6
-remote_theme: hydecorp/hydejack@v9.1.6
+remote_theme: hydecorp/hydejack@v9.2.1
 
 # Customizaton
 # ----------------------------------------------------------------------------------------
