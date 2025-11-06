@@ -210,3 +210,7 @@ keybase:
 download:
   name: Download
   icon: icon-box-add
+bluesky:
+  name: BlueSky
+  icon: icon-bluesky
+  prepend: "https://bsky.app/profile/"
