@@ -1,9 +1,9 @@
-# Donny Chen's Homepage
+# Donny Y. Chen's Homepage
 
 
 Kindly check: [https://donydchen.github.io/](https://donydchen.github.io/)
 
-Powered by [Hydejack](https://hydejack.com/) v9.1.6
+Powered by [Hydejack](https://hydejack.com/) v9.2.1; Modified from [HERE](https://bo-zhang.me/); Hosted at [GitHub Pages](https://docs.github.com/en/pages).
 
 ## Installation
 
