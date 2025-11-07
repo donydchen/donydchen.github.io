@@ -22,7 +22,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 
 <!-- <p style="color: red;font-weight: bold;"> -->
-<p style="color: #B63732;">
+<p id="news-notes">
 <br><br>
 Our team has openings for both full-time and internship positions from time to time. If you are interested in conducting 3D/4D vision research with us, please feel free to reach out to me via my <a href="mailto:donny.chen@bytedance.com">company email</a>.
 <!-- Actively seeking Research Scientist position (<a href="mailto:donny.chen@outlook.sg">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br /> -->
