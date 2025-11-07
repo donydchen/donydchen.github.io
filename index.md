@@ -21,13 +21,16 @@ Previously, he was a Research Assistant at [IMI NTU (Singapore)](http://web.arch
 His academic journey began with the completion of both his MEng and BEng degrees at [Sun Yat-sen University](https://www.sysu.edu.cn/sysuen/), where he majored in Software Engineering. Additionally, he spent a semester as an exchange student at [National Chi Nan University (Taiwan)](https://www.ncnu.edu.tw/?Lang=en) during his BEng study, collaborating closely with [David Cheng](https://www.linkedin.com/in/hui-sheng-cheng/).
 
 
-<!-- <p style="color: red;font-weight: bold;"> -->
-<p id="news-notes">
-<br><br>
-Our team has openings for both full-time and internship positions from time to time. If you are interested in conducting 3D/4D vision research with us, please feel free to reach out to me via my <a href="mailto:donny.chen@bytedance.com">company email</a>.
+
+
+<div id="news-notes">
+<br /><br />
+<!-- Put time-sensitive news below -->
+
+<p><a class="external" href="https://github.com/DepthAnything" target="_blank">Our team</a> has openings for both full-time and internship positions from time to time. If you are interested in conducting 3D/4D vision research with us, please feel free to reach out to me via my <a href="mailto:donny.chen@bytedance.com">company email</a>.</p>
 <!-- Actively seeking Research Scientist position (<a href="mailto:donny.chen@outlook.sg">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br /> -->
 <!-- I will present MVSplat360 on-site at NeurIPS24 (13/12 at Vancouver). Let's connect! -->
-</p>
+</div>
 
 
 
