@@ -1,75 +1,39 @@
-<!--
-Code used for embedding Gumroad on the Hydejack Site. 
-Left here for reference, feel free to delete.
--->
-<link rel="dns-prefetch" href="https://assets.gumroad.com">
-<script>window.GET_CLAPS_API = 'https://worker.getclaps.dev'</script>
-<script type="module">
-  const ppiData = window._ppiData = fetch('https://hydejack-ppi.qwtel.workers.dev', { mode: 'cors'}).then(res => res.json()).catch(() => ({}));
-  const promisify = f => x => new Promise(r => f(x).addEventListener('load', r));
-  const loadJS = promisify(window.loadJS);
-  {
-    let p;
-    document.querySelector('hy-push-state').addEventListener('load', () => {
-      const io = new IntersectionObserver(async (entries) => {
-        if (entries.some(x => x.isIntersecting)) {
-          p = p || loadJS('https://gumroad.com/js/gumroad-embed.js');
-          const [{ code }] = await Promise.all([ppiData, p]);
-          document.querySelectorAll('.gumroad-product-embed').forEach(el => { 
-            if (!el.dataset.gumroadParams) {
-              el.dataset.gumroadParams = 'offer_code=' + (code || 'qr0tw8m');
-            }
-          });
-          if (!window.GumroadEmbed) {
-            await new Promise(function check1(res) {
-              if ('createGumroadEmbed' in window) res(window.createGumroadEmbed());
-              else setTimeout(() => check1(res), 200);
-            });
-          }
-          await new Promise(function check2(res) {
-            if ('GumroadEmbed' in window) res(GumroadEmbed.reload());
-            else setTimeout(() => check2(res), 200);
-          });
-        }
-      }, { rootMargin: '1440px' });
-      document.querySelectorAll('.gumroad-product-embed').forEach(el => io.observe(el));
-    });
-  }
-  {
-    let p;
-    document.querySelector('hy-push-state').addEventListener('load', () => {
-      const io = new IntersectionObserver(async (entries) => {
-        if (entries.some(x => x.isIntersecting)) {
-          p = p || loadJS('https://gumroad.com/js/gumroad.js');
-          const [{ code }] = await Promise.all([ppiData, p]);
-          if (code) {
-            document.querySelectorAll('.gumroad-button').forEach(el => { 
-              if (!el.href.endsWith(code)) {
-                el.href = el.href + '/' + (code || 'qr0tw8m');
-              }
-            });
-          }
-          if (!window.GumroadOverlay) {
-            await new Promise(function check(res) {
-              if ('createGumroadOverlay' in window) res(window.createGumroadOverlay());
-              else setTimeout(() => check(res), 200);
-            });
-          }
-        }
-      }, { rootMargin: '300px' });
-      document.querySelectorAll('.gumroad-button').forEach(el => io.observe(el));
-    });
-  }
-</script>
-
 
 <style type="text/css">
+  @media screen {
+    body,body.light-mode {
+        --header-color: #2452A1;
+        --bright-color: #B63732;
+        --subhead-color: #576982;
+    }
+    body.dark-mode {
+        --header-color: #8ab4f8;
+        --bright-color: #ff6b6b;
+        --subhead-color: #a9b7c6;
+    }
+  }
+  @media screen and (prefers-color-scheme: light) {
+      body {
+        --header-color: #2452A1;
+        --bright-color: #B63732;
+        --subhead-color: #576982;
+      }
+  }
+  @media screen and (prefers-color-scheme: dark) {
+      body {
+        --header-color: #8ab4f8;
+        --bright-color: #ff6b6b;
+        --subhead-color: #a9b7c6;
+      }
+  }
+
+
   .navbar>.content::before {
     box-shadow: 0 0 0;
   }
 
   .index-header {
-    color: #2452A1;
+    color: var(--header-color);
   }
 
   .body-social>ul {
@@ -110,13 +74,20 @@ Left here for reference, feel free to delete.
     transition: background-color 250ms, color 250ms, text-decoration-color 250ms, border-color 250ms;
   }
 
+  #news-notes {
+    color: var(--bright-color);
+  }
+  #news-notes a {
+    color: var(--bright-color);
+  }
+
   .hl-sen {
     font-style: italic;
-    color: #999;
+    color: var(--gray-text);
   }
 
   .pub {
-    border-left: 4px solid #aaa;
+    border-left: 4px solid var(--menu-text);
     padding: 2px 0px 2px 10px;
     margin-bottom: 10px;
   }
@@ -128,13 +99,13 @@ Left here for reference, feel free to delete.
 
   .pub-venue {
     display: inline;
-    color: #576982;
+    color: var(--subhead-color);
     padding-left: 0.5em;
   }
 
   .pub-authors {
     display: block;
-    color: #B63732;
+    color: var(--bright-color);
   }
 
   .demo-proj-row {
@@ -149,10 +120,10 @@ Left here for reference, feel free to delete.
   .card {
     grid-column: span 3;
     vertical-align: top;
-    border: 1px solid #ddd;
-    background-color: white;
+    border: 1px solid var(--border-color);
+    background-color: var(--body-bg);
     padding-bottom: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px color-mix(in srgb, var(--body-color) 10%, transparent);
   }
 
   @media (max-width: 991px) {
@@ -194,7 +165,7 @@ Left here for reference, feel free to delete.
     margin: 0;
   }
 
-  .about-contents {
+  p.about-contents {
     text-align: justify;
   }
 
