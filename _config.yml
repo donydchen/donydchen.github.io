@@ -62,6 +62,7 @@ menu:
     url: /#projects
   - title: Miscellanies
     url: /#misc
+
 clap_button: false
 
 # Add links to the footer.

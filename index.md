@@ -10,8 +10,7 @@ cover: false # true
 
 <h2 class="h1 index-header" id="about">Short Bio </h2>
 
-Donny (Yuedong) Chen is currently a Research Scientist at [ByteDance Seed (Singapore)](https://seed.bytedance.com/en/), where he is building 3D & 4D foundation models.
- <!-- as part of the [Depth Anything Team](https://github.com/DepthAnything). -->
+Donny (Yuedong) Chen is currently a Research Scientist at [ByteDance Seed (Singapore)](https://seed.bytedance.com/en/), where he is building 3D & 4D foundation models. <span class="hl-work">ALL VIEWS ARE HIS OWN ([DISCLAIMER](/#disclaimer)).</span>
 
 Before this, Donny obtained his PhD degree at [Monash University](https://www.monash.edu), under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io), Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and Dr. [Bohan Zhuang](https://bohanzhuang.github.io/). His PhD research focused on [Feed-Forward Novel View Synthesis from Sparse Observations](https://bridges.monash.edu/articles/thesis/Feed-Forward_Novel_View_Synthesis_from_Sparse_Observations/29123996). During his PhD, he was fortunate to collaborate closely with [Haofei Xu](https://haofeixu.github.io/), Prof. [Marc Pollefeys](https://people.inf.ethz.ch/marc.pollefeys/), Prof. [Andreas Geiger](http://www.cvlibs.net/), Dr. [Chuanxia Zheng](https://physicalvision.github.io/people/~chuanxia), Prof. [Andrea Vedaldi](https://www.robots.ox.ac.uk/~vedaldi/) and Dr. [Qianyi Wu](https://wuqianyi.top/).
 
@@ -59,6 +58,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
     page</a>] [<a href="https://huggingface.co/spaces/depth-anything/depth-anything-3">demo</a>] [<a href="https://depth-anything-3.github.io/gallery.html">gallery</a>]</div>
 </div>
 
+<!-- 
 <div class="pub">
   <div class="pub-title">Revisiting Depth Representations for Feed-Forward 3D Gaussian Splatting</div>
   <div class="pub-venue">3DV 2026</div>
@@ -73,7 +73,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
   <div class="pub-authors">Weijie Wang, <b>Donny Y. Chen</b>, Zeyu Zhang, Duochao Shi, Akide Liu, and Bohan Zhuang</div>
   <div>[<a href="https://arxiv.org/abs/2505.23734">arXiv</a>] [<a href="https://github.com/ziplab/ZPressor">code</a>] [<a href="https://lhmd.top/zpressor/">project
     page</a>] </div>
-</div>
+</div> -->
 
 <div class="pub">
   <div class="pub-title">Explicit Correspondence Matching for Generalizable Neural Radiance Fields</div>
@@ -235,6 +235,10 @@ His academic journey began with the completion of both his MEng and BEng degrees
     </li>
   </ul>
 </div>
+
+<h2 class="h1 index-header" id="disclaimer">DISCLAIMER</h2>
+
+ALL OPINIONS AND VIEWS EXPRESSED ON THIS PAGE ARE SOLELY HIS OWN. THEY DO NOT REPRESENT OR REFLECT THE VIEWS OR POSITIONS OF HIS EMPLOYER. PLEASE DO NOT CONTACT HIM REGARDING ANY RESEARCH COOPERATION OR INQUIRIES THAT MAY RELATE TO OR CONFLICT WITH THE INTERESTS OF HIS EMPLOYER. ANY RESEARCH COOPERATION OR FORMAL COLLABORATION MUST BE CONDUCTED DIRECTLY WITH THE COMPANY.
 
 
 <div class="container">
