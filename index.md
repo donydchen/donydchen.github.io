@@ -10,7 +10,7 @@ cover: false # true
 
 <h2 class="h1 index-header" id="about">Short Bio </h2>
 
-Donny (Yuedong) Chen is currently a Research Scientist at [ByteDance Seed (Singapore)](https://seed.bytedance.com/en/), where he is building 3D & 4D foundation models. <span class="hl-work">ALL VIEWS ARE HIS OWN ([DISCLAIMER](/#disclaimer)).</span>
+Donny (Yuedong) Chen is currently a Research Scientist at [ByteDance Seed (Singapore)](https://seed.bytedance.com/en/), where he is building 3D & 4D foundation models. <span class="hl-work">ALL VIEWS ARE SOLELY HIS OWN ([DISCLAIMER](/#disclaimer)).</span>
 
 Before this, Donny obtained his PhD degree at [Monash University](https://www.monash.edu), under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io), Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and Dr. [Bohan Zhuang](https://bohanzhuang.github.io/). His PhD research focused on [Feed-Forward Novel View Synthesis from Sparse Observations](https://bridges.monash.edu/articles/thesis/Feed-Forward_Novel_View_Synthesis_from_Sparse_Observations/29123996). During his PhD, he was fortunate to collaborate closely with [Haofei Xu](https://haofeixu.github.io/), Prof. [Marc Pollefeys](https://people.inf.ethz.ch/marc.pollefeys/), Prof. [Andreas Geiger](http://www.cvlibs.net/), Dr. [Chuanxia Zheng](https://physicalvision.github.io/people/~chuanxia), Prof. [Andrea Vedaldi](https://www.robots.ox.ac.uk/~vedaldi/) and Dr. [Qianyi Wu](https://wuqianyi.top/).
 
@@ -25,8 +25,8 @@ His academic journey began with the completion of both his MEng and BEng degrees
 <div id="news-notes">
 <br /><br />
 <!-- Put time-sensitive news below -->
+<p><a class="external" href="https://github.com/DepthAnything" target="_blank">Our team</a> has openings for full time and internship positions from time to time. If you are interested in joining us for 3D/4D vision research, please feel free to reach out to me via my <a href="mailto:donny.chen@bytedance.com">company email</a> after reading the <a href="/#disclaimer">disclaimer</a>.</p>
 
-<p><a class="external" href="https://github.com/DepthAnything" target="_blank">Our team</a> has openings for both full-time and internship positions from time to time. If you are interested in conducting 3D/4D vision research with us, please feel free to reach out to me via my <a href="mailto:donny.chen@bytedance.com">company email</a>.</p>
 <!-- Actively seeking Research Scientist position (<a href="mailto:donny.chen@outlook.sg">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br /> -->
 <!-- I will present MVSplat360 on-site at NeurIPS24 (13/12 at Vancouver). Let's connect! -->
 </div>
@@ -35,7 +35,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <div class="body-social sidebar-social">
   <ul>
-    <li> <a href="mailto:donny.chen@outlook.sg" title="donny.chen@outlook.sg" class="no-mark-external" target="_blank"> <span class="icon-mail"></span> <span aria-hidden="true">Email </span><span class="sr-only">Donny's Email Address</span></a></li>
+    <li> <a href="mailto:donny.chen@outlook.sg" title="Personal Email" class="no-mark-external" target="_blank"> <span class="icon-mail"></span> <span aria-hidden="true">Email </span><span class="sr-only">Donny's Email Address</span></a></li>
     <li> <a href="https://scholar.google.com/citations?user=GqgGZlQAAAAJ" title="Google Scholar" class="no-mark-external" target="_blank"> <span class="icon-googlescholar"></span> <span aria-hidden="true">Google Scholar </span><span class="sr-only">Donny's Google Scholar profile</span></a></li>
     <li> <a href="https://github.com/donydchen" title="GitHub" class="no-mark-external" target="_blank"> <span class="icon-github"></span> <span aria-hidden="true">GitHub </span><span class="sr-only">Donny's Github</span></a></li>
     <li> <a href="https://www.linkedin.com/in/donydchen" title="LinkedIn" class="no-mark-external" target="_blank"> <span class="icon-linkedin2"></span> <span aria-hidden="true">LinkedIn </span><span class="sr-only">Donny's LinkedIn</span></a></li>
@@ -58,7 +58,6 @@ His academic journey began with the completion of both his MEng and BEng degrees
     page</a>] [<a href="https://huggingface.co/spaces/depth-anything/depth-anything-3">demo</a>] [<a href="https://depth-anything-3.github.io/gallery.html">gallery</a>]</div>
 </div>
 
-<!-- 
 <div class="pub">
   <div class="pub-title">Revisiting Depth Representations for Feed-Forward 3D Gaussian Splatting</div>
   <div class="pub-venue">3DV 2026</div>
@@ -73,7 +72,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
   <div class="pub-authors">Weijie Wang, <b>Donny Y. Chen</b>, Zeyu Zhang, Duochao Shi, Akide Liu, and Bohan Zhuang</div>
   <div>[<a href="https://arxiv.org/abs/2505.23734">arXiv</a>] [<a href="https://github.com/ziplab/ZPressor">code</a>] [<a href="https://lhmd.top/zpressor/">project
     page</a>] </div>
-</div> -->
+</div>
 
 <div class="pub">
   <div class="pub-title">Explicit Correspondence Matching for Generalizable Neural Radiance Fields</div>
@@ -238,8 +237,9 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <h2 class="h1 index-header" id="disclaimer">DISCLAIMER</h2>
 
-ALL OPINIONS AND VIEWS EXPRESSED ON THIS PAGE ARE SOLELY HIS OWN. THEY DO NOT REPRESENT OR REFLECT THE VIEWS OR POSITIONS OF HIS EMPLOYER. PLEASE DO NOT CONTACT HIM REGARDING ANY RESEARCH COOPERATION OR INQUIRIES THAT MAY RELATE TO OR CONFLICT WITH THE INTERESTS OF HIS EMPLOYER. ANY RESEARCH COOPERATION OR FORMAL COLLABORATION MUST BE CONDUCTED DIRECTLY WITH THE COMPANY.
-
+<div class="disclaimer-block">
+ALL OPINIONS AND VIEWS EXPRESSED ON THIS PAGE ARE SOLELY HIS OWN AND SHALL NOT BE INTERPRETED AS REPRESENTING OR IMPUTING THE VIEWS, POSITIONS, POLICIES, OR OFFICIAL COMMUNICATIONS OF HIS EMPLOYER. NO STATEMENT, COMMENT, OR MATERIAL PRESENTED HERE SHALL BE CONSTRUED AS PROFESSIONAL ADVICE OR AS ANY FORM OF AUTHORIZED ENDORSEMENT BY THE COMPANY. HE DOES NOT ENGAGE IN, NOR SHALL HE RESPOND TO, ANY INQUIRIES OR COMMUNICATIONS PERTAINING TO CONFIDENTIAL INFORMATION, INTERNAL PROJECTS, PROPRIETARY MATERIALS, OR ANY MATTERS THAT MAY AFFECT OR POTENTIALLY CONFLICT WITH THE INTERESTS OF HIS EMPLOYER. ALL REQUESTS FOR RESEARCH COOPERATION, FORMAL COLLABORATION, OR OTHER OFFICIAL ENGAGEMENTS MUST BE DIRECTED EXCLUSIVELY TO THE COMPANY THROUGH ITS DESIGNATED CHANNELS.
+</div>
 
 <div class="container">
   <script type='text/javascript' id='clustrmaps'
