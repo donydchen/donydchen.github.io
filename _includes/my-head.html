@@ -3,20 +3,23 @@
   @media screen {
     body,body.light-mode {
         --header-color: #2452A1;
-        --bright-color: #B63732;
+        --bright-color: #A0322E;
         --subhead-color: #576982;
+        --highlight-color: #FF8C00;
     }
     body.dark-mode {
         --header-color: #8ab4f8;
         --bright-color: #ff6b6b;
         --subhead-color: #a9b7c6;
+        --highlight-color: #FFD54F;
     }
   }
   @media screen and (prefers-color-scheme: light) {
       body {
         --header-color: #2452A1;
-        --bright-color: #B63732;
+        --bright-color: #A0322E;
         --subhead-color: #576982;
+        --highlight-color: #FF8C00;
       }
   }
   @media screen and (prefers-color-scheme: dark) {
@@ -24,6 +27,7 @@
         --header-color: #8ab4f8;
         --bright-color: #ff6b6b;
         --subhead-color: #a9b7c6;
+        --highlight-color: #FFD54F;
       }
   }
 
@@ -87,6 +91,12 @@
   .hl-sen {
     font-style: italic;
     color: var(--gray-text);
+  }
+  .hl-sen2 {
+    color: var(--gray-text);
+  }
+  .hl-work {
+    color: var(--highlight-color);
   }
 
   .pub {
