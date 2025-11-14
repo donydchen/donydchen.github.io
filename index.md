@@ -49,6 +49,15 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <h2 class="h1 index-header" id="publications">Selected Publications </h2>
 <p class='hl-sen'> 🤖🧠👌🏼 He prefers simple yet effective solutions </p>
+<p class='hl-sen2'> * indicates Equal Contribution </p>
+
+<div class="pub">
+  <div class="pub-title"><span class="hl-work">Depth Anything 3</span>: Recovering the Visual Space from Any Views</div>
+  <div class="pub-venue">Tech Report 2025</div>
+  <div class="pub-authors">Haotong Lin*, Sili Chen*, Jun Hao Liew*, <b>Donny Y. Chen*</b>, Zhenyu Li, Guang Shi, Jiashi Feng, Bingyi Kang*</div>
+  <div>[<a href="https://arxiv.org/abs/2511.10647">arXiv</a>] [<a href="https://github.com/ByteDance-Seed/depth-anything-3">code</a>] [<a href="https://depth-anything-3.github.io/">project
+    page</a>] [<a href="https://huggingface.co/spaces/depth-anything/depth-anything-3">demo</a>] [<a href="https://depth-anything-3.github.io/gallery.html">gallery</a>]</div>
+</div>
 
 <div class="pub">
   <div class="pub-title">Revisiting Depth Representations for Feed-Forward 3D Gaussian Splatting</div>
@@ -83,11 +92,11 @@ His academic journey began with the completion of both his MEng and BEng degrees
 </div>
 
 <div class="pub">
-  <div class="pub-title">MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images</div>
+  <div class="pub-title"><span class="hl-work">MVSplat</span>: Efficient 3D Gaussian Splatting from Sparse Multi-View Images</div>
   <div class="pub-venue">ECCV 2024 (Oral)</div>
   <div class="pub-authors"><b>Yuedong Chen</b>, Haofei Xu, Chuanxia Zheng, Bohan Zhuang, Marc Pollefeys, Andreas Geiger, Tat-Jen Cham, and Jianfei Cai</div>
   <div>[<a href="https://arxiv.org/abs/2403.14627">arXiv</a>] [<a href="https://github.com/donydchen/mvsplat">code</a>] [<a href="https://donydchen.github.io/mvsplat">project
-    page</a>] [<a href="https://news.ycombinator.com/item?id=41222655">Hacker News</a>] [<a href="https://trendshift.io/repositories/8862">Trendshift #20</a>] [<a href="https://resources.paperdigest.org/2025/09/most-influential-eccv-papers-2025-09-version/">Most Influential ECCV Paper #13</a>] </div>
+    page</a>] [<a href="https://news.ycombinator.com/item?id=41222655">Hacker News</a>] [<a href="https://trendshift.io/repositories/8862" class="hl-work">Trendshift #20</a>] [<a href="https://resources.paperdigest.org/2025/09/most-influential-eccv-papers-2025-09-version/" class="hl-work">Most Influential ECCV Paper #13</a>] </div>
 </div>
 
 <div class="pub">
@@ -123,14 +132,13 @@ His academic journey began with the completion of both his MEng and BEng degrees
   </div>
 </div> -->
 
-<div class="pub">
+<!-- <div class="pub">
   <div class="pub-title">GeoConv: Geodesic Guided Convolution for Facial Action Unit Recognition</div>
   <div class="pub-venue">Pattern Recognition 2022</div>
   <div class="pub-authors"><b>Yuedong Chen</b>, Guoxian Song, Zhiwen Shao, Jianfei Cai, Tat-Jen Cham, and Jianmin Zheng</div>
   <div>[<a href="https://arxiv.org/abs/2003.03055">arXiv</a>] 
-    <!-- [<a href="#">code (coming soon)</a>] -->
   </div>
-</div>
+</div> -->
 
 <!-- <div class="pub">
   <div class="pub-title">Facial Motion Prior Networks for Facial Expression Recognition</div>
