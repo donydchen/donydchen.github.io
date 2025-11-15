@@ -10,11 +10,11 @@ cover: false # true
 
 <h2 class="h1 index-header" id="about">Short Bio </h2>
 
-Donny (Yuedong) Chen is currently a Research Scientist at [ByteDance Seed (Singapore)](https://seed.bytedance.com/en/), where he is building 3D & 4D foundation models. <span class="hl-work">ALL VIEWS ARE SOLELY HIS OWN ([DISCLAIMER](/#disclaimer)).</span>
+Donny (Yuedong) Chen is currently a Research Scientist at [ByteDance Seed (Singapore)](https://seed.bytedance.com/en/), where he is building 3D & 4D foundation models. ALL VIEWS ARE SOLELY HIS OWN ([DISCLAIMER](/#disclaimer)).
 
 Before this, Donny obtained his PhD degree at [Monash University](https://www.monash.edu), under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io), Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and Dr. [Bohan Zhuang](https://bohanzhuang.github.io/). His PhD research focused on [Feed-Forward Novel View Synthesis from Sparse Observations](https://bridges.monash.edu/articles/thesis/Feed-Forward_Novel_View_Synthesis_from_Sparse_Observations/29123996). During his PhD, he was fortunate to collaborate closely with [Haofei Xu](https://haofeixu.github.io/), Prof. [Marc Pollefeys](https://people.inf.ethz.ch/marc.pollefeys/), Prof. [Andreas Geiger](http://www.cvlibs.net/), Dr. [Chuanxia Zheng](https://physicalvision.github.io/people/~chuanxia), Prof. [Andrea Vedaldi](https://www.robots.ox.ac.uk/~vedaldi/) and Dr. [Qianyi Wu](https://wuqianyi.top/).
 
-Previously, he was a Research Assistant at [IMI NTU (Singapore)](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), where he worked closely with Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and Prof. [Jianfei Cai](https://jianfei-cai.github.io). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge. 
+Previously, he was a Research Assistant at [Institute for Media Innovation](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), [NTU (Singapore)](https://www.ntu.edu.sg/). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge. 
 <!-- He also interned at [Lenovo Research](https://research.lenovo.com/webapp/view_English/researchField.html), collaborating closely with Dr. [Jianfeng Wang](https://jianf-wang.github.io/personal/). -->
 
 His academic journey began with the completion of both his MEng and BEng degrees at [Sun Yat-sen University](https://www.sysu.edu.cn/sysuen/), where he majored in Software Engineering. Additionally, he spent a semester as an exchange student at [National Chi Nan University (Taiwan)](https://www.ncnu.edu.tw/?Lang=en) during his BEng study, collaborating closely with [David Cheng](https://www.linkedin.com/in/hui-sheng-cheng/).
@@ -95,7 +95,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
   <div class="pub-venue">ECCV 2024 (Oral)</div>
   <div class="pub-authors"><b>Yuedong Chen</b>, Haofei Xu, Chuanxia Zheng, Bohan Zhuang, Marc Pollefeys, Andreas Geiger, Tat-Jen Cham, and Jianfei Cai</div>
   <div>[<a href="https://arxiv.org/abs/2403.14627">arXiv</a>] [<a href="https://github.com/donydchen/mvsplat">code</a>] [<a href="https://donydchen.github.io/mvsplat">project
-    page</a>] [<a href="https://news.ycombinator.com/item?id=41222655">Hacker News</a>] [<a href="https://trendshift.io/repositories/8862" class="hl-work">Trendshift #20</a>] [<a href="https://resources.paperdigest.org/2025/09/most-influential-eccv-papers-2025-09-version/" class="hl-work">Most Influential ECCV Paper #13</a>] </div>
+    page</a>] [<a href="https://news.ycombinator.com/item?id=41222655">Hacker News</a>] [<span class="hl-work"><a href="https://trendshift.io/repositories/8862">Trendshift #20</a></span>] [<span class="hl-work"><a href="https://resources.paperdigest.org/2025/09/most-influential-eccv-papers-2025-09-version/">Most Influential ECCV Paper #13</a></span>] </div>
 </div>
 
 <div class="pub">
