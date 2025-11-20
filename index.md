@@ -25,7 +25,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
 <div id="news-notes">
 <br /><br />
 <!-- Put time-sensitive news below -->
-<p><a class="external" href="https://github.com/DepthAnything" target="_blank">Our team</a> has openings for full time and internship positions from time to time. If you are interested in joining us for 3D/4D vision research, please feel free to reach out to me via my <a href="mailto:donny.chen@bytedance.com">company email</a> after reading the <a href="/#disclaimer">disclaimer</a>.</p>
+<!-- <p><a class="external" href="https://github.com/DepthAnything" target="_blank">Our team</a> has openings for full time and internship positions from time to time. If you are interested in joining us for 3D/4D vision research, please feel free to reach out to me via my <a href="mailto:donny.chen@bytedance.com">company email</a> after reading the <a href="/#disclaimer">disclaimer</a>.</p> -->
 
 <!-- Actively seeking Research Scientist position (<a href="mailto:donny.chen@outlook.sg">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br /> -->
 <!-- I will present MVSplat360 on-site at NeurIPS24 (13/12 at Vancouver). Let's connect! -->
@@ -53,9 +53,10 @@ His academic journey began with the completion of both his MEng and BEng degrees
 <div class="pub">
   <div class="pub-title"><span class="hl-work">Depth Anything 3</span>: Recovering the Visual Space from Any Views</div>
   <div class="pub-venue">Tech Report 2025</div>
-  <div class="pub-authors">Haotong Lin*, Sili Chen*, Jun Hao Liew*, <b>Donny Y. Chen*</b>, Zhenyu Li, Guang Shi, Jiashi Feng, Bingyi Kang*</div>
+  <div class="pub-authors">Haotong Lin*, Sili Chen*, Jun Hao Liew*, <b>Donny Y. Chen*</b>, Zhenyu Li, Guang Shi, Jiashi Feng, and Bingyi Kang*</div>
   <div>[<a href="https://arxiv.org/abs/2511.10647">arXiv</a>] [<a href="https://github.com/ByteDance-Seed/depth-anything-3">code</a>] [<a href="https://depth-anything-3.github.io/">project
-    page</a>] [<a href="https://huggingface.co/spaces/depth-anything/depth-anything-3">demo</a>] [<a href="https://depth-anything-3.github.io/gallery.html">gallery</a>]</div>
+    page</a>] [<a href="https://huggingface.co/spaces/depth-anything/depth-anything-3">demo</a>] [<a href="https://depth-anything-3.github.io/gallery.html">gallery</a>] [<span class="hl-work"><a href="https://huggingface.co/papers/date/2025-11-14">Paper of the Day #2</a></span>]</div>
+
 </div>
 
 <div class="pub">
