@@ -13,6 +13,10 @@ google-scholar:
   name: Google Scholar
   icon: icon-googlescholar
   prepend: "https://scholar.google.com/citations?user="
+orcid:
+  name: ORCID
+  icon: icon-orcid
+  prepend: "https://orcid.org/"
 google-plus:
   name: Google+
   icon: icon-google-plus
