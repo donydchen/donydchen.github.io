@@ -3,7 +3,7 @@ layout: plain
 name: index
 title: 
 description: >
-  Homepage of Donny Chen, a Research Scientist at ByteDance Seed (Singapore), working on 3D/4D vision. Views are his own.
+  Homepage of Donny Chen, a Research Scientist at ByteDance Seed (Singapore), working on 3D/4D vision. ALL VIEWS ARE SOLELY HIS OWN.
 hide_description: true
 cover: false # true
 ---
@@ -37,6 +37,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
   <ul>
     <li> <a href="mailto:donny.chen@outlook.sg" title="Personal Email" class="no-mark-external" target="_blank"> <span class="icon-mail"></span> <span aria-hidden="true">Email </span><span class="sr-only">Donny's Email Address</span></a></li>
     <li> <a href="https://scholar.google.com/citations?user=GqgGZlQAAAAJ" title="Google Scholar" class="no-mark-external" target="_blank"> <span class="icon-googlescholar"></span> <span aria-hidden="true">Google Scholar </span><span class="sr-only">Donny's Google Scholar profile</span></a></li>
+    <li> <a href="https://orcid.org/0000-0003-0943-1512" title="ORCID" class="no-mark-external" target="_blank"> <span class="icon-orcid"></span> <span aria-hidden="true">ORCID </span><span class="sr-only">Donny's ORCID page</span></a></li>
     <li> <a href="https://github.com/donydchen" title="GitHub" class="no-mark-external" target="_blank"> <span class="icon-github"></span> <span aria-hidden="true">GitHub </span><span class="sr-only">Donny's Github</span></a></li>
     <li> <a href="https://www.linkedin.com/in/donydchen" title="LinkedIn" class="no-mark-external" target="_blank"> <span class="icon-linkedin2"></span> <span aria-hidden="true">LinkedIn </span><span class="sr-only">Donny's LinkedIn</span></a></li>
     <li> <a href="https://bsky.app/profile/donydchen.bsky.social" title="Bluesky" class="no-mark-external" target="_blank"> <span class="icon-bluesky"></span> <span aria-hidden="true">Bluesky </span><span class="sr-only">Donny's Bluesky</span></a></li>
