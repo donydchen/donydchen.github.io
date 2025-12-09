@@ -65,7 +65,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
   <div class="pub-venue">3DV 2026</div>
   <div class="pub-authors">Duochao Shi*, Weijie Wang*, <b>Donny Y. Chen</b>, Zeyu Zhang, Jia-Wang Bian, and Bohan Zhuang</div>
   <div>[<a href="https://arxiv.org/abs/2506.05327">arXiv</a>] [<a href="https://github.com/aim-uofa/PM-Loss">code</a>] [<a href="https://aim-uofa.github.io/PMLoss/">project
-    page</a>] </div>
+    page</a>] [also presented at <a href="https://space-in-vision-language-embodied-ai.github.io/">SpaVLE&#64;NeurIPS'25</a>] </div>
 </div>
 
 <div class="pub">
