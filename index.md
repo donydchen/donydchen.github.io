@@ -3,29 +3,26 @@ layout: plain
 name: index
 title: 
 description: >
-  Homepage of Donny Chen, a Research Scientist at ByteDance Seed (Singapore), working on 3D/4D vision. ALL VIEWS ARE SOLELY HIS OWN.
+  Homepage of Donny Chen, a Singapore-based Research Scientist, working on 3D/4D vision. ALL VIEWS ARE SOLELY HIS OWN.
 hide_description: true
 cover: false # true
 ---
 
 <h2 class="h1 index-header" id="about">Short Bio </h2>
 
-Donny (Yuedong) Chen is currently a Research Scientist at [ByteDance Seed (Singapore)](https://seed.bytedance.com/en/), where he is building 3D & 4D foundation models. ALL VIEWS ARE SOLELY HIS OWN ([DISCLAIMER](/#disclaimer)).
+Donny (Yuedong) Chen is currently a Singapore-based Research Scientist building 3D and 4D foundation models. ALL VIEWS ARE SOLELY HIS OWN ([DISCLAIMER](/#disclaimer)).
 
-Before this, Donny obtained his PhD degree at [Monash University](https://www.monash.edu), under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io), Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and Dr. [Bohan Zhuang](https://bohanzhuang.github.io/). His PhD research focused on [Feed-Forward Novel View Synthesis from Sparse Observations](https://bridges.monash.edu/articles/thesis/Feed-Forward_Novel_View_Synthesis_from_Sparse_Observations/29123996). During his PhD, he was fortunate to collaborate closely with [Haofei Xu](https://haofeixu.github.io/), Prof. [Marc Pollefeys](https://people.inf.ethz.ch/marc.pollefeys/), Prof. [Andreas Geiger](http://www.cvlibs.net/), Dr. [Chuanxia Zheng](https://physicalvision.github.io/people/~chuanxia), Prof. [Andrea Vedaldi](https://www.robots.ox.ac.uk/~vedaldi/) and Dr. [Qianyi Wu](https://wuqianyi.top/).
+Previously, Donny obtained his PhD degree at [Monash University](https://www.monash.edu) under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io), Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and Dr. [Bohan Zhuang](https://bohanzhuang.github.io/). His PhD research focused on [Feed-Forward Novel View Synthesis from Sparse Observations](https://doi.org/10.26180/29123996). During his PhD, he collaborated closely with [Haofei Xu](https://haofeixu.github.io/), Prof. [Marc Pollefeys](https://people.inf.ethz.ch/marc.pollefeys/), Prof. [Andreas Geiger](http://www.cvlibs.net/), Dr. [Chuanxia Zheng](https://physicalvision.github.io/people/~chuanxia), Prof. [Andrea Vedaldi](https://www.robots.ox.ac.uk/~vedaldi/) and Dr. [Qianyi Wu](https://wuqianyi.top/).
 
-Previously, he was a Research Assistant at [Institute for Media Innovation](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), [NTU (Singapore)](https://www.ntu.edu.sg/). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge. 
-<!-- He also interned at [Lenovo Research](https://research.lenovo.com/webapp/view_English/researchField.html), collaborating closely with Dr. [Jianfeng Wang](https://jianf-wang.github.io/personal/). -->
+Before that, he was a Research Assistant at the [Institute for Media Innovation](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), [NTU (Singapore)](https://www.ntu.edu.sg/). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge.
 
-His academic journey began with the completion of both his MEng and BEng degrees at [Sun Yat-sen University](https://www.sysu.edu.cn/sysuen/), where he majored in Software Engineering. Additionally, he spent a semester as an exchange student at [National Chi Nan University (Taiwan)](https://www.ncnu.edu.tw/?Lang=en) during his BEng study, collaborating closely with [David Cheng](https://www.linkedin.com/in/hui-sheng-cheng/).
-
-
+His academic journey began with the completion of both his MEng and BEng degrees at [Sun Yat-sen University](https://www.sysu.edu.cn/sysuen/), where he majored in Software Engineering. Additionally, he spent a semester as an exchange student at [National Chi Nan University (Taiwan)](https://www.ncnu.edu.tw/?Lang=en) during his BEng studies, collaborating closely with [David Cheng](https://www.linkedin.com/in/hui-sheng-cheng/).
 
 
 <div id="news-notes">
 <br /><br />
 <!-- Put time-sensitive news below -->
-<!-- <p><a class="external" href="https://github.com/DepthAnything" target="_blank">Our team</a> has openings for full time and internship positions from time to time. If you are interested in joining us for 3D/4D vision research, please feel free to reach out to me via my <a href="mailto:donny.chen@bytedance.com">company email</a> after reading the <a href="/#disclaimer">disclaimer</a>.</p> -->
+<!-- <p><a class="external" href="https://github.com/DepthAnything" target="_blank">Our team</a> has openings for full time and internship positions from time to time. If you are interested in joining us for 3D/4D vision research, please feel free to reach out to me via my company email after reading the <a href="/#disclaimer">disclaimer</a>.</p> -->
 
 <!-- Actively seeking Research Scientist position (<a href="mailto:donny.chen@outlook.sg">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br /> -->
 <!-- I will present MVSplat360 on-site at NeurIPS24 (13/12 at Vancouver). Let's connect! -->
@@ -56,7 +53,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
   <div class="pub-venue">Tech Report 2025</div>
   <div class="pub-authors">Haotong Lin*, Sili Chen*, Jun Hao Liew*, <b>Donny Y. Chen*</b>, Zhenyu Li, Guang Shi, Jiashi Feng, and Bingyi Kang*</div>
   <div>[<a href="https://arxiv.org/abs/2511.10647">arXiv</a>] [<a href="https://github.com/ByteDance-Seed/depth-anything-3">code</a>] [<a href="https://depth-anything-3.github.io/">project
-    page</a>] [<a href="https://huggingface.co/spaces/depth-anything/depth-anything-3">demo</a>] [<a href="https://depth-anything-3.github.io/gallery.html">gallery</a>] [<span class="hl-work"><a href="https://huggingface.co/papers/date/2025-11-14">Paper of the Day #2</a></span>] [<span class="hl-work"><a href="https://huggingface.co/spaces?date=2025-W47">Spaces of the Week</a></span>]</div>
+    page</a>] [<a href="https://huggingface.co/spaces/depth-anything/depth-anything-3">demo</a>] [<a href="https://depth-anything-3.github.io/gallery.html">gallery</a>] [<a href="https://seed.bytedance.com/en/blog/seed-research-depth-anything-3-a-single-transformer-architecture-for-space-reconstruction-from-any-views?view_from=content_recommend">news</a>] [<span class="hl-work"><a href="https://huggingface.co/papers/date/2025-11-14">Paper of the Day #2</a></span>] [<span class="hl-work"><a href="https://huggingface.co/spaces?date=2025-W47">Spaces of the Week</a></span>]</div>
 
 </div>
 
@@ -228,20 +225,22 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <h2 class="h1 index-header" id="misc">Miscellanies</h2>
 
-<div style="margin-bottom: 40px;">
-  <ul>
-    <li>Conference Reviewer: ECCV('24), CVPR('23-'26), ICCV('23-'25), NeurIPS('24-'25), ICLR('25-'26), ICML('25), 3DV('24-'26), AAAI('24-'26), ACMMM('21‑'24), ACCV('24), ISMAR('23-'24), IEEEVR('24)</li>
-    <li>Journal Reviewer: TPAMI, IJCV, TIP, TVCG, TMM, TCSVT, TOMM, TVCJ, Computers & Graphics, The Visual Computer</li>
-    <li>Donny is a native speaker of <a href="https://en.wikipedia.org/wiki/Teochew_dialect">Teochew</a>, fluent in English, Mandarin, <a href="https://en.wikipedia.org/wiki/Cantonese">Cantonese</a>, and also familiar with <a href="https://en.wikipedia.org/wiki/Singlish">Singlish</a>.
-    </li>
-  </ul>
-</div>
+* Conference Reviewer: ECCV('24), CVPR('23-'26), ICCV('23-'25), NeurIPS('24-'25), ICLR('25-'26), ICML('25), 3DV('24-'26), AAAI('24-'26), ACMMM('21‑'24), ACCV('24), ISMAR('23-'24), IEEEVR('24)
+* Journal Reviewer: TPAMI, IJCV, TIP, TVCG, TMM, TCSVT, TOMM, TVCJ, Computers & Graphics, The Visual Computer
+* Donny is a native speaker of [Teochew](https://en.wikipedia.org/wiki/Teochew_dialect), fluent in English, [Cantonese](https://en.wikipedia.org/wiki/Cantonese), Mandarin, and also familiar with [Singlish](https://en.wikipedia.org/wiki/Singlish).
+
+*[Teochew]: Teochew-nang, gaginang, pah-si bho-siang-gang
+
+---
 
 <h2 class="h1 index-header" id="disclaimer">DISCLAIMER</h2>
 
 <div class="disclaimer-block">
 ALL OPINIONS AND VIEWS EXPRESSED ON THIS PAGE ARE SOLELY HIS OWN AND SHALL NOT BE INTERPRETED AS REPRESENTING OR IMPUTING THE VIEWS, POSITIONS, POLICIES, OR OFFICIAL COMMUNICATIONS OF HIS EMPLOYER. NO STATEMENT, COMMENT, OR MATERIAL PRESENTED HERE SHALL BE CONSTRUED AS PROFESSIONAL ADVICE OR AS ANY FORM OF AUTHORIZED ENDORSEMENT BY THE COMPANY. HE DOES NOT ENGAGE IN, NOR SHALL HE RESPOND TO, ANY INQUIRIES OR COMMUNICATIONS PERTAINING TO CONFIDENTIAL INFORMATION, INTERNAL PROJECTS, PROPRIETARY MATERIALS, OR ANY MATTERS THAT MAY AFFECT OR POTENTIALLY CONFLICT WITH THE INTERESTS OF HIS EMPLOYER. ALL REQUESTS FOR RESEARCH COOPERATION, FORMAL COLLABORATION, OR OTHER OFFICIAL ENGAGEMENTS MUST BE DIRECTED EXCLUSIVELY TO THE COMPANY THROUGH ITS DESIGNATED CHANNELS.
 </div>
+
+---
+
 
 <div class="container">
   <script type='text/javascript' id='clustrmaps'
