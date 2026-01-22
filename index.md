@@ -10,9 +10,9 @@ cover: false # true
 
 <h2 class="h1 index-header" id="about">Short Bio </h2>
 
-Donny (Yuedong) Chen is currently a Singapore-based Research Scientist building 3D and 4D foundation models. ALL VIEWS ARE SOLELY HIS OWN ([DISCLAIMER](/#disclaimer)).
+Donny (Yuedong) Chen is a Research Scientist at [ByteDance Seed (Singapore)](https://seed.bytedance.com/en/), developing 3D and 4D foundation models. ALL VIEWS ARE SOLELY HIS OWN ([DISCLAIMER](/#disclaimer)).
 
-Previously, Donny obtained his PhD degree at [Monash University](https://www.monash.edu) under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io), Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and Dr. [Bohan Zhuang](https://bohanzhuang.github.io/). His PhD research focused on [Feed-Forward Novel View Synthesis from Sparse Observations](https://doi.org/10.26180/29123996). During his PhD, he collaborated closely with [Haofei Xu](https://haofeixu.github.io/), Prof. [Marc Pollefeys](https://people.inf.ethz.ch/marc.pollefeys/), Prof. [Andreas Geiger](http://www.cvlibs.net/), Dr. [Chuanxia Zheng](https://physicalvision.github.io/people/~chuanxia), Prof. [Andrea Vedaldi](https://www.robots.ox.ac.uk/~vedaldi/) and Dr. [Qianyi Wu](https://wuqianyi.top/).
+Previously, Donny obtained his PhD degree at [Monash University (Australia)](https://www.monash.edu) under the supervision of Prof. [Jianfei Cai](https://jianfei-cai.github.io), Prof. [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and Dr. [Bohan Zhuang](https://bohanzhuang.github.io/). His PhD research focused on [Feed-Forward Novel View Synthesis from Sparse Observations](https://doi.org/10.26180/29123996). During his PhD, he also collaborated with [Haofei Xu](https://haofeixu.github.io/), Prof. [Marc Pollefeys](https://people.inf.ethz.ch/marc.pollefeys/), Prof. [Andreas Geiger](http://www.cvlibs.net/), Dr. [Chuanxia Zheng](https://physicalvision.github.io/people/~chuanxia), Prof. [Andrea Vedaldi](https://www.robots.ox.ac.uk/~vedaldi/) and Dr. [Qianyi Wu](https://qianyiwu.github.io/).
 
 Before that, he was a Research Assistant at the [Institute for Media Innovation](http://web.archive.org/web/20200812205019/https://imi.ntu.edu.sg/Pages/Home.aspx), [NTU (Singapore)](https://www.ntu.edu.sg/). During this period, his research focused on enhancing emotion recognition by incorporating human prior knowledge.
 
@@ -118,7 +118,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
   <div class="pub-venue">ECCV 2022</div>
   <div class="pub-authors">Qianyi Wu, Xian Liu, <b>Yuedong Chen</b>, Kejie Li, Chuanxia Zheng, Jianfei Cai, and Jianmin Zheng</div>
   <div>[<a href="https://arxiv.org/abs/2207.09686">arXiv</a>] [<a href="https://github.com/QianyiWu/objsdf">code</a>]
-    [<a href="https://wuqianyi.top/objectsdf/">project
+    [<a href="https://qianyiwu.github.io/objectsdf/">project
       page</a>] [<a href="https://youtu.be/23vxOV19bEw">demo video</a>] </div>
 </div>
 
