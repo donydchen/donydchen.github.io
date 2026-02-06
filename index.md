@@ -52,9 +52,24 @@ His academic journey began with the completion of both his MEng and BEng degrees
   <div class="pub-title"><span class="hl-work">Depth Anything 3</span>: Recovering the Visual Space from Any Views</div>
   <div class="pub-venue">Tech Report 2025</div>
   <div class="pub-authors">Haotong Lin*, Sili Chen*, Jun Hao Liew*, <b>Donny Y. Chen*</b>, Zhenyu Li, Guang Shi, Jiashi Feng, and Bingyi Kang*</div>
-  <div>[<a href="https://arxiv.org/abs/2511.10647">arXiv</a>] [<a href="https://github.com/ByteDance-Seed/depth-anything-3">code</a>] [<a href="https://depth-anything-3.github.io/">project
-    page</a>] [<a href="https://huggingface.co/spaces/depth-anything/depth-anything-3">demo</a>] [<a href="https://depth-anything-3.github.io/gallery.html">gallery</a>] [<a href="https://seed.bytedance.com/en/blog/seed-research-depth-anything-3-a-single-transformer-architecture-for-space-reconstruction-from-any-views?view_from=content_recommend">news</a>] [<span class="hl-work"><a href="https://huggingface.co/papers/date/2025-11-14">Paper of the Day #2</a></span>] [<span class="hl-work"><a href="https://huggingface.co/spaces?date=2025-W47">Spaces of the Week</a></span>]</div>
+  <div>
+  [<a href="https://arxiv.org/abs/2511.10647">arXiv</a>] 
+  [<a href="https://github.com/ByteDance-Seed/depth-anything-3">code</a> <img class="pub-code-label" src="https://img.shields.io/github/stars/ByteDance-Seed/depth-anything-3?style=flat-square&label=⭐&labelColor=555&color=2452A1">] 
+  [<a href="https://depth-anything-3.github.io/">project page</a>] 
+  [<a href="https://huggingface.co/spaces/depth-anything/depth-anything-3">demo</a>] 
+  [<a href="https://depth-anything-3.github.io/gallery.html">gallery</a>] 
+  [<a href="https://seed.bytedance.com/en/blog/seed-research-depth-anything-3-a-single-transformer-architecture-for-space-reconstruction-from-any-views?view_from=content_recommend">news</a>] 
+  [<span class="hl-work"><a href="https://huggingface.co/papers/date/2025-11-14">Paper of the Day #2</a></span>] 
+  [<span class="hl-work"><a href="https://huggingface.co/spaces?date=2025-W47">Spaces of the Week #4</a></span>] <br>
+  [also presented at <span class="hl-work"><a href="https://openreview.net/forum?id=yirunib8l8">ICLR 2026 (Oral)</a></span>]
+  </div>
+</div>
 
+<div class="pub">
+  <div class="pub-title">Trace Anything: Representing Any Video in 4D via Trajectory Fields</div>
+  <div class="pub-venue">ICLR 2026</div>
+  <div class="pub-authors">Xinhang Liu, Yuxi Xiao, <b>Donny Y. Chen</b>, Jiashi Feng, Yu-Wing Tai, Chi-Keung Tang, and Bingyi Kang</div>
+  <div>[<a href="https://arxiv.org/abs/2510.13802">arXiv</a>] [<a href="https://github.com/ByteDance-Seed/TraceAnything">code</a>] [<a href="https://trace-anything.github.io/">project page</a>] </div>
 </div>
 
 <div class="pub">
@@ -69,8 +84,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
   <div class="pub-title">ZPressor: Bottleneck-Aware Compression for Scalable Feed-Forward 3DGS</div>
   <div class="pub-venue">NeurIPS 2025</div>
   <div class="pub-authors">Weijie Wang, <b>Donny Y. Chen</b>, Zeyu Zhang, Duochao Shi, Akide Liu, and Bohan Zhuang</div>
-  <div>[<a href="https://arxiv.org/abs/2505.23734">arXiv</a>] [<a href="https://github.com/ziplab/ZPressor">code</a>] [<a href="https://lhmd.top/zpressor/">project
-    page</a>] </div>
+  <div>[<a href="https://arxiv.org/abs/2505.23734">arXiv</a>] [<a href="https://github.com/ziplab/ZPressor">code</a>] [<a href="https://lhmd.top/zpressor/">project page</a>] </div>
 </div>
 
 <div class="pub">
@@ -93,8 +107,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
   <div class="pub-title"><span class="hl-work">MVSplat</span>: Efficient 3D Gaussian Splatting from Sparse Multi-View Images</div>
   <div class="pub-venue">ECCV 2024 (Oral)</div>
   <div class="pub-authors"><b>Yuedong Chen</b>, Haofei Xu, Chuanxia Zheng, Bohan Zhuang, Marc Pollefeys, Andreas Geiger, Tat-Jen Cham, and Jianfei Cai</div>
-  <div>[<a href="https://arxiv.org/abs/2403.14627">arXiv</a>] [<a href="https://github.com/donydchen/mvsplat">code</a>] [<a href="https://donydchen.github.io/mvsplat">project
-    page</a>] [<a href="https://news.ycombinator.com/item?id=41222655">Hacker News</a>] [<span class="hl-work"><a href="https://trendshift.io/repositories/8862">Trendshift #20</a></span>] [<span class="hl-work"><a href="https://resources.paperdigest.org/2025/09/most-influential-eccv-papers-2025-09-version/">Most Influential ECCV Paper #13</a></span>] </div>
+  <div>[<a href="https://arxiv.org/abs/2403.14627">arXiv</a>] [<a href="https://github.com/donydchen/mvsplat">code</a> <img class="pub-code-label" src="https://img.shields.io/github/stars/donydchen/mvsplat?style=flat-square&label=⭐&labelColor=555&color=2452A1">] [<a href="https://donydchen.github.io/mvsplat">project page</a>] [<span class="hl-work"><a href="https://news.ycombinator.com/item?id=41222655">Hacker News</a></span>] [<span class="hl-work"><a href="https://trendshift.io/repositories/8862">Trendshift #20</a></span>] [<span class="hl-work"><a href="https://resources.paperdigest.org/2025/09/most-influential-eccv-papers-2025-09-version/">Most Influential ECCV Paper #13</a></span>] </div>
 </div>
 
 <div class="pub">
@@ -106,20 +119,20 @@ His academic journey began with the completion of both his MEng and BEng degrees
 </div>
 
 <div class="pub">
-  <div class="pub-title">Sem2NeRF: Converting Single-View Semantic Masks to Neural Radiance Fields</div>
-  <div class="pub-venue">ECCV 2022</div>
-  <div class="pub-authors"><b>Yuedong Chen</b>, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, and Jianfei Cai</div>
-  <div>[<a href="https://arxiv.org/abs/2203.10821">arXiv</a>] [<a href="https://github.com/donydchen/sem2nerf">code</a>] [<a href="https://donydchen.github.io/sem2nerf/">project
-    page</a>] [<a href="https://www.youtube.com/watch?v=cYr3Dz8N_9E">demo video</a>] </div>
-</div>
-
-<div class="pub">
   <div class="pub-title">Object-Compositional Neural Implicit Surfaces</div>
   <div class="pub-venue">ECCV 2022</div>
   <div class="pub-authors">Qianyi Wu, Xian Liu, <b>Yuedong Chen</b>, Kejie Li, Chuanxia Zheng, Jianfei Cai, and Jianmin Zheng</div>
   <div>[<a href="https://arxiv.org/abs/2207.09686">arXiv</a>] [<a href="https://github.com/QianyiWu/objsdf">code</a>]
     [<a href="https://qianyiwu.github.io/objectsdf/">project
       page</a>] [<a href="https://youtu.be/23vxOV19bEw">demo video</a>] </div>
+</div>
+
+<div class="pub">
+  <div class="pub-title">Sem2NeRF: Converting Single-View Semantic Masks to Neural Radiance Fields</div>
+  <div class="pub-venue">ECCV 2022</div>
+  <div class="pub-authors"><b>Yuedong Chen</b>, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, and Jianfei Cai</div>
+  <div>[<a href="https://arxiv.org/abs/2203.10821">arXiv</a>] [<a href="https://github.com/donydchen/sem2nerf">code</a>] [<a href="https://donydchen.github.io/sem2nerf/">project
+    page</a>] [<a href="https://www.youtube.com/watch?v=cYr3Dz8N_9E">demo video</a>] </div>
 </div>
 
 <!-- <div class="pub">
