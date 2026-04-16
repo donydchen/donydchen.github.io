@@ -20,12 +20,16 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 
 <div id="news-notes">
-<br /><br />
+<br />
+I will present <a class="external" href="https://iclr.cc/virtual/2026/oral/10006532" target="_blank">Depth Anything 3</a> and <a class="external" href="https://iclr.cc/virtual/2026/poster/10010908" target="_blank">Trace Anything</a> on-site at ICLR26. See you in Brazil!
+
 <!-- Put time-sensitive news below -->
 <!-- <p><a class="external" href="https://github.com/DepthAnything" target="_blank">Our team</a> has openings for full time and internship positions from time to time. If you are interested in joining us for 3D/4D vision research, please feel free to reach out to me via my company email after reading the <a href="/#disclaimer">disclaimer</a>.</p> -->
 
 <!-- Actively seeking Research Scientist position (<a href="mailto:donny.chen@outlook.sg">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br /> -->
 <!-- I will present MVSplat360 on-site at NeurIPS24 (13/12 at Vancouver). Let's connect! -->
+
+<br /><br />
 </div>
 
 
