@@ -44,7 +44,7 @@
   @media screen {
     body.dark-mode {
       --header-color: #8ab4f8;
-      --bright-color: #ff6b6b;
+      --bright-color: #dd7e7e;
       --subhead-color: #a9b7c6;
       --highlight-color: #FFD54F;
       --link-underline-color: rgba(138, 180, 248, 0.3);
@@ -65,7 +65,7 @@
   @media screen and (prefers-color-scheme: dark) {
     body {
       --header-color: #8ab4f8;
-      --bright-color: #ff6b6b;
+      --bright-color: #dd7e7e;
       --subhead-color: #a9b7c6;
       --highlight-color: #FFD54F;
       --link-underline-color: rgba(138, 180, 248, 0.3);
@@ -375,6 +375,26 @@
       transform: translateY(-3px) scale(0.98);
     }
   }
+
+  /* Widen the article column ~5 characters to the right on desktop.
+     Hydejack caps .content at 54rem, leaving a sizeable empty strip on
+     the right. Bump the cap to 57rem at the same breakpoint that sets
+     the cap (break-point-5 = 86em). Left gutter stays untouched. */
+  @media screen and (min-width: 86em) {
+    .content { max-width: 57rem; }
+  }
+  /* The theme's @media (min-width: 104rem) rule centers .content with
+     `margin: auto`, calibrated to leave exactly sidebar-width on the left
+     for the original 54rem column. With our wider 57rem, centering would
+     pull the left edge slightly into the sidebar gutter. Pin the left
+     gutter to sidebar-width + content-margin-5; right margin auto-fills,
+     which keeps the visual unchanged on the left. */
+  @media screen and (min-width: 104rem) {
+    .content {
+      margin-left: 25rem;
+      margin-right: auto;
+    }
+  }
 </style>
 
 {% comment %}
@@ -383,74 +403,81 @@
 
       desktop_cover: true|false   # show the cover hero on desktop
       mobile_cover:  true|false   # show the cover hero on mobile
-      cover_breakpoint: 64        # (optional em; defaults to site BP3)
 
-  How it works (works WITH Hydejack, no theme modification):
+  Hydejack's break-point-3 (64em) and sidebar-width (21rem) are hardcoded
+  below so VSCode parses each <style> block as pure CSS; if either is ever
+  customised in _config.yml these values need to be updated to match.
+
+  How it works (no theme modification):
 
   1. _includes/body/index.html sets effective_cover = desktop_cover OR
-     mobile_cover and passes that to Hydejack's body/sidebar.html. So when
-     EITHER flag is true, Hydejack renders the standard cover layout
-     (sidebar BEFORE main + .cover class + opened attribute) — i.e. exactly
-     Hydejack's `cover: true` behavior, with all its DOM/JS plumbing intact.
+     mobile_cover and passes that to Hydejack's body/sidebar.html so the
+     standard cover layout (sidebar BEFORE main + .cover class + opened
+     attribute) is rendered whenever either flag is true.
 
-  2. Below, we revert the .cover styling on the viewport whose flag is
-     FALSE, restoring Hydejack's non-cover behavior for that viewport:
-
-       - desktop_cover=false → hy-drawer.cover on desktop is overridden to
-         position:fixed/21rem (the same look as Hydejack's non-cover
-         desktop side panel). With peek-width = sidebar width, the drawer
-         is fully visible regardless of the opened/closed JS state.
-
-       - mobile_cover=false → hy-drawer.cover on mobile gets peek-width 0
-         so the "closed" state (forced by the drawer JS on subsequent
-         visits) hides the cover entirely; user accesses the drawer via
-         the menu button.
-
-  Result: each viewport behaves EXACTLY like Hydejack's native cover or
-  non-cover, just controlled per viewport.
+  2. Each <style> block below reverts the .cover styling on the viewport
+     whose flag is FALSE, restoring Hydejack's non-cover behavior:
+       - desktop_cover=false → hy-drawer.cover pinned position:fixed/21rem
+         with peek-width=21rem (consistent side panel; #_menu still slides
+         the cover hero in and out via the drawer's native translateX).
+       - mobile_cover=false  → hy-drawer.cover on mobile gets peek-width 0
+         so the closed state hides the cover entirely; user accesses the
+         drawer via the menu button.
   ========================================================================
 {% endcomment %}
 {% if page.desktop_cover or page.mobile_cover %}
-  {% assign _bp = page.cover_breakpoint | default: site.hydejack.break_point_3 | default: 64 %}
-  {% assign _sw = site.hydejack.sidebar_width | default: 21 %}
+
+{% unless page.mobile_cover %}
 <style type="text/css">
-  {% unless page.mobile_cover %}
   /* mobile_cover=false: cover hero shouldn't appear on mobile. Set
      peek-width to 0 so once the drawer JS closes the cover (it does so
      on every load past the first visit, per the closedOnce logic) nothing
      remains visible. The menu button still toggles the drawer for nav. */
-  @media screen and (max-width: {{ _bp }}em) {
+  @media screen and (max-width: 64em) {
     hy-drawer.cover { --hy-drawer-peek-width: 0 !important; }
   }
-  {% endunless %}
+</style>
+{% endunless %}
 
-  {% unless page.desktop_cover %}
+{% unless page.desktop_cover %}
+<style type="text/css">
   /* desktop_cover=false: on desktop, dress hy-drawer.cover up as the
      standard non-cover side panel — pin the host fixed to the left at
-     sidebar-width, leaving the shadow .wrapper at its native 100vw size.
-     The drawer's translateX animation then naturally runs between the
-     21rem peek (closed → side panel look) and 100vw (opened → cover hero
-     look), so clicking #_menu smoothly slides the cover in and out.
-     Hydejack's wrapper script (drawer-hydejack-9.2.1.js) shifts #_sidebar
-     by (windowWidth - peekWidth)/2 * (1 - drawer.opacity), which centers
-     .sidebar-sticky in the 21rem peek when closed and in the 100vw cover
-     when opened — both correct, so we don't touch that transform. */
-  @media screen and (min-width: {{ _bp }}em) {
+     sidebar-width and lock --hy-drawer-peek-width so the visible side
+     panel stays a consistent 21rem at every viewport. The drawer's
+     translateX animation runs between the 21rem peek (closed → side
+     panel look) and 100vw (opened → cover hero look), so clicking #_menu
+     smoothly slides the cover in and out. */
+  @media screen and (min-width: 64em) {
     hy-drawer.cover,
     hy-drawer.cover.loaded {
       position: fixed !important;
       top: 0 !important;
       left: 0 !important;
       bottom: 0 !important;
-      width: {{ _sw }}rem !important;
+      width: 21rem !important;
+      --hy-drawer-peek-width: 21rem !important;
     }
   }
-  {% endunless %}
+  /* Hydejack's body::before is a fixed left bar tinted with --gray-bg
+     that's meant to mirror the visible sidebar width. At break-point-
+     dynamic (≥104rem) it grows to `calc(50% - half-content)`, which
+     bleeds outside our forced 21rem peek and shows as a faint
+     half-transparent rectangle on the right of the side panel in dark
+     mode. Pin it to sidebar-width so the tint matches the real panel. */
+  @media screen and (min-width: 104rem) {
+    body::before { width: 21rem !important; }
+  }
+</style>
+{% endunless %}
 
+<style type="text/css">
   /* The swipe-to-dismiss hint (#_swipe, injected by Hydejack on
      hy-drawer-init) is only meaningful while the cover hero is on screen.
-     Hide it whenever the drawer is closed; the JS below re-adds it after
-     Hydejack removes it on close so it's available on the next open. */
+     Hide it whenever the drawer is closed; the JS in body/index.html
+     re-adds it after Hydejack removes it on close so it's available on
+     the next open. */
   hy-drawer.cover:not([opened]) #_swipe { display: none !important; }
 </style>
+
 {% endif %}

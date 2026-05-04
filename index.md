@@ -134,13 +134,13 @@ His academic journey began with the completion of both his MEng and BEng degrees
   [<a href="https://donydchen.github.io/mvsplat">project page</a>] [<span class="hl-work"><a href="https://news.ycombinator.com/item?id=41222655">Hacker News</a></span>] [<span class="hl-work"><a href="https://trendshift.io/repositories/8862">Trendshift #20</a></span>] [<span class="hl-work"><a href="https://resources.paperdigest.org/2025/09/most-influential-eccv-papers-2025-09-version/">Most Influential ECCV Paper #13</a></span>] </div>
 </div>
 
-<div class="pub">
+<!-- <div class="pub">
   <div class="pub-title">MuRF: Multi-Baseline Radiance Fields</div>
   <div class="pub-venue">CVPR 2024</div>
   <div class="pub-authors">Haofei Xu, Anpei Chen, <b>Yuedong Chen</b>, Christos Sakaridis, Yulun Zhang, Marc Pollefeys, Andreas Geiger, <i>et al.</i></div>
   <div>[<a href="https://arxiv.org/abs/2312.04565">arXiv</a>] [<a href="https://github.com/autonomousvision/murf">code</a>] [<a href="https://haofeixu.github.io/murf/">project
     page</a>] </div>
-</div>
+</div> -->
 
 <!-- <div class="pub">
   <div class="pub-title">Object-Compositional Neural Implicit Surfaces</div>
