@@ -376,3 +376,81 @@
     }
   }
 </style>
+
+{% comment %}
+  ========================================================================
+  Per-viewport cover control. Per-page opt-in via front matter:
+
+      desktop_cover: true|false   # show the cover hero on desktop
+      mobile_cover:  true|false   # show the cover hero on mobile
+      cover_breakpoint: 64        # (optional em; defaults to site BP3)
+
+  How it works (works WITH Hydejack, no theme modification):
+
+  1. _includes/body/index.html sets effective_cover = desktop_cover OR
+     mobile_cover and passes that to Hydejack's body/sidebar.html. So when
+     EITHER flag is true, Hydejack renders the standard cover layout
+     (sidebar BEFORE main + .cover class + opened attribute) — i.e. exactly
+     Hydejack's `cover: true` behavior, with all its DOM/JS plumbing intact.
+
+  2. Below, we revert the .cover styling on the viewport whose flag is
+     FALSE, restoring Hydejack's non-cover behavior for that viewport:
+
+       - desktop_cover=false → hy-drawer.cover on desktop is overridden to
+         position:fixed/21rem (the same look as Hydejack's non-cover
+         desktop side panel). With peek-width = sidebar width, the drawer
+         is fully visible regardless of the opened/closed JS state.
+
+       - mobile_cover=false → hy-drawer.cover on mobile gets peek-width 0
+         so the "closed" state (forced by the drawer JS on subsequent
+         visits) hides the cover entirely; user accesses the drawer via
+         the menu button.
+
+  Result: each viewport behaves EXACTLY like Hydejack's native cover or
+  non-cover, just controlled per viewport.
+  ========================================================================
+{% endcomment %}
+{% if page.desktop_cover or page.mobile_cover %}
+  {% assign _bp = page.cover_breakpoint | default: site.hydejack.break_point_3 | default: 64 %}
+  {% assign _sw = site.hydejack.sidebar_width | default: 21 %}
+<style type="text/css">
+  {% unless page.mobile_cover %}
+  /* mobile_cover=false: cover hero shouldn't appear on mobile. Set
+     peek-width to 0 so once the drawer JS closes the cover (it does so
+     on every load past the first visit, per the closedOnce logic) nothing
+     remains visible. The menu button still toggles the drawer for nav. */
+  @media screen and (max-width: {{ _bp }}em) {
+    hy-drawer.cover { --hy-drawer-peek-width: 0 !important; }
+  }
+  {% endunless %}
+
+  {% unless page.desktop_cover %}
+  /* desktop_cover=false: on desktop, dress hy-drawer.cover up as the
+     standard non-cover side panel — pin the host fixed to the left at
+     sidebar-width, leaving the shadow .wrapper at its native 100vw size.
+     The drawer's translateX animation then naturally runs between the
+     21rem peek (closed → side panel look) and 100vw (opened → cover hero
+     look), so clicking #_menu smoothly slides the cover in and out.
+     Hydejack's wrapper script (drawer-hydejack-9.2.1.js) shifts #_sidebar
+     by (windowWidth - peekWidth)/2 * (1 - drawer.opacity), which centers
+     .sidebar-sticky in the 21rem peek when closed and in the 100vw cover
+     when opened — both correct, so we don't touch that transform. */
+  @media screen and (min-width: {{ _bp }}em) {
+    hy-drawer.cover,
+    hy-drawer.cover.loaded {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      bottom: 0 !important;
+      width: {{ _sw }}rem !important;
+    }
+  }
+  {% endunless %}
+
+  /* The swipe-to-dismiss hint (#_swipe, injected by Hydejack on
+     hy-drawer-init) is only meaningful while the cover hero is on screen.
+     Hide it whenever the drawer is closed; the JS below re-adds it after
+     Hydejack removes it on close so it's available on the next open. */
+  hy-drawer.cover:not([opened]) #_swipe { display: none !important; }
+</style>
+{% endif %}
