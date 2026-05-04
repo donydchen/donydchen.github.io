@@ -5,7 +5,9 @@ title:
 description: >
   Homepage of Donny Chen, a Singapore-based Research Scientist, working on 3D/4D vision. ALL VIEWS ARE SOLELY HIS OWN.
 hide_description: true
-cover: false # true
+cover: false
+desktop_cover: false      # cover hero on desktop?
+mobile_cover: true        # cover hero on mobile?
 ---
 
 <h2 class="h1 index-header" id="about">Short Bio </h2>
@@ -21,7 +23,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <div id="news-notes">
 <br />
-I will present <a class="external" href="https://iclr.cc/virtual/2026/oral/10006532" target="_blank">Depth Anything 3</a> and <a class="external" href="https://iclr.cc/virtual/2026/poster/10010908" target="_blank">Trace Anything</a> on-site at ICLR26. See you in Brazil!
+<!-- I will present <a class="external" href="https://iclr.cc/virtual/2026/oral/10006532" target="_blank">Depth Anything 3</a> and <a class="external" href="https://iclr.cc/virtual/2026/poster/10010908" target="_blank">Trace Anything</a> on-site at ICLR26. See you in Brazil! -->
 
 <!-- Put time-sensitive news below -->
 <!-- <p><a class="external" href="https://github.com/DepthAnything" target="_blank">Our team</a> has openings for full time and internship positions from time to time. If you are interested in joining us for 3D/4D vision research, please feel free to reach out to me via my company email after reading the <a href="/#disclaimer">disclaimer</a>.</p> -->
@@ -50,24 +52,40 @@ I will present <a class="external" href="https://iclr.cc/virtual/2026/oral/10006
 
 <h2 class="h1 index-header" id="publications">Selected Publications </h2>
 <p class='hl-sen'> 🤖🧠👌🏼 He prefers simple yet effective solutions </p>
-<p class='hl-sen2'> * indicates Equal Contribution </p>
+<p class='hl-sen2'> * indicates Equal Contribution; † indicates Project Lead</p>
+
+
+<div class="pub">
+  <div class="pub-title">World-R1: Reinforcing 3D Constraints for Text-to-Video Generation</div>
+  <div class="pub-venue">ICML 2026</div>
+  <div class="pub-authors">Weijie Wang*, Xiaoxuan He*, Youping Gu*, Yifan Yang, Zeyu Zhang, Yefei He, Yanbo Ding, Xirui Hu, <b>Donny Y. Chen</b>, Zhiyuan He, Yuqing Yang, and Bohan Zhuang</div>
+  <div>[<a href="https://arxiv.org/abs/2604.24764">arXiv</a>] [<a href="https://github.com/microsoft/World-R1">code</a>] [<a href="https://aka.ms/world-r1">project page</a>] 
+  [<span class="hl-work"><a href="https://huggingface.co/papers/2604.24764">Paper of the Day #1</a></span>]</div>
+</div>
+
+<div class="pub">
+  <div class="pub-title">Feed-Forward 3D Scene Modeling: A Problem-Driven Perspective</div>
+  <div class="pub-venue">Survey 2026</div>
+  <div class="pub-authors">Weijie Wang*, Qihang Cao*, Sensen Gao*, <b>Donny Y. Chen†</b>, Haofei Xu, Wenjing Bian, Songyou Peng, Tat-Jen Cham, Chuanxia Zheng, Andreas Geiger, Jianfei Cai, Jia-Wang Bian, and Bohan Zhuang</div>
+  <div>[<a href="https://arxiv.org/abs/2604.14025">arXiv</a>] [<a href="https://github.com/ziplab/Awesome-Feed-Forward-3D">code</a>] [<a href="https://ff3d-survey.github.io/">project page</a>] </div>
+</div>
 
 <div class="pub">
   <div class="pub-title"><span class="hl-work">Depth Anything 3</span>: Recovering the Visual Space from Any Views</div>
-  <div class="pub-venue">Tech Report 2025</div>
-  <div class="pub-authors">Haotong Lin*, Sili Chen*, Jun Hao Liew*, <b>Donny Y. Chen*</b>, Zhenyu Li, Guang Shi, Jiashi Feng, and Bingyi Kang*</div>
-  <div>
-  [<a href="https://arxiv.org/abs/2511.10647">arXiv</a>] 
-  [<a href="https://github.com/ByteDance-Seed/depth-anything-3">code</a> <img class="pub-code-label" src="https://img.shields.io/github/stars/ByteDance-Seed/depth-anything-3?style=flat-square&label=⭐&labelColor=555&color=2452A1">] 
-  [<a href="https://depth-anything-3.github.io/">project page</a>] 
-  [<a href="https://huggingface.co/spaces/depth-anything/depth-anything-3">demo</a>] 
-  [<a href="https://depth-anything-3.github.io/gallery.html">gallery</a>] 
-  [<a href="https://seed.bytedance.com/en/blog/seed-research-depth-anything-3-a-single-transformer-architecture-for-space-reconstruction-from-any-views?view_from=content_recommend">news</a>] 
-  [<span class="hl-work"><a href="https://huggingface.co/papers/date/2025-11-14">Paper of the Day #2</a></span>] 
-  [<span class="hl-work"><a href="https://huggingface.co/spaces?date=2025-W47">Spaces of the Week #4</a></span>] <br>
-  [also presented at <span class="hl-work"><a href="https://openreview.net/forum?id=yirunib8l8">ICLR 2026 (Oral)</a></span>]
+    <div class="pub-venue">Tech Report 2025</div>
+    <div class="pub-authors">Haotong Lin*, Sili Chen*, Jun Hao Liew*, <b>Donny Y. Chen*</b>, Zhenyu Li, Guang Shi, Jiashi Feng, and Bingyi Kang*</div>
+    <div>
+    [<a href="https://arxiv.org/abs/2511.10647">arXiv</a>] 
+    [<a href="https://github.com/ByteDance-Seed/depth-anything-3">code</a> <img class="pub-code-label" src="https://img.shields.io/github/stars/ByteDance-Seed/depth-anything-3?style=flat-square&label=⭐&labelColor=555">] 
+    [<a href="https://depth-anything-3.github.io/">project page</a>] 
+    [<a href="https://huggingface.co/spaces/depth-anything/depth-anything-3">demo</a>] 
+    [<a href="https://depth-anything-3.github.io/gallery.html">gallery</a>] 
+    [<a href="https://seed.bytedance.com/en/blog/seed-research-depth-anything-3-a-single-transformer-architecture-for-space-reconstruction-from-any-views?view_from=content_recommend">news</a>] 
+    [<span class="hl-work"><a href="https://huggingface.co/papers/date/2025-11-14">Paper of the Day #2</a></span>] 
+    [<span class="hl-work"><a href="https://huggingface.co/spaces?date=2025-W47">Spaces of the Week #4</a></span>] <br>
+    [also presented at <span class="hl-work"><a href="https://openreview.net/forum?id=yirunib8l8">ICLR 2026 Oral</a> (<a href="https://www.youtube.com/watch?v=noY558thveo" target="_blank">recording</a>, <a href="assets/pdf/DA3_Oral_ICLR2026_CHEN.pdf" target="_blank">slides</a>)</span>]
+    </div>
   </div>
-</div>
 
 <div class="pub">
   <div class="pub-title">Trace Anything: Representing Any Video in 4D via Trajectory Fields</div>
@@ -111,7 +129,9 @@ I will present <a class="external" href="https://iclr.cc/virtual/2026/oral/10006
   <div class="pub-title"><span class="hl-work">MVSplat</span>: Efficient 3D Gaussian Splatting from Sparse Multi-View Images</div>
   <div class="pub-venue">ECCV 2024 (Oral)</div>
   <div class="pub-authors"><b>Yuedong Chen</b>, Haofei Xu, Chuanxia Zheng, Bohan Zhuang, Marc Pollefeys, Andreas Geiger, Tat-Jen Cham, and Jianfei Cai</div>
-  <div>[<a href="https://arxiv.org/abs/2403.14627">arXiv</a>] [<a href="https://github.com/donydchen/mvsplat">code</a> <img class="pub-code-label" src="https://img.shields.io/github/stars/donydchen/mvsplat?style=flat-square&label=⭐&labelColor=555&color=2452A1">] [<a href="https://donydchen.github.io/mvsplat">project page</a>] [<span class="hl-work"><a href="https://news.ycombinator.com/item?id=41222655">Hacker News</a></span>] [<span class="hl-work"><a href="https://trendshift.io/repositories/8862">Trendshift #20</a></span>] [<span class="hl-work"><a href="https://resources.paperdigest.org/2025/09/most-influential-eccv-papers-2025-09-version/">Most Influential ECCV Paper #13</a></span>] </div>
+  <div>[<a href="https://arxiv.org/abs/2403.14627">arXiv</a>] 
+  [<a href="https://github.com/donydchen/mvsplat">code</a> <img class="pub-code-label" src="https://img.shields.io/github/stars/donydchen/mvsplat?style=flat-square&label=⭐&labelColor=555">] 
+  [<a href="https://donydchen.github.io/mvsplat">project page</a>] [<span class="hl-work"><a href="https://news.ycombinator.com/item?id=41222655">Hacker News</a></span>] [<span class="hl-work"><a href="https://trendshift.io/repositories/8862">Trendshift #20</a></span>] [<span class="hl-work"><a href="https://resources.paperdigest.org/2025/09/most-influential-eccv-papers-2025-09-version/">Most Influential ECCV Paper #13</a></span>] </div>
 </div>
 
 <div class="pub">
@@ -122,14 +142,14 @@ I will present <a class="external" href="https://iclr.cc/virtual/2026/oral/10006
     page</a>] </div>
 </div>
 
-<div class="pub">
+<!-- <div class="pub">
   <div class="pub-title">Object-Compositional Neural Implicit Surfaces</div>
   <div class="pub-venue">ECCV 2022</div>
   <div class="pub-authors">Qianyi Wu, Xian Liu, <b>Yuedong Chen</b>, Kejie Li, Chuanxia Zheng, Jianfei Cai, and Jianmin Zheng</div>
   <div>[<a href="https://arxiv.org/abs/2207.09686">arXiv</a>] [<a href="https://github.com/QianyiWu/objsdf">code</a>]
     [<a href="https://qianyiwu.github.io/objectsdf/">project
       page</a>] [<a href="https://youtu.be/23vxOV19bEw">demo video</a>] </div>
-</div>
+</div> -->
 
 <div class="pub">
   <div class="pub-title">Sem2NeRF: Converting Single-View Semantic Masks to Neural Radiance Fields</div>
@@ -179,6 +199,13 @@ I will present <a class="external" href="https://iclr.cc/virtual/2026/oral/10006
 </div>
 
 <div class="demo-proj-row">
+
+  <div class="card">
+    <a href="https://www.youtube.com/watch?v=noY558thveo" target="_blank">
+      <div><img src="assets/img/talk_iclr26.png" /></div>
+    </a>
+    <div class="cdesc">Oral presentation at ICLR 2026</div>
+  </div>
 
   <div class="card">
     <a href="https://bsky.app/profile/donydchen.bsky.social/post/3lldtgeyitc2h" target="_blank">
@@ -260,6 +287,30 @@ ALL OPINIONS AND VIEWS EXPRESSED ON THIS PAGE ARE SOLELY HIS OWN AND SHALL NOT B
 
 
 <div class="container">
-  <script type='text/javascript' id='clustrmaps'
-    src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d=rZHkm--x6O2bEyO0Je3uy1kjPw-mXX0YCKFUg287Tc0&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script>
+  <div id="visitor-map" style="min-height:200px;width:300px;margin:0 auto;"></div>
 </div>
+<script>
+  (function () {
+    var slot = document.getElementById('visitor-map');
+    if (!slot) return;
+    var SRC = '//cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d=rZHkm--x6O2bEyO0Je3uy1kjPw-mXX0YCKFUg287Tc0&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353';
+    var loaded = false;
+    function inject() {
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.id = 'clustrmaps';
+      s.async = true;
+      s.src = SRC;
+      slot.appendChild(s);
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries, obs) {
+        if (entries[0].isIntersecting) { obs.disconnect(); inject(); }
+      }, { rootMargin: '300px' });
+      io.observe(slot);
+    } else {
+      window.addEventListener('load', inject);
+    }
+  })();
+</script>
