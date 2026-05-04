@@ -50,28 +50,73 @@
 {% if page.desktop_cover or page.mobile_cover %}
   {% assign _bp = page.cover_breakpoint | default: site.hydejack.break_point_3 | default: 64 %}
 <script>
-  // Per-viewport cover behaviour. effective_cover=true gives Hydejack the
-  // cover layout (sidebar before main, .cover class, opened attr); we tweak
-  // the initial opened state per viewport so that:
-  //   desktop_cover=false  →  drawer starts closed (= side panel by default;
-  //                           clicking #_menu slides the cover in/out)
-  //   mobile_cover=false   →  drawer starts closed on mobile (no cover hero)
-  // Runs synchronously before the async drawer module upgrades the element,
-  // so $.opened is seeded with the correct initial value.
+  /* Per-viewport cover behaviour. Hydejack's compress_html (production
+     mode only) strips newlines inside script blocks, which collapses
+     line comments into one giant comment that swallows the rest of the
+     IIFE. Block comments only inside this script. */
   (function () {
     var drawer = document.getElementById('_drawer');
     if (!drawer) return;
     var DESKTOP_MQ = '(min-width: {{ _bp }}em)';
     var DESKTOP_COVER = {% if page.desktop_cover %}true{% else %}false{% endif %};
     var MOBILE_COVER  = {% if page.mobile_cover %}true{% else %}false{% endif %};
-    var isDesktop = window.matchMedia(DESKTOP_MQ).matches;
-    if ((isDesktop && !DESKTOP_COVER) || (!isDesktop && !MOBILE_COVER)) {
-      drawer.removeAttribute('opened');
+
+    /* Inline styles with !important beat any author CSS regardless of
+       load order, including Hydejack's production-mode critical-CSS
+       block. The @media revert blocks in _includes/my-head.html stay as
+       a fallback for when JS is disabled. */
+    var DESKTOP_LOCK = {
+      'position': 'fixed',
+      'top': '0',
+      'left': '0',
+      'bottom': '0',
+      'width': '21rem',
+      '--hy-drawer-peek-width': '21rem'
+    };
+    var MOBILE_LOCK = {
+      '--hy-drawer-peek-width': '0'
+    };
+    function setLock(props) {
+      for (var k in props) drawer.style.setProperty(k, props[k], 'important');
+    }
+    function clearLock(props) {
+      for (var k in props) drawer.style.removeProperty(k);
     }
 
-    // Hydejack removes #_swipe on every transition-to-closed. Re-add it
-    // afterwards so it's available the next time the user opens the cover.
-    // setTimeout(0) lets Hydejack's removal run first.
+    function applyState() {
+      var isDesktop = window.matchMedia(DESKTOP_MQ).matches;
+      var wantsCover = isDesktop ? DESKTOP_COVER : MOBILE_COVER;
+
+      /* Sync the opened attribute with the new viewport's intent. On first
+         call the custom element may not be upgraded yet (no .open/.close
+         methods), so fall back to attribute manipulation; on resize calls
+         the API exists and is preferred so the drawer's internal state
+         and animations stay in sync. */
+      if (wantsCover && !drawer.hasAttribute('opened')) {
+        if (typeof drawer.open === 'function') drawer.open();
+        else drawer.setAttribute('opened', '');
+      } else if (!wantsCover && drawer.hasAttribute('opened')) {
+        if (typeof drawer.close === 'function') drawer.close();
+        else drawer.removeAttribute('opened');
+      }
+
+      if (isDesktop && !DESKTOP_COVER) {
+        clearLock(MOBILE_LOCK);
+        setLock(DESKTOP_LOCK);
+      } else if (!isDesktop && !MOBILE_COVER) {
+        clearLock(DESKTOP_LOCK);
+        setLock(MOBILE_LOCK);
+      } else {
+        clearLock(DESKTOP_LOCK);
+        clearLock(MOBILE_LOCK);
+      }
+    }
+    applyState();
+    window.addEventListener('resize', applyState);
+
+    /* Hydejack removes #_swipe on every transition-to-closed. Re-add it
+       afterwards so it's available the next time the user opens the
+       cover. setTimeout(0) lets Hydejack's removal run first. */
     drawer.addEventListener('hy-drawer-transitioned', function (ev) {
       if (ev.detail) return;
       setTimeout(function () {
