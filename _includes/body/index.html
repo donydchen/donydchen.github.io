@@ -1,0 +1,94 @@
+{% comment %}
+  Project override of hydejack/_includes/body/index.html.
+
+  Adds per-viewport cover control on top of Hydejack's `cover` flag:
+
+      desktop_cover: true|false   # show the cover hero on desktop
+      mobile_cover:  true|false   # show the cover hero on mobile
+
+  When EITHER flag is true, we set Hydejack's `effective_cover` to true so
+  the theme renders the standard cover layout (sidebar BEFORE main, .cover
+  class on hy-drawer, opened attribute) — i.e. exactly Hydejack's `cover:
+  true` behavior. CSS in _includes/my-head.html then reverts the .cover
+  styling on the viewport whose flag is false (e.g. on desktop when
+  desktop_cover is false, hy-drawer.cover is styled like the non-cover
+  side panel — same visual result as `cover: false`).
+
+  When both flags are false, falls back to page.cover so existing pages
+  keep working unchanged. The rest of this file mirrors the theme version
+  verbatim.
+{% endcomment %}
+{% include_cached pro/dark-mode-fix.html %}
+
+{% if page.desktop_cover or page.mobile_cover %}
+  {% assign effective_cover = true %}
+{% else %}
+  {% assign effective_cover = page.cover %}
+{% endif %}
+
+{% assign assets_url = "/assets/" | relative_url %}
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='{{ assets_url }}']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  {% capture sidebar %}{% include_cached body/sidebar.html cover=effective_cover invert=page.invert_sidebar theme_color=page.theme_color image=image color=color %}{% endcapture %}
+  {% if effective_cover %}{{ sidebar }}{% endif %}
+  {% include_cached body/menu.html %}
+  {% include body/main.html %}
+  {% unless effective_cover %}{{ sidebar }}{% endunless %}
+</hy-push-state>
+
+{% unless page.redirect %}
+  {% include_cached body/scripts.html %}
+  {% include my-body.html %}
+{% endunless %}
+
+{% if page.desktop_cover or page.mobile_cover %}
+  {% assign _bp = page.cover_breakpoint | default: site.hydejack.break_point_3 | default: 64 %}
+<script>
+  // Per-viewport cover behaviour. effective_cover=true gives Hydejack the
+  // cover layout (sidebar before main, .cover class, opened attr); we tweak
+  // the initial opened state per viewport so that:
+  //   desktop_cover=false  →  drawer starts closed (= side panel by default;
+  //                           clicking #_menu slides the cover in/out)
+  //   mobile_cover=false   →  drawer starts closed on mobile (no cover hero)
+  // Runs synchronously before the async drawer module upgrades the element,
+  // so $.opened is seeded with the correct initial value.
+  (function () {
+    var drawer = document.getElementById('_drawer');
+    if (!drawer) return;
+    var DESKTOP_MQ = '(min-width: {{ _bp }}em)';
+    var DESKTOP_COVER = {% if page.desktop_cover %}true{% else %}false{% endif %};
+    var MOBILE_COVER  = {% if page.mobile_cover %}true{% else %}false{% endif %};
+    var isDesktop = window.matchMedia(DESKTOP_MQ).matches;
+    if ((isDesktop && !DESKTOP_COVER) || (!isDesktop && !MOBILE_COVER)) {
+      drawer.removeAttribute('opened');
+    }
+
+    // Hydejack removes #_swipe on every transition-to-closed. Re-add it
+    // afterwards so it's available the next time the user opens the cover.
+    // setTimeout(0) lets Hydejack's removal run first.
+    drawer.addEventListener('hy-drawer-transitioned', function (ev) {
+      if (ev.detail) return;
+      setTimeout(function () {
+        if (document.getElementById('_swipe')) return;
+        var tpl = document.getElementById('_hrefSwipeSVG');
+        var sb  = document.getElementById('_sidebar');
+        if (!tpl || !sb) return;
+        var img = document.createElement('img');
+        img.id  = '_swipe';
+        img.src = tpl.href;
+        img.alt = 'Swipe image';
+        img.addEventListener('click', function () { drawer.close(); });
+        sb.appendChild(img);
+      }, 0);
+    });
+  })();
+</script>
+{% endif %}
+
+{% include_cached templates/index.html %}
