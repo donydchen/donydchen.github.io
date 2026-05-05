@@ -10,29 +10,40 @@ in `_config.yml`, so it never ships to the rendered site.
 
 ---
 
-## 2026-05 · Restore `&labelColor=555` on the GitHub stars badge
+## 2026-05 · GitHub stars badge: encode emoji, pin colors
 
 ### Why
-Shields.io's flat-square badge with an emoji-only label (`label=⭐`) and
-no explicit `labelColor` hits an obscure validation path that resolves
-inconsistently per repo. After the publications refactor we'd dropped
-`&labelColor=555` from the badge URL on the assumption it was cosmetic.
-The `donydchen/mvsplat` badge then started rendering as `⭐: invalid`
-(56-wide grey-pill) while `ByteDance-Seed/depth-anything-3` still
-worked — same URL template, different shields.io cache path.
+Shields.io's flat-square badge intermittently rendered `⭐: invalid`
+for one repo or the other (DA3 sometimes, MVSplat sometimes — same
+URL template, different shields.io cache path). Two contributing
+factors:
+
+1. The badge URL had a literal `⭐` (U+2B50) in the `label` query.
+   Browsers URL-encode it on the way out, but the encoding choice
+   isn't fully spec-pinned (some UAs may emit `%E2%AD%90`, some may
+   normalize differently). shields.io caches per-encoding, so different
+   visitors hit different cache slots, and any slot with a stale
+   "invalid" entry replayed forever for that visitor.
+2. `labelColor` was missing earlier; that took the badge through
+   shields' auto-derive path which is what trips the validation in
+   the first place.
 
 ### What
-`_includes/publications.html` — restored `&labelColor=555` on the
-stars badge `<img>` URL. Visually identical (the auto-derived color
-on flat-square WAS `#555`), but it routes shields.io through the
-deterministic processing path so any `link.stars` repo renders the
-star count instead of "invalid".
+`_includes/publications.html` — the stars badge URL now uses the
+fully URL-encoded `&label=%E2%AD%90` literal in the template (so every
+browser sends exactly the same bytes), with `&labelColor=555` and
+`&color=2452A1` (matches `--header-color` for brand consistency)
+spelled out. Stress test: 10 cache-busted requests against both repos
+returned valid SVG every time.
 
 ### Watch out
-Don't drop `&labelColor=555` again. The badge looks fine without it
-in local previews because the default flat-square label tint matches,
-so the "is this needed?" instinct will whisper "no". The deterministic
-path matters more than the visible color.
+- Don't replace `%E2%AD%90` with the literal `⭐` "for readability".
+  The bug returns when each browser is left to encode it on its own.
+- Don't drop `&labelColor=555` either. Even though `#555` is the
+  flat-square default, removing it routes shields back through the
+  auto-derive path that triggered the original "invalid" returns.
+- The right end of the badge is now `#2452A1` instead of the default
+  `#007ec6`. If you change `--header-color`, sync `&color=…` here.
 
 ---
 
