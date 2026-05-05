@@ -64,14 +64,22 @@
     /* Inline styles with !important beat any author CSS regardless of
        load order, including Hydejack's production-mode critical-CSS
        block. The @media revert blocks in _includes/my-head.html stay as
-       a fallback for when JS is disabled. */
-    var DESKTOP_LOCK = {
+       a fallback for when JS is disabled. The desktop side-panel widens
+       to 31.5rem (1.5× the 21rem default) at break-point-dynamic (104em)
+       to fill empty right-side space on wide monitors; below that we
+       keep 21rem so the article column isn't squeezed on narrow desktops. */
+    var WIDE_DESKTOP_MQ = '(min-width: 104em)';
+    var DESKTOP_LOCK_BASE = {
       'position': 'fixed',
       'top': '0',
       'left': '0',
       'bottom': '0',
       'width': '21rem',
       '--hy-drawer-peek-width': '21rem'
+    };
+    var DESKTOP_LOCK_WIDE = {
+      'width': '31.5rem',
+      '--hy-drawer-peek-width': '31.5rem'
     };
     var MOBILE_LOCK = {
       '--hy-drawer-peek-width': '0'
@@ -85,6 +93,7 @@
 
     function applyState() {
       var isDesktop = window.matchMedia(DESKTOP_MQ).matches;
+      var isWideDesktop = window.matchMedia(WIDE_DESKTOP_MQ).matches;
       var wantsCover = isDesktop ? DESKTOP_COVER : MOBILE_COVER;
 
       /* Sync the opened attribute with the new viewport's intent. On first
@@ -102,25 +111,31 @@
 
       if (isDesktop && !DESKTOP_COVER) {
         clearLock(MOBILE_LOCK);
-        setLock(DESKTOP_LOCK);
+        setLock(DESKTOP_LOCK_BASE);
+        if (isWideDesktop) setLock(DESKTOP_LOCK_WIDE);
       } else if (!isDesktop && !MOBILE_COVER) {
-        clearLock(DESKTOP_LOCK);
+        clearLock(DESKTOP_LOCK_BASE);
+        clearLock(DESKTOP_LOCK_WIDE);
         setLock(MOBILE_LOCK);
       } else {
-        clearLock(DESKTOP_LOCK);
+        clearLock(DESKTOP_LOCK_BASE);
+        clearLock(DESKTOP_LOCK_WIDE);
         clearLock(MOBILE_LOCK);
       }
     }
     applyState();
-    /* Only re-evaluate when actually crossing the desktop/mobile breakpoint.
+    /* Only re-evaluate when actually crossing a width-driven breakpoint.
        Listening to `resize` directly would also fire on every iOS Safari
        address-bar collapse/expand (height changes, width unchanged), which
        would re-open the cover after the user dismissed it on mobile and
        break scrolling. matchMedia('change') fires only on width-driven
-       breakpoint crossings. */
-    var _mq = window.matchMedia(DESKTOP_MQ);
-    if (_mq.addEventListener) _mq.addEventListener('change', applyState);
-    else if (_mq.addListener) _mq.addListener(applyState);
+       breakpoint crossings — we listen to both the desktop/mobile boundary
+       and the wide-desktop boundary so the side-panel can switch sizes. */
+    [DESKTOP_MQ, WIDE_DESKTOP_MQ].forEach(function (q) {
+      var _mq = window.matchMedia(q);
+      if (_mq.addEventListener) _mq.addEventListener('change', applyState);
+      else if (_mq.addListener) _mq.addListener(applyState);
+    });
 
     /* Hydejack removes #_swipe on every transition-to-closed. Re-add it
        afterwards so it's available the next time the user opens the

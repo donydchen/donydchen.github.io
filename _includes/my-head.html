@@ -387,8 +387,9 @@
      `margin: auto`, calibrated to leave exactly sidebar-width on the left
      for the original 54rem column. With our wider 57rem, centering would
      pull the left edge slightly into the sidebar gutter. Pin the left
-     gutter to sidebar-width + content-margin-5; right margin auto-fills,
-     which keeps the visual unchanged on the left. */
+     gutter to default-sidebar (21rem) + content-margin-5 (4rem); right
+     margin auto-fills, which keeps the visual unchanged on the left.
+     desktop_cover=false pages override this further down. */
   @media screen and (min-width: 104rem) {
     .content {
       margin-left: 25rem;
@@ -406,7 +407,11 @@
 
   Hydejack's break-point-3 (64em) and sidebar-width (21rem) are hardcoded
   below so VSCode parses each <style> block as pure CSS; if either is ever
-  customised in _config.yml these values need to be updated to match.
+  customised in _config.yml these values need to be updated to match. On
+  desktop_cover=false pages the side panel widens to 31.5rem (= 1.5× the
+  default) at break-point-dynamic (≥104em / 1664px) where empty right-
+  side space starts to be noticeable; below that breakpoint we keep the
+  21rem default so narrow desktops don't squeeze the article column.
 
   How it works (no theme modification):
 
@@ -417,9 +422,10 @@
 
   2. Each <style> block below reverts the .cover styling on the viewport
      whose flag is FALSE, restoring Hydejack's non-cover behavior:
-       - desktop_cover=false → hy-drawer.cover pinned position:fixed/21rem
-         with peek-width=21rem (consistent side panel; #_menu still slides
-         the cover hero in and out via the drawer's native translateX).
+       - desktop_cover=false → hy-drawer.cover pinned position:fixed at
+         21rem (≥64em) / 31.5rem (≥104em). The drawer's translateX runs
+         between that peek (closed → side panel look) and 100vw (opened →
+         cover hero look), so #_menu still slides the cover in and out.
        - mobile_cover=false  → hy-drawer.cover on mobile gets peek-width 0
          so the closed state hides the cover entirely; user accesses the
          drawer via the menu button.
@@ -443,11 +449,11 @@
 <style type="text/css">
   /* desktop_cover=false: on desktop, dress hy-drawer.cover up as the
      standard non-cover side panel — pin the host fixed to the left at
-     sidebar-width and lock --hy-drawer-peek-width so the visible side
-     panel stays a consistent 21rem at every viewport. The drawer's
-     translateX animation runs between the 21rem peek (closed → side
-     panel look) and 100vw (opened → cover hero look), so clicking #_menu
-     smoothly slides the cover in and out. */
+     21rem and lock --hy-drawer-peek-width so the visible side panel
+     stays consistent at every viewport. The drawer's translateX
+     animation runs between the peek (closed → side panel look) and
+     100vw (opened → cover hero look), so clicking #_menu smoothly
+     slides the cover in and out. */
   @media screen and (min-width: 64em) {
     hy-drawer.cover,
     hy-drawer.cover.loaded {
@@ -459,14 +465,22 @@
       --hy-drawer-peek-width: 21rem !important;
     }
   }
-  /* Hydejack's body::before is a fixed left bar tinted with --gray-bg
-     that's meant to mirror the visible sidebar width. At break-point-
-     dynamic (≥104rem) it grows to `calc(50% - half-content)`, which
-     bleeds outside our forced 21rem peek and shows as a faint
-     half-transparent rectangle on the right of the side panel in dark
-     mode. Pin it to sidebar-width so the tint matches the real panel. */
+  /* At break-point-dynamic (≥104em ≈ 1664px) wide-desktop viewports
+     have plenty of empty space on the right of the article column.
+     Widen the side panel to 31.5rem (= 1.5× the 21rem default) and
+     push .content right by the same delta so the gap to the article
+     stays at content-margin-5 (4rem). Hydejack's body::before would
+     normally grow to `calc(50% - half-content)` at this breakpoint
+     and bleed beyond the visible panel as a faint half-transparent
+     rectangle in dark mode — pin it to match the new sidebar-width. */
   @media screen and (min-width: 104rem) {
-    body::before { width: 21rem !important; }
+    hy-drawer.cover,
+    hy-drawer.cover.loaded {
+      width: 31.5rem !important;
+      --hy-drawer-peek-width: 31.5rem !important;
+    }
+    body::before { width: 31.5rem !important; }
+    .content { margin-left: 35.5rem; }
   }
 </style>
 {% endunless %}
