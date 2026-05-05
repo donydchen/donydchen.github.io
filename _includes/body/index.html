@@ -112,7 +112,15 @@
       }
     }
     applyState();
-    window.addEventListener('resize', applyState);
+    /* Only re-evaluate when actually crossing the desktop/mobile breakpoint.
+       Listening to `resize` directly would also fire on every iOS Safari
+       address-bar collapse/expand (height changes, width unchanged), which
+       would re-open the cover after the user dismissed it on mobile and
+       break scrolling. matchMedia('change') fires only on width-driven
+       breakpoint crossings. */
+    var _mq = window.matchMedia(DESKTOP_MQ);
+    if (_mq.addEventListener) _mq.addEventListener('change', applyState);
+    else if (_mq.addListener) _mq.addListener(applyState);
 
     /* Hydejack removes #_swipe on every transition-to-closed. Re-add it
        afterwards so it's available the next time the user opens the
