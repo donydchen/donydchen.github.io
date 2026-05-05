@@ -28,11 +28,11 @@
 
     /* Highlight work links in light mode (when no explicit mode is set) */
     body:not(.dark-mode) .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external) {
-      text-decoration-color: rgba(255, 140, 0, 0.4);
+      text-decoration-color: color-mix(in srgb, var(--highlight-color) 40%, transparent);
     }
 
     body:not(.dark-mode) .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external):hover {
-      text-decoration-color: rgba(255, 140, 0, 0.8);
+      text-decoration-color: color-mix(in srgb, var(--highlight-color) 80%, transparent);
     }
   }
 
@@ -46,18 +46,18 @@
       --header-color: #8ab4f8;
       --bright-color: #dd7e7e;
       --subhead-color: #a9b7c6;
-      --highlight-color: #FFD54F;
+      --highlight-color: #E5BC42;
       --link-underline-color: rgba(138, 180, 248, 0.3);
     }
 
     /* Highlight work links in dark mode */
     body.dark-mode .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external) {
-      text-decoration-color: rgba(255, 213, 79, 0.4);
+      text-decoration-color: color-mix(in srgb, var(--highlight-color) 40%, transparent);
       transition: text-decoration-color 250ms;
     }
 
     body.dark-mode .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external):hover {
-      text-decoration-color: rgba(255, 213, 79, 0.8);
+      text-decoration-color: color-mix(in srgb, var(--highlight-color) 80%, transparent);
     }
   }
 
@@ -67,17 +67,17 @@
       --header-color: #8ab4f8;
       --bright-color: #dd7e7e;
       --subhead-color: #a9b7c6;
-      --highlight-color: #FFD54F;
+      --highlight-color: #E5BC42;
       --link-underline-color: rgba(138, 180, 248, 0.3);
     }
 
     /* Highlight work links in dark mode (when no explicit mode is set) */
     body:not(.light-mode) .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external) {
-      text-decoration-color: rgba(255, 213, 79, 0.4);
+      text-decoration-color: color-mix(in srgb, var(--highlight-color) 40%, transparent);
     }
 
     body:not(.light-mode) .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external):hover {
-      text-decoration-color: rgba(255, 213, 79, 0.8);
+      text-decoration-color: color-mix(in srgb, var(--highlight-color) 80%, transparent);
     }
   }
 

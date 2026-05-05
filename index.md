@@ -81,8 +81,8 @@ His academic journey began with the completion of both his MEng and BEng degrees
     [<a href="https://huggingface.co/spaces/depth-anything/depth-anything-3">demo</a>] 
     [<a href="https://depth-anything-3.github.io/gallery.html">gallery</a>] 
     [<a href="https://seed.bytedance.com/en/blog/seed-research-depth-anything-3-a-single-transformer-architecture-for-space-reconstruction-from-any-views?view_from=content_recommend">news</a>] 
-    [<span class="hl-work"><a href="https://huggingface.co/papers/date/2025-11-14">Paper of the Day #2</a></span>] 
-    [<span class="hl-work"><a href="https://huggingface.co/spaces?date=2025-W47">Spaces of the Week #4</a></span>] <br>
+    [<span><a href="https://huggingface.co/spaces?date=2025-W47">Spaces of the Week #4</a></span>]
+    [<span class="hl-work"><a href="https://huggingface.co/papers/2511.10647">Paper of the Day #2</a></span>]<br>
     [also presented at <span class="hl-work"><a href="https://openreview.net/forum?id=yirunib8l8">ICLR 2026 Oral</a> (<a href="https://www.youtube.com/watch?v=noY558thveo" target="_blank">recording</a>, <a href="assets/pdf/DA3_Oral_ICLR2026_CHEN.pdf" target="_blank">slides</a>)</span>]
     </div>
   </div>
@@ -204,7 +204,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
     <a href="https://www.youtube.com/watch?v=noY558thveo" target="_blank">
       <div><img src="assets/img/talk_iclr26.png" /></div>
     </a>
-    <div class="cdesc">Oral presentation at ICLR 2026</div>
+    <div class="cdesc">Oral presentation at ICLR 2026 <span class="icon-youtube"></span></div>
   </div>
 
   <div class="card">
@@ -232,7 +232,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
     <a href="https://eccv2024.ecva.net/virtual/2024/poster/1231" target="_blank">
       <div><img src="assets/img/eccv24_oral.jpeg" /></div>
     </a>
-    <div class="cdesc">Oral presentation at ECCV 2024</div>
+    <div class="cdesc">Oral presentation at ECCV 2024 <span class="icon-youtube"></span></div>
   </div>
 
   <div class="card">
@@ -246,7 +246,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
     <a href="https://www.bilibili.com/video/BV1sAWhe1ENw/" target="_blank">
       <div><img src="assets/img/talk_3dcver.jpeg" /></div>
     </a>
-    <div class="cdesc">Invited talk at 3DCVer</div>
+    <div class="cdesc">Invited talk at 3DCVer <span class="icon-youtube"></span></div>
   </div>  
 
   <div class="card">
@@ -269,7 +269,7 @@ His academic journey began with the completion of both his MEng and BEng degrees
 
 <h2 class="h1 index-header" id="misc">Miscellanies</h2>
 
-* Conference Reviewer: ECCV('24), CVPR('23-'26), ICCV('23-'25), NeurIPS('24-'25), ICLR('25-'26), ICML('25), 3DV('24-'26), AAAI('24-'26), ACMMM('21‑'24), ACCV('24), ISMAR('23-'24), IEEEVR('24)
+* Conference Reviewer: ECCV('24-'26), CVPR('23-'26), ICCV('23-'25), NeurIPS('24-'25), ICLR('25-'26), ICML('25), 3DV('24-'26), AAAI('24-'26), ACMMM('21‑'24), ACCV('24), ISMAR('23-'24), IEEEVR('24)
 * Journal Reviewer: TPAMI, IJCV, TIP, TVCG, TMM, TCSVT, TOMM, TVCJ, Computers & Graphics, The Visual Computer
 * Donny is a native speaker of [Teochew](https://en.wikipedia.org/wiki/Teochew_dialect), fluent in English, [Cantonese](https://en.wikipedia.org/wiki/Cantonese), Mandarin, and also familiar with [Singlish](https://en.wikipedia.org/wiki/Singlish).
 
