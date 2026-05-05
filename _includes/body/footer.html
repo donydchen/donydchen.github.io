@@ -1,12 +1,40 @@
-<!-- {% if site.copyright.size > 0 or site.legal.size > 0 or site.hydejack.advertise %} -->
-<footer class="content" role="contentinfo">
+{% comment %}
+  Project shadow of hydejack/_includes/body/footer.html.
 
+  Renders, in order, on every page (homepage, 404, license, posts, …):
+    1. `disclaimer.html`  — heading + legal notice.
+    2. `<hr class="post-disclaimer-divider">` — visual separator with
+       extra breathing room (CSS in `_includes/my-head.html`) so the
+       disclaimer block doesn't bleed into the visitor map.
+    3. `visitor-map.html` — clustrmaps tracker, deferred so it never
+       blocks rendering.
+    4. `components/dingbat.html` — the chess-piece divider that
+       Hydejack would normally inject right after `</article>`. We
+       moved it here so it lands AFTER the disclaimer + visitor-map
+       (the project shadows of `_layouts/plain.html` and
+       `_layouts/page.html` strip the original include for that
+       reason).
+    5. The upstream copyright + legal footer block, mirrored from
+       Hydejack's body/footer.html. The "Powered by Hydejack /
+       Modified from … / Hosted at GitHub Pages" credit paragraph has
+       been removed — those attributions now live on the
+       Documentation page (`docs.md`) instead, so every page footer
+       stays focused on copyright + legal.
+{% endcomment %}
+{% include disclaimer.html %}
+
+<hr class="post-disclaimer-divider" />
+
+{% include visitor-map.html %}
+
+{% include components/dingbat.html %}
+
+{% if site.copyright.size > 0 or site.legal.size > 0 or site.hydejack.advertise %}
+<footer class="content" role="contentinfo">
   <hr/>
-  
   {% if site.copyright.size > 0 %}
     <p><small class="copyright">{{ site.copyright | markdownify | replace:'<p>','' | replace:'</p>','' }}</small></p>
   {% endif %}
-
   {% if site.legal.size > 0 %}
     <nav class="legal"><small>
     {% for node in site.legal %}
@@ -15,13 +43,7 @@
       {% unless forloop.last %}{{ site.data.strings.separator | default:'|' }}{% endunless %}
     {% endfor %}
     </small></nav>
-  {% endif %} 
-
-    <p style="font-size: smaller">Powered by <a class="external" href="https://hydejack.com/" target="_blank">Hydejack</a>; 
-    Modified from <a class="external" href="https://bo-zhang.me/" target="_blank">HERE</a>;
-    Hosted at <a class="external" href="https://docs.github.com/en/pages" target="_blank">GitHub Pages</a>.
-    </p>
-
+  {% endif %}
   <hr class="sr-only"/>
 </footer>
-<!-- {% endif %} -->
+{% endif %}

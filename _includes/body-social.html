@@ -1,0 +1,40 @@
+{% comment %}
+  Reusable body-social row, fed by the same data the sidebar reads:
+    - `_data/authors.yml`  → `site.data.authors.first[1].social` (the
+      ordered list of platform: username pairs).
+    - `_data/social.yml`   → `site.data.social[platform]` (icon class,
+      display name, URL prefix per platform).
+
+  Visually mirrors the sidebar's icon row but adds the two body-social
+  flourishes: a visible label next to each icon and `target="_blank"`
+  on each link. To add or remove a social account, edit `_data/authors.yml`
+  ONLY — both the sidebar and this row pick it up automatically. To rename
+  a platform's display label (e.g. "Twitter" → "X"), edit `_data/social.yml`.
+{% endcomment %}
+{% assign author = site.data.authors.first[1] | default:site.author %}
+<div class="body-social sidebar-social">
+  <ul>
+  {% for entry in author.social %}
+    {% assign platform = entry[0] | downcase %}
+    {% assign username = entry[1] %}
+    {% if username.size > 0 %}
+      {% assign data = site.data.social[platform] %}
+      {% assign name = data.name | default:platform %}
+      {% assign icon = data.icon | default:'icon-link' %}
+      {% if username contains '//' or username contains 'mailto:' %}
+        {% assign url = username %}
+      {% else %}
+        {% assign url = username | prepend:data.prepend | append:data.append %}
+      {% endif %}
+      {% comment %} For email, surface the address itself as the
+         hover tooltip instead of the generic platform name. {% endcomment %}
+      {% if platform == 'email' %}
+        {% assign tooltip = username %}
+      {% else %}
+        {% assign tooltip = name %}
+      {% endif %}
+      <li><a href="{{ url }}" title="{{ tooltip }}" class="no-mark-external" target="_blank"><span class="{{ icon }}"></span> <span aria-hidden="true">{{ name }}</span><span class="sr-only"> profile</span></a></li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>

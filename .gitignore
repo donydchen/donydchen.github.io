@@ -10,3 +10,7 @@ vendor/
 
 # Local copy of the remote_theme for reference; fetched at build time
 hydejack/
+
+# Editor / linter configs (per-developer, not part of the published site)
+.vscode/
+.markdownlint.json

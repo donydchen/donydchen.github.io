@@ -1,0 +1,166 @@
+# Selected Publications.
+#
+# Newest at the top. Each entry renders one .pub block via
+# `_includes/publications.html`. Comment out (`#`) the lines for a paper
+# you want to hide without losing the data.
+#
+# Schema per entry:
+#   title    - paper title. May contain inline HTML (e.g. wrap part of
+#              the title with `<span class="hl-work">…</span>` to apply
+#              the accent highlight, like "Depth Anything 3" below).
+#   venue    - venue + year string (e.g. "ICML 2026", "Tech Report 2025").
+#   authors  - plain comma-separated author list. Conventions:
+#                * the homepage owner names listed in `_data/authors.yml`
+#                  (currently "Donny Y. Chen" and "Yuedong Chen") are
+#                  auto-bolded by the include — do NOT wrap them in
+#                  <b>…</b> here;
+#                * the include also inserts "and " before the final
+#                  author automatically — do NOT write ", and X";
+#                * `*` for equal contribution and `†` for project lead
+#                  go right after the name (e.g. "Weijie Wang*",
+#                  "Donny Y. Chen†");
+#                * `<i>et al.</i>` is honored verbatim if you want to
+#                  intentionally elide the tail of a long author list.
+#   links    - ordered list of badge links rendered as `[text]`. Each:
+#                text       - link label (required)
+#                url        - link target (required)
+#                highlight  - true to wrap in `<span class="hl-work">`
+#                             (the colored accent badge)
+#                stars      - optional "owner/repo" to append a GitHub
+#                             stars shield badge after the link
+#   extra    - optional raw HTML appended after the links row, e.g.
+#              "also presented at …" notes that don't fit the badge
+#              pattern. Supports multi-line via the `|` YAML literal.
+
+- title: 'World-R1: Reinforcing 3D Constraints for Text-to-Video Generation'
+  venue: 'ICML 2026'
+  authors: 'Weijie Wang*, Xiaoxuan He*, Youping Gu*, Yifan Yang, Zeyu Zhang, Yefei He, Yanbo Ding, Xirui Hu, Donny Y. Chen, Zhiyuan He, Yuqing Yang, Bohan Zhuang'
+  links:
+    - {text: 'arXiv',       url: 'https://arxiv.org/abs/2604.24764'}
+    - {text: 'code',        url: 'https://github.com/microsoft/World-R1'}
+    - {text: 'project page', url: 'https://aka.ms/world-r1'}
+    - {text: 'Paper of the Day #1', url: 'https://huggingface.co/papers/2604.24764', highlight: true}
+
+- title: 'Feed-Forward 3D Scene Modeling: A Problem-Driven Perspective'
+  venue: 'Survey 2026'
+  authors: 'Weijie Wang*, Qihang Cao*, Sensen Gao*, Donny Y. Chen†, Haofei Xu, Wenjing Bian, Songyou Peng, Tat-Jen Cham, Chuanxia Zheng, Andreas Geiger, Jianfei Cai, Jia-Wang Bian, Bohan Zhuang'
+  links:
+    - {text: 'arXiv',       url: 'https://arxiv.org/abs/2604.14025'}
+    - {text: 'code',        url: 'https://github.com/ziplab/Awesome-Feed-Forward-3D'}
+    - {text: 'project page', url: 'https://ff3d-survey.github.io/'}
+
+- title: '<span class="hl-work">Depth Anything 3</span>: Recovering the Visual Space from Any Views'
+  venue: 'Tech Report 2025'
+  authors: 'Haotong Lin*, Sili Chen*, Jun Hao Liew*, Donny Y. Chen*, Zhenyu Li, Guang Shi, Jiashi Feng, Bingyi Kang*'
+  links:
+    - {text: 'arXiv',         url: 'https://arxiv.org/abs/2511.10647'}
+    - {text: 'code',          url: 'https://github.com/ByteDance-Seed/depth-anything-3', stars: 'ByteDance-Seed/depth-anything-3'}
+    - {text: 'project page',  url: 'https://depth-anything-3.github.io/'}
+    - {text: 'demo',          url: 'https://huggingface.co/spaces/depth-anything/depth-anything-3'}
+    - {text: 'gallery',       url: 'https://depth-anything-3.github.io/gallery.html'}
+    - {text: 'news',          url: 'https://seed.bytedance.com/en/blog/seed-research-depth-anything-3-a-single-transformer-architecture-for-space-reconstruction-from-any-views?view_from=content_recommend'}
+    - {text: 'Spaces of the Week #4', url: 'https://huggingface.co/spaces?date=2025-W47'}
+    - {text: 'Paper of the Day #2',   url: 'https://huggingface.co/papers/2511.10647', highlight: true}
+  extra: |
+    <br>[also presented at <span class="hl-work"><a href="https://openreview.net/forum?id=yirunib8l8">ICLR 2026 Oral</a> (<a href="https://www.youtube.com/watch?v=noY558thveo" target="_blank">recording</a>, <a href="assets/pdf/DA3_Oral_ICLR2026_CHEN.pdf" target="_blank">slides</a>)</span>]
+
+- title: 'Trace Anything: Representing Any Video in 4D via Trajectory Fields'
+  venue: 'ICLR 2026'
+  authors: 'Xinhang Liu, Yuxi Xiao, Donny Y. Chen, Jiashi Feng, Yu-Wing Tai, Chi-Keung Tang, Bingyi Kang'
+  links:
+    - {text: 'arXiv',       url: 'https://arxiv.org/abs/2510.13802'}
+    - {text: 'code',        url: 'https://github.com/ByteDance-Seed/TraceAnything'}
+    - {text: 'project page', url: 'https://trace-anything.github.io/'}
+
+- title: 'Revisiting Depth Representations for Feed-Forward 3D Gaussian Splatting'
+  venue: '3DV 2026'
+  authors: 'Duochao Shi*, Weijie Wang*, Donny Y. Chen, Zeyu Zhang, Jia-Wang Bian, Bohan Zhuang'
+  links:
+    - {text: 'arXiv',       url: 'https://arxiv.org/abs/2506.05327'}
+    - {text: 'code',        url: 'https://github.com/aim-uofa/PM-Loss'}
+    - {text: 'project page', url: 'https://aim-uofa.github.io/PMLoss/'}
+  extra: |
+    [also presented at <a href="https://space-in-vision-language-embodied-ai.github.io/">SpaVLE&#64;NeurIPS'25</a>]
+
+- title: 'ZPressor: Bottleneck-Aware Compression for Scalable Feed-Forward 3DGS'
+  venue: 'NeurIPS 2025'
+  authors: 'Weijie Wang, Donny Y. Chen, Zeyu Zhang, Duochao Shi, Akide Liu, Bohan Zhuang'
+  links:
+    - {text: 'arXiv',       url: 'https://arxiv.org/abs/2505.23734'}
+    - {text: 'code',        url: 'https://github.com/ziplab/ZPressor'}
+    - {text: 'project page', url: 'https://lhmd.top/zpressor/'}
+
+- title: 'Explicit Correspondence Matching for Generalizable Neural Radiance Fields'
+  venue: 'TPAMI 2025'
+  authors: 'Yuedong Chen, Haofei Xu, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, Jianfei Cai'
+  links:
+    - {text: 'arXiv',       url: 'http://arxiv.org/abs/2304.12294'}
+    - {text: 'code',        url: 'https://github.com/donydchen/matchnerf'}
+    - {text: 'project page', url: 'https://donydchen.github.io/matchnerf/'}
+
+- title: 'MVSplat360: Feed-Forward 360 Scene Synthesis from Sparse Views'
+  venue: 'NeurIPS 2024'
+  authors: 'Yuedong Chen, Chuanxia Zheng, Haofei Xu, Bohan Zhuang, Andrea Vedaldi, Tat-Jen Cham, Jianfei Cai'
+  links:
+    - {text: 'arXiv',       url: 'https://arxiv.org/abs/2411.04924'}
+    - {text: 'code',        url: 'https://github.com/donydchen/mvsplat360'}
+    - {text: 'project page', url: 'https://donydchen.github.io/mvsplat360'}
+  extra: |
+    [also presented at <a href="https://ajcai2024.org/call_for_encore.html">AJCAI'24</a> &amp; <a href="https://3dvconf.github.io/2025/call-for-nectar-track/">3DV'25</a>]
+
+- title: '<span class="hl-work">MVSplat</span>: Efficient 3D Gaussian Splatting from Sparse Multi-View Images'
+  venue: 'ECCV 2024 (Oral)'
+  authors: 'Yuedong Chen, Haofei Xu, Chuanxia Zheng, Bohan Zhuang, Marc Pollefeys, Andreas Geiger, Tat-Jen Cham, Jianfei Cai'
+  links:
+    - {text: 'arXiv',       url: 'https://arxiv.org/abs/2403.14627'}
+    - {text: 'code',        url: 'https://github.com/donydchen/mvsplat', stars: 'donydchen/mvsplat'}
+    - {text: 'project page', url: 'https://donydchen.github.io/mvsplat'}
+    - {text: 'Hacker News',                  url: 'https://news.ycombinator.com/item?id=41222655', highlight: true}
+    - {text: 'Trendshift #20',               url: 'https://trendshift.io/repositories/8862', highlight: true}
+    - {text: 'Most Influential ECCV Paper #13', url: 'https://resources.paperdigest.org/2025/09/most-influential-eccv-papers-2025-09-version/', highlight: true}
+
+- title: 'MuRF: Multi-Baseline Radiance Fields'
+  venue: 'CVPR 2024'
+  authors: 'Haofei Xu, Anpei Chen, Yuedong Chen, Christos Sakaridis, Yulun Zhang, Marc Pollefeys, Andreas Geiger, <i>et al.</i>'
+  links:
+    - {text: 'arXiv',        url: 'https://arxiv.org/abs/2312.04565'}
+    - {text: 'code',         url: 'https://github.com/autonomousvision/murf'}
+    - {text: 'project page', url: 'https://haofeixu.github.io/murf/'}
+
+# - title: 'Object-Compositional Neural Implicit Surfaces'
+#   venue: 'ECCV 2022'
+#   authors: 'Qianyi Wu, Xian Liu, Yuedong Chen, Kejie Li, Chuanxia Zheng, Jianfei Cai, Jianmin Zheng'
+#   links:
+#     - {text: 'arXiv',        url: 'https://arxiv.org/abs/2207.09686'}
+#     - {text: 'code',         url: 'https://github.com/QianyiWu/objsdf'}
+#     - {text: 'project page', url: 'https://qianyiwu.github.io/objectsdf/'}
+#     - {text: 'demo video',   url: 'https://youtu.be/23vxOV19bEw'}
+
+- title: 'Sem2NeRF: Converting Single-View Semantic Masks to Neural Radiance Fields'
+  venue: 'ECCV 2022'
+  authors: 'Yuedong Chen, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, Jianfei Cai'
+  links:
+    - {text: 'arXiv',       url: 'https://arxiv.org/abs/2203.10821'}
+    - {text: 'code',        url: 'https://github.com/donydchen/sem2nerf'}
+    - {text: 'project page', url: 'https://donydchen.github.io/sem2nerf/'}
+    - {text: 'demo video',  url: 'https://www.youtube.com/watch?v=cYr3Dz8N_9E'}
+
+# - title: 'Towards Unbiased Visual Emotion Recognition via Causal Intervention'
+#   venue: 'ACM Multimedia 2022'
+#   authors: 'Yuedong Chen, Xu Yang, Tat-Jen Cham, Jianfei Cai'
+#   links:
+#     - {text: 'arXiv', url: 'https://arxiv.org/abs/2107.12096'}
+#     - {text: 'code',  url: 'https://github.com/donydchen/causal_emotion'}
+
+# - title: 'GeoConv: Geodesic Guided Convolution for Facial Action Unit Recognition'
+#   venue: 'Pattern Recognition 2022'
+#   authors: 'Yuedong Chen, Guoxian Song, Zhiwen Shao, Jianfei Cai, Tat-Jen Cham, Jianmin Zheng'
+#   links:
+#     - {text: 'arXiv', url: 'https://arxiv.org/abs/2003.03055'}
+
+# - title: 'Facial Motion Prior Networks for Facial Expression Recognition'
+#   venue: 'VCIP 2019 (Oral)'
+#   authors: 'Yuedong Chen, Jianfeng Wang, Shikai Chen, Zhongchao Shi, Jianfei Cai'
+#   links:
+#     - {text: 'arXiv', url: 'https://arxiv.org/abs/1902.08788'}
+#     - {text: 'code',  url: 'https://github.com/donydchen/FMPN-FER'}

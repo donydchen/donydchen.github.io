@@ -9,7 +9,7 @@ sitemap: false
 {:toc .large-only}
 
 ## GNU GENERAL PUBLIC LICENSE
-{:.no_toc}
+{:.no_toc .h1 .index-header}
 
 Version 3, 29 June 2007
 

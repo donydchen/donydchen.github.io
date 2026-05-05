@@ -1,0 +1,69 @@
+# Co-author homepages. Used by `_includes/publications.html` to wrap each
+# matching name in `<a class="coauthor" target="_blank" …>` so the author
+# row links out without adding any visual underline.
+#
+# Schema:
+#   '<exact name as it appears in publications.yml>': '<homepage URL>'
+#
+# Notes:
+#   - The homepage owner (Donny Y. Chen / Yuedong Chen) is NEVER listed
+#     here — the include treats those names specially and renders them
+#     as plain text (or plain bold text if wrapped in <b>…</b>).
+#   - The match is a literal substring lookup on the cleaned name, so
+#     the key must match the spelling in `_data/publications.yml`
+#     character-for-character. Stick to plain ASCII hyphens in names.
+#   - Names not in this file fall back to a Google search link with the
+#     name as the query. So adding a name here is optional; it just
+#     gives a nicer destination than search.
+#   - Order is alphabetical for human convenience. Liquid `replace` is
+#     a substring match, but no current key is a substring of another.
+
+'Akide Liu':         'https://github.com/AkideLiu'
+'Andrea Vedaldi':    'https://www.robots.ox.ac.uk/~vedaldi/'
+'Andreas Geiger':    'https://www.cvlibs.net/'
+'Anpei Chen':        'https://apchenstu.github.io/'
+'Bingyi Kang':       'https://bingyikang.com/'
+'Bohan Zhuang':      'https://bohanzhuang.github.io/'
+'Chi-Keung Tang':    'https://cse.hkust.edu.hk/~cktang/'
+'Christos Sakaridis': 'https://people.ee.ethz.ch/~csakarid/'
+'Chuanxia Zheng':    'https://physicalvision.github.io/people/~chuanxia'
+'Duochao Shi':       'https://scholar.google.com/citations?user=BG-NXgoAAAAJ'
+'Guang Shi':         'https://scholar.google.com/citations?user=MjXxWbUAAAAJ&hl=en'
+'Guoxian Song':      'https://guoxiansong.github.io/homepage/index.html'
+'Haofei Xu':         'https://haofeixu.github.io/'
+'Haotong Lin':       'https://haotongl.github.io/'
+'Jia-Wang Bian':     'https://jwbian.net/'
+'Jianfei Cai':       'https://jianfei-cai.github.io/'
+'Jianfeng Wang':     'http://jianfengwang.me/'
+'Jianmin Zheng':     'https://personal.ntu.edu.sg/asjmzheng/'
+'Jiashi Feng':       'https://sites.google.com/site/jshfeng/home'
+'Jun Hao Liew':      'https://liewjunhao.github.io/'
+'Kejie Li':          'https://likojack.bitbucket.io/'
+'Marc Pollefeys':    'https://people.inf.ethz.ch/marc.pollefeys/'
+'Qianyi Wu':         'https://qianyiwu.github.io/'
+'Qihang Cao':        'https://scholar.google.com/citations?user=oegbT6AAAAAJ'
+'Sensen Gao':        'https://sensengao.github.io/'
+'Shikai Chen':       'https://scholar.google.com/citations?user=qMGwH3wAAAAJ'
+'Sili Chen':         'https://github.com/SiliChen321'
+'Songyou Peng':      'https://pengsongyou.github.io/'
+'Tat-Jen Cham':      'https://personal.ntu.edu.sg/astjcham/'
+'Weijie Wang':       'https://lhmd.top/'
+'Wenjing Bian':      'https://bianwenjing.github.io/'
+'Xian Liu':          'https://alvinliu0.github.io/'
+'Xiaoxuan He':       'https://github.com/Shredded-Pork'
+'Xinhang Liu':       'https://xinhangliu.com/'
+'Xirui Hu':          'https://openreview.net/profile?id=~Xirui_Hu1'
+'Xu Yang':           'https://yangxuntu.github.io/'
+'Yanbo Ding':        'https://github.com/DINGYANB'
+'Yefei He':          'https://hexy.tech/'
+'Yifan Yang':        'https://www.microsoft.com/en-us/research/people/yifanyang/'
+'Youping Gu':        'https://github.com/Tacossp'
+'Yu-Wing Tai':       'https://yuwingtai.github.io/'
+'Yulun Zhang':       'https://yulunzhang.com/'
+'Yuqing Yang':       'https://www.microsoft.com/en-us/research/people/yuqyang/'
+'Yuxi Xiao':         'https://henry123-boy.github.io/'
+'Zeyu Zhang':        'https://steve-zeyu-zhang.github.io/'
+'Zhenyu Li':         'https://zhyever.github.io/'
+'Zhiwen Shao':       'https://zhiwenshao.github.io/'
+'Zhiyuan He':        'https://www.microsoft.com/en-us/research/people/zhiyuhe/'
+'Zhongchao Shi':     'https://dblp.org/pid/45/5323.html'

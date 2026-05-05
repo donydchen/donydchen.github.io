@@ -1,0 +1,31 @@
+{% comment %}
+  Renders the time-sensitive news block from `_data/news.yml`.
+
+  An entry is shown unless either of these is true:
+    - `expires` is set and is strictly before today's date (string
+      compare on YYYY-MM-DD works because that format sorts the same
+      lexicographically as it does chronologically). The build's
+      `site.time` is the reference, so a fresh deploy each day keeps
+      this honest; a long-running cached build wouldn't roll the date
+      forward.
+    - the entry is commented out in the YAML (it just doesn't appear
+      in `site.data.news` at all in that case — natural YAML behavior,
+      no template work needed).
+
+  The wrapping `<div id="news-notes">` plus the leading `<br />` and
+  trailing `<br /><br />` are kept verbatim from the previous
+  hand-crafted markup so the surrounding spacing in the homepage hero
+  area looks identical whether or not any entries are active.
+{% endcomment %}
+{%- assign today = site.time | date: '%Y-%m-%d' -%}
+<div id="news-notes">
+<br />
+{%- for item in site.data.news -%}
+  {%- if item.expires and item.expires < today -%}
+    {%- comment -%} expired — skip {%- endcomment -%}
+  {%- else %}
+{{ item.html }}
+  {%- endif -%}
+{%- endfor %}
+<br /><br />
+</div>

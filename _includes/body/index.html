@@ -57,7 +57,13 @@
   (function () {
     var drawer = document.getElementById('_drawer');
     if (!drawer) return;
-    var DESKTOP_MQ = '(min-width: {{ _bp }}em)';
+    /* desktop_cover applies on desktop AND iPad landscape; mobile_cover
+       applies on phone AND iPad portrait. iPad widths overlap between
+       portrait (768–1024px) and landscape (1024–1366px) at 1024 — only
+       the orientation clause disambiguates. Width-only `min-width: 64em`
+       would put iPad Pro 12.9 portrait (1024×1366) into desktop_cover by
+       mistake. */
+    var DESKTOP_MQ = '(min-width: {{ _bp }}em) and (orientation: landscape)';
     var DESKTOP_COVER = {% if page.desktop_cover %}true{% else %}false{% endif %};
     var MOBILE_COVER  = {% if page.mobile_cover %}true{% else %}false{% endif %};
 

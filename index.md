@@ -1,16 +1,22 @@
 ---
-layout: plain 
+layout: plain
 name: index
-title: 
+# Explicit empty string (not bare `title:` / null).
+title: ""
 description: >
-  Homepage of Donny Chen, a Singapore-based Research Scientist, working on 3D/4D vision. ALL VIEWS ARE SOLELY HIS OWN.
+  Homepage of Donny Y. Chen, a Singapore-based Research Scientist, working on 3D/4D vision. ALL VIEWS ARE SOLELY HIS OWN.
 hide_description: true
-cover: false
-desktop_cover: false      # cover hero on desktop?
-mobile_cover: true        # cover hero on mobile?
+desktop_cover: false       # enable cover mode on desktop or iPad landscape view
+mobile_cover: true         # enable cover mode on mobile or iPad portrait view
+cover: false               # no effect here, a fallback when the above two modes are not set
 ---
 
-<h2 class="h1 index-header" id="about">Short Bio </h2>
+
+
+## Short Bio
+{:.h1 .index-header #about}
+
+<div class="bio-text" markdown="1">
 
 Donny (Yuedong) Chen is a Research Scientist at [ByteDance Seed (Singapore)](https://seed.bytedance.com/en/), developing 3D and 4D foundation models. ALL VIEWS ARE SOLELY HIS OWN ([DISCLAIMER](/#disclaimer)).
 
@@ -20,311 +26,52 @@ Before that, he was a Research Assistant at the [Institute for Media Innovation]
 
 His academic journey began with the completion of both his MEng and BEng degrees at [Sun Yat-sen University](https://www.sysu.edu.cn/sysuen/), where he majored in Software Engineering. Additionally, he spent a semester as an exchange student at [National Chi Nan University (Taiwan)](https://www.ncnu.edu.tw/?Lang=en) during his BEng studies, collaborating closely with [David Cheng](https://www.linkedin.com/in/hui-sheng-cheng/).
 
-
-<div id="news-notes">
-<br />
-<!-- I will present <a class="external" href="https://iclr.cc/virtual/2026/oral/10006532" target="_blank">Depth Anything 3</a> and <a class="external" href="https://iclr.cc/virtual/2026/poster/10010908" target="_blank">Trace Anything</a> on-site at ICLR26. See you in Brazil! -->
-
-<!-- Put time-sensitive news below -->
-<!-- <p><a class="external" href="https://github.com/DepthAnything" target="_blank">Our team</a> has openings for full time and internship positions from time to time. If you are interested in joining us for 3D/4D vision research, please feel free to reach out to me via my company email after reading the <a href="/#disclaimer">disclaimer</a>.</p> -->
-
-<!-- Actively seeking Research Scientist position (<a href="mailto:donny.chen@outlook.sg">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>) <br /> <br /> -->
-<!-- I will present MVSplat360 on-site at NeurIPS24 (13/12 at Vancouver). Let's connect! -->
-
-<br /><br />
 </div>
 
+<!-- Update time-sensitive news in `_data/news.yml`. -->
+{% include news.html %}
 
-
-<div class="body-social sidebar-social">
-  <ul>
-    <li> <a href="mailto:donny.chen@outlook.sg" title="Personal Email" class="no-mark-external" target="_blank"> <span class="icon-mail"></span> <span aria-hidden="true">Email </span><span class="sr-only">Donny's Email Address</span></a></li>
-    <li> <a href="https://scholar.google.com/citations?user=GqgGZlQAAAAJ" title="Google Scholar" class="no-mark-external" target="_blank"> <span class="icon-googlescholar"></span> <span aria-hidden="true">Google Scholar </span><span class="sr-only">Donny's Google Scholar profile</span></a></li>
-    <li> <a href="https://orcid.org/0000-0003-0943-1512" title="ORCID" class="no-mark-external" target="_blank"> <span class="icon-orcid"></span> <span aria-hidden="true">ORCID </span><span class="sr-only">Donny's ORCID page</span></a></li>
-    <li> <a href="https://github.com/donydchen" title="GitHub" class="no-mark-external" target="_blank"> <span class="icon-github"></span> <span aria-hidden="true">GitHub </span><span class="sr-only">Donny's Github</span></a></li>
-    <li> <a href="https://www.linkedin.com/in/donydchen" title="LinkedIn" class="no-mark-external" target="_blank"> <span class="icon-linkedin2"></span> <span aria-hidden="true">LinkedIn </span><span class="sr-only">Donny's LinkedIn</span></a></li>
-    <li> <a href="https://bsky.app/profile/donydchen.bsky.social" title="Bluesky" class="no-mark-external" target="_blank"> <span class="icon-bluesky"></span> <span aria-hidden="true">Bluesky </span><span class="sr-only">Donny's Bluesky</span></a></li>
-    <li> <a href="https://x.com/donydchen" title="X" class="no-mark-external" target="_blank"> <span class="icon-twitter"></span> <span aria-hidden="true">X </span><span class="sr-only">Donny's X</span></a></li>
-  </ul>
-</div>
-
----
-
-<h2 class="h1 index-header" id="publications">Selected Publications </h2>
-<p class='hl-sen'> 🤖🧠👌🏼 He prefers simple yet effective solutions </p>
-<p class='hl-sen2'> * indicates Equal Contribution; † indicates Project Lead</p>
-
-
-<div class="pub">
-  <div class="pub-title">World-R1: Reinforcing 3D Constraints for Text-to-Video Generation</div>
-  <div class="pub-venue">ICML 2026</div>
-  <div class="pub-authors">Weijie Wang*, Xiaoxuan He*, Youping Gu*, Yifan Yang, Zeyu Zhang, Yefei He, Yanbo Ding, Xirui Hu, <b>Donny Y. Chen</b>, Zhiyuan He, Yuqing Yang, and Bohan Zhuang</div>
-  <div>[<a href="https://arxiv.org/abs/2604.24764">arXiv</a>] [<a href="https://github.com/microsoft/World-R1">code</a>] [<a href="https://aka.ms/world-r1">project page</a>] 
-  [<span class="hl-work"><a href="https://huggingface.co/papers/2604.24764">Paper of the Day #1</a></span>]</div>
-</div>
-
-<div class="pub">
-  <div class="pub-title">Feed-Forward 3D Scene Modeling: A Problem-Driven Perspective</div>
-  <div class="pub-venue">Survey 2026</div>
-  <div class="pub-authors">Weijie Wang*, Qihang Cao*, Sensen Gao*, <b>Donny Y. Chen†</b>, Haofei Xu, Wenjing Bian, Songyou Peng, Tat-Jen Cham, Chuanxia Zheng, Andreas Geiger, Jianfei Cai, Jia-Wang Bian, and Bohan Zhuang</div>
-  <div>[<a href="https://arxiv.org/abs/2604.14025">arXiv</a>] [<a href="https://github.com/ziplab/Awesome-Feed-Forward-3D">code</a>] [<a href="https://ff3d-survey.github.io/">project page</a>] </div>
-</div>
-
-<div class="pub">
-  <div class="pub-title"><span class="hl-work">Depth Anything 3</span>: Recovering the Visual Space from Any Views</div>
-    <div class="pub-venue">Tech Report 2025</div>
-    <div class="pub-authors">Haotong Lin*, Sili Chen*, Jun Hao Liew*, <b>Donny Y. Chen*</b>, Zhenyu Li, Guang Shi, Jiashi Feng, and Bingyi Kang*</div>
-    <div>
-    [<a href="https://arxiv.org/abs/2511.10647">arXiv</a>] 
-    [<a href="https://github.com/ByteDance-Seed/depth-anything-3">code</a> <img class="pub-code-label" src="https://img.shields.io/github/stars/ByteDance-Seed/depth-anything-3?style=flat-square&label=⭐&labelColor=555">] 
-    [<a href="https://depth-anything-3.github.io/">project page</a>] 
-    [<a href="https://huggingface.co/spaces/depth-anything/depth-anything-3">demo</a>] 
-    [<a href="https://depth-anything-3.github.io/gallery.html">gallery</a>] 
-    [<a href="https://seed.bytedance.com/en/blog/seed-research-depth-anything-3-a-single-transformer-architecture-for-space-reconstruction-from-any-views?view_from=content_recommend">news</a>] 
-    [<span><a href="https://huggingface.co/spaces?date=2025-W47">Spaces of the Week #4</a></span>]
-    [<span class="hl-work"><a href="https://huggingface.co/papers/2511.10647">Paper of the Day #2</a></span>]<br>
-    [also presented at <span class="hl-work"><a href="https://openreview.net/forum?id=yirunib8l8">ICLR 2026 Oral</a> (<a href="https://www.youtube.com/watch?v=noY558thveo" target="_blank">recording</a>, <a href="assets/pdf/DA3_Oral_ICLR2026_CHEN.pdf" target="_blank">slides</a>)</span>]
-    </div>
-  </div>
-
-<div class="pub">
-  <div class="pub-title">Trace Anything: Representing Any Video in 4D via Trajectory Fields</div>
-  <div class="pub-venue">ICLR 2026</div>
-  <div class="pub-authors">Xinhang Liu, Yuxi Xiao, <b>Donny Y. Chen</b>, Jiashi Feng, Yu-Wing Tai, Chi-Keung Tang, and Bingyi Kang</div>
-  <div>[<a href="https://arxiv.org/abs/2510.13802">arXiv</a>] [<a href="https://github.com/ByteDance-Seed/TraceAnything">code</a>] [<a href="https://trace-anything.github.io/">project page</a>] </div>
-</div>
-
-<div class="pub">
-  <div class="pub-title">Revisiting Depth Representations for Feed-Forward 3D Gaussian Splatting</div>
-  <div class="pub-venue">3DV 2026</div>
-  <div class="pub-authors">Duochao Shi*, Weijie Wang*, <b>Donny Y. Chen</b>, Zeyu Zhang, Jia-Wang Bian, and Bohan Zhuang</div>
-  <div>[<a href="https://arxiv.org/abs/2506.05327">arXiv</a>] [<a href="https://github.com/aim-uofa/PM-Loss">code</a>] [<a href="https://aim-uofa.github.io/PMLoss/">project
-    page</a>] [also presented at <a href="https://space-in-vision-language-embodied-ai.github.io/">SpaVLE&#64;NeurIPS'25</a>] </div>
-</div>
-
-<div class="pub">
-  <div class="pub-title">ZPressor: Bottleneck-Aware Compression for Scalable Feed-Forward 3DGS</div>
-  <div class="pub-venue">NeurIPS 2025</div>
-  <div class="pub-authors">Weijie Wang, <b>Donny Y. Chen</b>, Zeyu Zhang, Duochao Shi, Akide Liu, and Bohan Zhuang</div>
-  <div>[<a href="https://arxiv.org/abs/2505.23734">arXiv</a>] [<a href="https://github.com/ziplab/ZPressor">code</a>] [<a href="https://lhmd.top/zpressor/">project page</a>] </div>
-</div>
-
-<div class="pub">
-  <div class="pub-title">Explicit Correspondence Matching for Generalizable Neural Radiance Fields</div>
-  <div class="pub-venue">TPAMI 2025</div>
-  <div class="pub-authors"><b>Yuedong Chen</b>, Haofei Xu, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, and Jianfei Cai</div>
-  <div>[<a href="http://arxiv.org/abs/2304.12294">arXiv</a>] [<a href="https://github.com/donydchen/matchnerf">code</a>] [<a href="https://donydchen.github.io/matchnerf/">project
-    page</a>] </div>
-</div>
-
-<div class="pub">
-  <div class="pub-title">MVSplat360: Feed‑Forward 360 Scene Synthesis from Sparse Views</div>
-  <div class="pub-venue">NeurIPS 2024</div>
-  <div class="pub-authors"><b>Yuedong Chen</b>, Chuanxia Zheng, Haofei Xu, Bohan Zhuang, Andrea Vedaldi, Tat‑Jen Cham, and Jianfei Cai</div>
-  <div>[<a href="https://arxiv.org/abs/2411.04924">arXiv</a>] [<a href="https://github.com/donydchen/mvsplat360">code</a>] [<a href="https://donydchen.github.io/mvsplat360">project page</a>] [also presented at <a href="https://ajcai2024.org/call_for_encore.html">AJCAI'24</a> & <a href="https://3dvconf.github.io/2025/call-for-nectar-track/">3DV'25</a>]</div>
-  <!-- <div> TL;DR: MVSplat360 is a feed‑forward model that combines 3DGS with SVD to achieve 360° NVS for complex scenes with less than 5 input views. </div>  -->
-</div>
-
-<div class="pub">
-  <div class="pub-title"><span class="hl-work">MVSplat</span>: Efficient 3D Gaussian Splatting from Sparse Multi-View Images</div>
-  <div class="pub-venue">ECCV 2024 (Oral)</div>
-  <div class="pub-authors"><b>Yuedong Chen</b>, Haofei Xu, Chuanxia Zheng, Bohan Zhuang, Marc Pollefeys, Andreas Geiger, Tat-Jen Cham, and Jianfei Cai</div>
-  <div>[<a href="https://arxiv.org/abs/2403.14627">arXiv</a>] 
-  [<a href="https://github.com/donydchen/mvsplat">code</a> <img class="pub-code-label" src="https://img.shields.io/github/stars/donydchen/mvsplat?style=flat-square&label=⭐&labelColor=555">] 
-  [<a href="https://donydchen.github.io/mvsplat">project page</a>] [<span class="hl-work"><a href="https://news.ycombinator.com/item?id=41222655">Hacker News</a></span>] [<span class="hl-work"><a href="https://trendshift.io/repositories/8862">Trendshift #20</a></span>] [<span class="hl-work"><a href="https://resources.paperdigest.org/2025/09/most-influential-eccv-papers-2025-09-version/">Most Influential ECCV Paper #13</a></span>] </div>
-</div>
-
-<!-- <div class="pub">
-  <div class="pub-title">MuRF: Multi-Baseline Radiance Fields</div>
-  <div class="pub-venue">CVPR 2024</div>
-  <div class="pub-authors">Haofei Xu, Anpei Chen, <b>Yuedong Chen</b>, Christos Sakaridis, Yulun Zhang, Marc Pollefeys, Andreas Geiger, <i>et al.</i></div>
-  <div>[<a href="https://arxiv.org/abs/2312.04565">arXiv</a>] [<a href="https://github.com/autonomousvision/murf">code</a>] [<a href="https://haofeixu.github.io/murf/">project
-    page</a>] </div>
-</div> -->
-
-<!-- <div class="pub">
-  <div class="pub-title">Object-Compositional Neural Implicit Surfaces</div>
-  <div class="pub-venue">ECCV 2022</div>
-  <div class="pub-authors">Qianyi Wu, Xian Liu, <b>Yuedong Chen</b>, Kejie Li, Chuanxia Zheng, Jianfei Cai, and Jianmin Zheng</div>
-  <div>[<a href="https://arxiv.org/abs/2207.09686">arXiv</a>] [<a href="https://github.com/QianyiWu/objsdf">code</a>]
-    [<a href="https://qianyiwu.github.io/objectsdf/">project
-      page</a>] [<a href="https://youtu.be/23vxOV19bEw">demo video</a>] </div>
-</div> -->
-
-<div class="pub">
-  <div class="pub-title">Sem2NeRF: Converting Single-View Semantic Masks to Neural Radiance Fields</div>
-  <div class="pub-venue">ECCV 2022</div>
-  <div class="pub-authors"><b>Yuedong Chen</b>, Qianyi Wu, Chuanxia Zheng, Tat-Jen Cham, and Jianfei Cai</div>
-  <div>[<a href="https://arxiv.org/abs/2203.10821">arXiv</a>] [<a href="https://github.com/donydchen/sem2nerf">code</a>] [<a href="https://donydchen.github.io/sem2nerf/">project
-    page</a>] [<a href="https://www.youtube.com/watch?v=cYr3Dz8N_9E">demo video</a>] </div>
-</div>
-
-<!-- <div class="pub">
-  <div class="pub-title">Towards Unbiased Visual Emotion Recognition via Causal Intervention</div>
-  <div class="pub-venue">ACM Multimedia 2022</div>
-  <div class="pub-authors">Yuedong Chen, Xu Yang, Tat-Jen Cham, and Jianfei Cai</div>
-  <div>[<a href="https://arxiv.org/abs/2107.12096">arXiv</a>] [<a href="https://github.com/donydchen/causal_emotion">code</a>]
-  </div>
-</div> -->
-
-<!-- <div class="pub">
-  <div class="pub-title">GeoConv: Geodesic Guided Convolution for Facial Action Unit Recognition</div>
-  <div class="pub-venue">Pattern Recognition 2022</div>
-  <div class="pub-authors"><b>Yuedong Chen</b>, Guoxian Song, Zhiwen Shao, Jianfei Cai, Tat-Jen Cham, and Jianmin Zheng</div>
-  <div>[<a href="https://arxiv.org/abs/2003.03055">arXiv</a>] 
-  </div>
-</div> -->
-
-<!-- <div class="pub">
-  <div class="pub-title">Facial Motion Prior Networks for Facial Expression Recognition</div>
-  <div class="pub-venue">VCIP 2019 (Oral)</div>
-  <div class="pub-authors"><b>Yuedong Chen</b>, Jianfeng Wang, Shikai Chen, Zhongchao Shi, and Jianfei Cai</div>
-  <div>[<a href="https://arxiv.org/abs/1902.08788">arXiv</a>] [<a href="https://github.com/donydchen/FMPN-FER">code</a>]</div>
-</div> -->
-
-<div>
-  <br>
-  More on <a href="https://scholar.google.com.sg/citations?user=GqgGZlQAAAAJ&hl=en" target="_blank">Google Scholar</a>
-</div>
-
----
-
-<h2 class="h1 index-header" id="projects">Projects & Talks</h2>
-
-<div style="padding-top: 20px; margin-bottom: -15px">
-  <ul>
-    <li>28-01-2025, Invited talk "Feed-forward NVS from Sparse Inputs​" at <i>Amazon, Tel Aviv</i>, hosted by <a href="https://www.linkedin.com/in/lior-fritz-6457a796">Lior Fritz</a>.</li>
-    <li>08-11-2024, Invited talk "Feed-forward Novel View Synthesis" at <i>Wayve, London</i>, hosted by <a href="https://www.linkedin.com/in/joepolin">Joe Polin</a>.</li>
-  </ul>
-</div>
-
-<div class="demo-proj-row">
-
-  <div class="card">
-    <a href="https://www.youtube.com/watch?v=noY558thveo" target="_blank">
-      <div><img src="assets/img/talk_iclr26.png" /></div>
-    </a>
-    <div class="cdesc">Oral presentation at ICLR 2026 <span class="icon-youtube"></span></div>
-  </div>
-
-  <div class="card">
-    <a href="https://bsky.app/profile/donydchen.bsky.social/post/3lldtgeyitc2h" target="_blank">
-      <div><img src="assets/img/talk_3dv25.png" /></div>
-    </a>
-    <div class="cdesc">Invited talk at <a href="https://3dvconf.github.io/2025/call-for-nectar-track" target="_blank">3DV25 Nectar Track</a></div>
-  </div>
-
-  <div class="card">
-    <a href="https://ajcai2024.org/files/AJCAI_Booklet.pdf#page=15.09" target="_blank">
-      <div><img src="assets/img/talk_ajcai2024.png" /></div>
-    </a>
-    <div class="cdesc">Invited talk at <a href="https://ajcai2024.org" target="_blank">AJCAI 2024</a></div>
-  </div>
-
-  <!-- <div class="card">
-    <a href="https://wayve.ai" target="_blank">
-      <div style="margin: 25px 0;"><img src="assets/img/talk_wayve_uk.png" /></div>
-    </a>
-    <div class="cdesc">Invited talk at WAYVE(London)</div>
-  </div> -->
-
-  <div class="card">
-    <a href="https://eccv2024.ecva.net/virtual/2024/poster/1231" target="_blank">
-      <div><img src="assets/img/eccv24_oral.jpeg" /></div>
-    </a>
-    <div class="cdesc">Oral presentation at ECCV 2024 <span class="icon-youtube"></span></div>
-  </div>
-
-  <div class="card">
-    <a href="https://mp.weixin.qq.com/s/SnmqOBkV3N3PVdBmgJ8NzA" target="_blank">
-      <div><img src="assets/img/talk_szhy.png" /></div>
-    </a>
-    <div class="cdesc">Invited talk at SHUZIHUANYU</div>
-  </div>
-
-  <div class="card">
-    <a href="https://www.bilibili.com/video/BV1sAWhe1ENw/" target="_blank">
-      <div><img src="assets/img/talk_3dcver.png" /></div>
-    </a>
-    <div class="cdesc">Invited talk at 3DCVer <span class="icon-youtube"></span></div>
-  </div>  
-
-  <div class="card">
-    <a href="https://github.com/lyndonzheng/Pluralistic-Inpainting#gui" target="_blank">
-      <div><img src="assets/img/openday22_demo.jpeg" /></div>
-    </a>
-    <div class="cdesc">Demo at Monash Uni. <a href="https://www.monash.edu/open-day">Open Day 2022</a></div>
-  </div>
-  
-  <div class="card">
-    <a href="https://github.com/donydchen/ganimation_replicate" target="_blank">
-      <div><img src="assets/img/ganimation_proj.png" /></div>
-    </a>
-    <div class="cdesc">A popular replication of <a href="https://github.com/albertpumarola/GANimation">GANimation</a></div>
-  </div>
-</div>
+{% include body-social.html %}
 
 ---
 
 
-<h2 class="h1 index-header" id="misc">Miscellanies</h2>
+
+## Selected Publications
+{:.h1 .index-header #publications}
+
+🤖🧠👌🏼 He prefers simple yet effective solutions
+{:.hl-sen}
+
+\* indicates Equal Contribution; † indicates Project Lead
+{:.hl-sen2}
+
+<!--  update _data/publications.yml and _data/coauthors.yml to add new publications  -->
+{% include publications.html %}
+
+More on [Google Scholar](https://scholar.google.com.sg/citations?user=GqgGZlQAAAAJ&hl=en){:target="_blank"}
+
+---
+
+
+
+## Projects & Talks
+{:.h1 .index-header #projects}
+
+{% include projects.html %}
+
+---
+
+
+
+## Miscellanies
+{:.h1 .index-header #misc}
 
 * Conference Reviewer: ECCV('24-'26), CVPR('23-'26), ICCV('23-'25), NeurIPS('24-'25), ICLR('25-'26), ICML('25), 3DV('24-'26), AAAI('24-'26), ACMMM('21‑'24), ACCV('24), ISMAR('23-'24), IEEEVR('24)
 * Journal Reviewer: TPAMI, IJCV, TIP, TVCG, TMM, TCSVT, TOMM, TVCJ, Computers & Graphics, The Visual Computer
 * Donny is a native speaker of [Teochew](https://en.wikipedia.org/wiki/Teochew_dialect), fluent in English, [Cantonese](https://en.wikipedia.org/wiki/Cantonese), Mandarin, and also familiar with [Singlish](https://en.wikipedia.org/wiki/Singlish).
+* You are welcome to use this personal homepage as a template for your own. See [the documentation](/docs/) for setup notes.
 
 *[Teochew]: Teochew-nang, gaginang, pah-si bho-siang-gang
 
 ---
-
-<h2 class="h1 index-header" id="disclaimer">DISCLAIMER</h2>
-
-<div class="disclaimer-block">
-ALL OPINIONS AND VIEWS EXPRESSED ON THIS PAGE ARE SOLELY HIS OWN AND SHALL NOT BE INTERPRETED AS REPRESENTING OR IMPUTING THE VIEWS, POSITIONS, POLICIES, OR OFFICIAL COMMUNICATIONS OF HIS EMPLOYER. NO STATEMENT, COMMENT, OR MATERIAL PRESENTED HERE SHALL BE CONSTRUED AS PROFESSIONAL ADVICE OR AS ANY FORM OF AUTHORIZED ENDORSEMENT BY THE COMPANY. HE DOES NOT ENGAGE IN, NOR SHALL HE RESPOND TO, ANY INQUIRIES OR COMMUNICATIONS PERTAINING TO CONFIDENTIAL INFORMATION, INTERNAL PROJECTS, PROPRIETARY MATERIALS, OR ANY MATTERS THAT MAY AFFECT OR POTENTIALLY CONFLICT WITH THE INTERESTS OF HIS EMPLOYER. ALL REQUESTS FOR RESEARCH COOPERATION, FORMAL COLLABORATION, OR OTHER OFFICIAL ENGAGEMENTS MUST BE DIRECTED EXCLUSIVELY TO THE COMPANY THROUGH ITS DESIGNATED CHANNELS.
-</div>
-
----
-
-
-<div class="container">
-  <div id="visitor-map" style="min-height:200px;width:300px;margin:0 auto;"></div>
-</div>
-<script>
-  /* Load clustrmaps off the critical path so it never blocks HTML parsing,
-     paint, or Hydejack's drawer init (the original sync <script src=...>
-     froze the sidebar while the CDN responded). Still fires once per page
-     load so every visitor is counted. */
-  (function () {
-    var SRC = '//cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d=rZHkm--x6O2bEyO0Je3uy1kjPw-mXX0YCKFUg287Tc0&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353';
-    function inject() {
-      if (document.getElementById('clustrmaps')) return;
-      var slot = document.getElementById('visitor-map');
-      if (!slot) return;
-      var s = document.createElement('script');
-      s.id = 'clustrmaps';
-      s.async = true;
-      s.src = SRC;
-      /* Hide the placeholder if the script never successfully loads —
-         explicit error (uBlock / NextDNS), hang (sinkhole DNS / dropped
-         packets), or slow CDN past 5s. async + the post-load schedule
-         already ensure nothing else on the page is gated on this; the
-         hide is purely cosmetic so visitors who block clustrmaps don't
-         see a blank 300x200 box at the bottom of the page. */
-      var done = false;
-      function hideOnFail() { if (!done) { done = true; slot.style.display = 'none'; } }
-      s.onload = function () { done = true; };
-      s.onerror = hideOnFail;
-      setTimeout(hideOnFail, 5000);
-      slot.appendChild(s);
-    }
-    function schedule() {
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(inject, { timeout: 3000 });
-      } else {
-        setTimeout(inject, 1500);
-      }
-    }
-    if (document.readyState === 'complete') schedule();
-    else window.addEventListener('load', schedule);
-  })();
-</script>

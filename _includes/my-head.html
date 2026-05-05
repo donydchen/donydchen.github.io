@@ -117,6 +117,16 @@
     color: var(--header-color);
   }
 
+  /* Separator between the disclaimer block and the visitor map.
+     The visitor map sits right at the bottom of every page above
+     the dingbat + copyright, so a default <hr> margin made the two
+     blocks crowd each other. Wider top/bottom margins give the
+     legal notice some breathing room. */
+  .post-disclaimer-divider {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
   /* Social media links styling */
   .body-social>ul {
     display: inline-block;
@@ -207,6 +217,43 @@
     color: var(--bright-color);
   }
 
+  /* The homepage owner is auto-bolded by the include; lift it back
+     to the paper-title color so the row reads "title-tone owner,
+     author-tone everyone else". `.pub-title` has no explicit color,
+     so the matching value is the inherited body color. */
+  .pub-authors b {
+    color: var(--body-color);
+  }
+
+  /* Co-author auto-link: inherit the author-row color and stay
+     undecorated by default. On hover we surface a thin underline as
+     a clickability cue, color-matched to the name (--bright-color in
+     both modes). The `.content` prefix on every selector bumps
+     specificity to (0,4,1) so it ties Hydejack's
+     `.content a:not(.btn):not(.no-hover):hover` rule and wins on
+     source order — without it, Hydejack's --accent-color underline
+     overrides our match-the-name intent. */
+  .content .pub-authors a.coauthor,
+  .content .pub-authors a.coauthor:focus,
+  .content .pub-authors a.coauthor:visited,
+  .content .pub-authors a.coauthor:active {
+    color: inherit;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .content .pub-authors a.coauthor:hover {
+    color: var(--bright-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--bright-color);
+    text-underline-offset: 2px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
   .pub-code-label {
     height:1.2em !important;
     vertical-align:middle;
@@ -222,41 +269,59 @@
     grid-template-columns: repeat(9, 1fr);
   }
 
-  /* Project card styling - Added touch-action and will-change for performance */
+  /* Project card block style — matches the showcase cards on
+     <https://hydejack.com/showcase/>: subtle body-color tint, no border,
+     8px rounded corners with overflow:hidden so the image's top edge
+     rounds with the card, and a soft 2/2/16 drop shadow. Works for both
+     light and dark mode because the tint is derived from --body-color
+     (which flips between modes). Text styling on .cdesc below is left
+     unchanged on purpose. */
   .card {
     grid-column: span 3;
     vertical-align: top;
-    border: 1px solid var(--border-color);
-    background-color: var(--body-bg);
-    padding-bottom: 10px;
-    box-shadow: 0 0 10px color-mix(in srgb, var(--body-color) 10%, transparent);
-    /* Add smooth transition effect */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Improve touch screen behavior */
+    background-color: color-mix(in srgb, var(--body-color) 2.5%, transparent);
+    border: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    padding-bottom: 16px;
+    box-shadow: 2px 2px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
     touch-action: manipulation;
     will-change: transform;
   }
 
-  /* Card hover effect - Removed outline from hover state */
+  /* Hover / active — keep the existing lift effect, with a slightly
+     stronger shadow that matches the deeper showcase look on hover. */
   .card:hover,
   .card:active {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px color-mix(in srgb, var(--body-color) 20%, transparent);
-    /* Removed outline from hover/active for cleaner look */
+    box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.25);
   }
 
   /* Separate focus state for accessibility */
   .card:focus {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px color-mix(in srgb, var(--body-color) 20%, transparent);
+    box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.25);
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;
   }
 
-  /* Card image styling */
+  /* Image fills the card width edge-to-edge with the top corners
+     rounded; the card's overflow:hidden clips the image to the card's
+     own border-radius. The fixed 4:3 aspect ratio + object-fit:cover
+     keeps every card the same height even when the underlying source
+     images have different aspect ratios — anything that doesn't match
+     gets center-cropped instead of letterboxed (object-position
+     defaults to center). The 1px bottom border (derived from
+     --body-color so it auto-flips for light/dark mode) separates the
+     image from the title text below. */
   .card img {
     width: 100%;
-    /* Add transition for image effects */
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--body-color) 12%, transparent);
     transition: filter 0.3s ease;
   }
 
@@ -292,8 +357,30 @@
     margin: 0;
   }
 
-  /* About section content alignment */
-  p.about-contents {
+  /* Tighten the footer's bottom whitespace. Hydejack ships
+     `main>footer.content { padding-bottom: 2rem }` + `footer
+     { margin-bottom: 2rem }` — that combined 4rem of empty space
+     looked balanced when the "Powered by Hydejack; …" paragraph sat
+     below the copyright line. With that paragraph moved to the docs
+     page, the gap between the "Last updated:" line and the page
+     bottom looks too generous, so we shave the padding to `0.5rem`
+     (≈ enough to keep the line from kissing the viewport edge) and
+     the margin to `1rem`. The selector mirrors the theme's
+     `main>footer.content` (specificity 0,0,3) so we win on equal
+     specificity by source order; a plain `footer.content` (0,0,2)
+     would silently lose. */
+  main > footer.content {
+    padding-bottom: 0.5rem;
+  }
+  footer {
+    margin-bottom: 1rem;
+  }
+
+  /* Justify the Short-Bio paragraphs only. The four bio paragraphs in
+     `index.md` are wrapped in `<div class="bio-text" markdown="1">`,
+     which makes this a CSS-only selector — no runtime JS needed and
+     it leaves the news block + body-social row alone. */
+  .bio-text p {
     text-align: justify;
   }
 
@@ -324,13 +411,15 @@
       grid-template-columns: repeat(14, 1fr);
     }
 
-    /* First card in each pair starts at column 1 */
+    /* First card in each pair starts at column 1. Padding and shadow
+       are slightly tighter on mobile, but the showcase-style background
+       tint and rounded corners come from the global .card rule above. */
     .card {
       grid-column: 1 / span 7;
-      padding-bottom: 8px;
+      padding-bottom: 12px;
       max-width: none;
       margin: 0;
-      box-shadow: 0 0 5px color-mix(in srgb, var(--body-color) 10%, transparent);
+      box-shadow: 1px 1px 8px 0 rgba(0, 0, 0, 0.18);
     }
 
     /* Second card in each pair starts at column 8 */
@@ -401,7 +490,12 @@
      pinned to match so its --gray-bg tint never bleeds past the visible
      panel (the half-transparent rectangle bug); .content is pushed to
      clear the wider sidebar with content-margin-5 (4rem) gap. */
-  @media screen and (min-width: 64em) {
+  /* `(min-width: 64em) and (orientation: landscape)` so iPad PORTRAIT
+     stays in mobile_cover layout (cover hero) — the width-only 64em
+     clause would otherwise put iPad Pro 12.9 portrait (1024×1366) into
+     the desktop side-panel layout. JS DESKTOP_MQ in body/index.html
+     uses the same query so JS locks and CSS stay consistent. */
+  @media screen and (min-width: 64em) and (orientation: landscape) {
     hy-drawer,
     hy-drawer.cover,
     hy-drawer.cover.loaded {
@@ -477,7 +571,7 @@
      The drawer's translateX animation runs between the peek (closed
      → side panel look) and 100vw (opened → cover hero look), so
      #_menu still slides the cover in and out. */
-  @media screen and (min-width: 64em) {
+  @media screen and (min-width: 64em) and (orientation: landscape) {
     hy-drawer.cover,
     hy-drawer.cover.loaded {
       position: fixed !important;

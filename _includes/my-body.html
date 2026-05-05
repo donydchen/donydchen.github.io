@@ -171,49 +171,40 @@ Example code for using Matamo as alternative analytics solution.
     attachPushStateListeners();
     document.addEventListener('DOMContentLoaded', attachPushStateListeners);
 
-    /* add specific text style to all text within the about section */
-    function markAboutContents() {
-      let start = document.getElementById('about');
-      let end = document.getElementById('news-notes');
-      if (!start || !end) return;
-      if (start.compareDocumentPosition(end) & Node.DOCUMENT_POSITION_PRECEDING) {
-        const tmp = start; start = end; end = tmp;
-      }
-      document.querySelectorAll('p.about-contents').forEach(p => p.classList.remove('about-contents'));
-      const paras = [];
-      paras.push(...start.querySelectorAll('p'));
-      let node = start.nextSibling;
-      while (node && node !== end) {
-        if (node.nodeType === Node.ELEMENT_NODE) {
-          paras.push(...node.querySelectorAll('p'));
-          if (node.tagName === 'P') paras.push(node);
-        }
-        node = node.nextSibling;
-      }
-      paras.push(...end.querySelectorAll('p'));
-      if (end.tagName === 'P') paras.push(end);
-      const seen = new Set();
-      paras.forEach(p => {
-        if (!seen.has(p)) {
-          seen.add(p);
-          p.classList.add('about-contents');
-        }
-      });
-    }
-    document.addEventListener('DOMContentLoaded', markAboutContents);
-    function scheduleMarking(delay = 250) {
-      clearTimeout(scheduleMarking._t);
-      scheduleMarking._t = setTimeout(markAboutContents, delay);
-    }
-    function attachMarkingListeners() {
-      const hyEl = document.querySelector('hy-push-state');
-      if (!hyEl) return;
-      ['hy-push-state-after', 'hy-push-state-ready'].forEach(ev =>
-        hyEl.addEventListener(ev, () => scheduleMarking(400))
-      );
-    }
-    attachMarkingListeners();
-    document.addEventListener('DOMContentLoaded', attachMarkingListeners);
+    /* The Short-Bio justify-text behaviour used to live here as a
+       runtime classlist hack walking from #about to #news-notes. It's
+       gone now — `index.md` wraps the bio in `<div class="bio-text"
+       markdown="1">…</div>` and the matching CSS in `my-head.html`
+       takes care of it without any JS. */
 
   })();
 </script>
+
+{% if site.hydejack.offline.enabled %}
+<script>
+  /* Service worker registration for offline support — homemade, NOT
+     Hydejack PRO (offline support is a PRO-only theme feature; the
+     `offline.enabled` config flag is a slot the free theme reads but
+     never acts on, so we wire it ourselves). The actual SW lives at
+     /sw.js (Jekyll-templated at the project root).
+
+     Register OFF the critical path so a slow/failed registration can
+     never block rendering or Hydejack's drawer init — same defensive
+     pattern as the deferred clustrmaps loader. */
+  (function () {
+    if (!('serviceWorker' in navigator)) return;
+    var SW_URL = '{{ "/sw.js" | relative_url }}';
+    function reg() {
+      navigator.serviceWorker.register(SW_URL).catch(function (e) {
+        if (window.console && console.warn) console.warn('SW register failed:', e);
+      });
+    }
+    function schedule() {
+      if ('requestIdleCallback' in window) requestIdleCallback(reg, { timeout: 5000 });
+      else setTimeout(reg, 2000);
+    }
+    if (document.readyState === 'complete') schedule();
+    else window.addEventListener('load', schedule);
+  })();
+</script>
+{% endif %}

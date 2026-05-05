@@ -1,0 +1,54 @@
+{% comment %}
+  Reusable visitor-map block (clustrmaps). Renders the placeholder div
+  + a deferred loader script. Pull into any page via the Liquid include
+  tag pointing at this filename.
+
+  Currently included from `_includes/body/footer.html` (our project
+  shadow of Hydejack's footer), so it appears at the bottom of every
+  layout — including 404, license pages, and any future post.
+
+  The loader is deferred via requestIdleCallback after window.load so a
+  slow / blocked clustrmaps CDN can never block rendering or Hydejack's
+  drawer init. The idempotency guard (getElementById('clustrmaps')
+  return) keeps push-state navigation from double-injecting the script.
+  Hide-on-fail removes the empty 300x200 box for visitors who block the
+  tracker (uBlock, Pi-hole, NextDNS, …).
+
+  NOTE: this header is a Liquid `{% raw %}{% comment %}{% endraw %}`
+  block, NOT an HTML `<!-- -->` comment. HTML comments do NOT stop
+  Liquid from processing tags inside them — putting a literal include
+  example in `<!-- -->` triggers infinite recursion through the
+  include itself.
+{% endcomment %}
+<div class="container">
+  <div id="visitor-map" style="min-height:200px;width:300px;margin:0 auto;"></div>
+</div>
+<script>
+  (function () {
+    var SRC = '//cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d=rZHkm--x6O2bEyO0Je3uy1kjPw-mXX0YCKFUg287Tc0&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353';
+    function inject() {
+      if (document.getElementById('clustrmaps')) return;
+      var slot = document.getElementById('visitor-map');
+      if (!slot) return;
+      var s = document.createElement('script');
+      s.id = 'clustrmaps';
+      s.async = true;
+      s.src = SRC;
+      var done = false;
+      function hideOnFail() { if (!done) { done = true; slot.style.display = 'none'; } }
+      s.onload = function () { done = true; };
+      s.onerror = hideOnFail;
+      setTimeout(hideOnFail, 5000);
+      slot.appendChild(s);
+    }
+    function schedule() {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(inject, { timeout: 3000 });
+      } else {
+        setTimeout(inject, 1500);
+      }
+    }
+    if (document.readyState === 'complete') schedule();
+    else window.addEventListener('load', schedule);
+  })();
+</script>

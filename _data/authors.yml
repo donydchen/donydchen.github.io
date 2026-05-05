@@ -8,11 +8,7 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about: |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-    Open `_data/authors.yml` to edit this text.
+    Donny Y. Chen is a Singapore-based Research Scientist, working on 3D/4D vision. ALL VIEWS ARE SOLELY HIS OWN.
 
   # This photo will be used in the about section
   picture:
@@ -69,17 +65,10 @@ author1:
     # download:        <url>
     # keybase          <username>
 
-# Another author (optional)
+# Older / alternate name the homepage owner has published under. Listed
+# here so `_includes/publications.html` can also auto-bold this name in
+# author rows. Only the `name` field is meaningful for that purpose; the
+# other Hydejack fields (about, picture, social) are intentionally
+# omitted because this is not a real second author.
 author2:
-  name: <firtname> <lastname>
-  email: <mail@domain.tld>
-  about: |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-    Open `_data/authors.yml` to edit this text.
-
-  picture: https://placehold.it/128x128
-  twitter: <username>
-  github: <username>
+  name: Yuedong Chen

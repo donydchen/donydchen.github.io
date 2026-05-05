@@ -1,35 +1,50 @@
 # Donny Y. Chen's Homepage
 
+A simple academic homepage. You can see it live at <https://donydchen.github.io/>.
 
-Kindly check: [https://donydchen.github.io/](https://donydchen.github.io/)
+It is built on the [Hydejack] Jekyll theme (free version). I added a few small overrides for the cover hero, sidebar, dark mode, and offline support.
 
-Powered by [Hydejack](https://hydejack.com/) v9.2.1; Modified from [HERE](https://bo-zhang.me/); Hosted at [GitHub Pages](https://docs.github.com/en/pages).
+[Hydejack]: https://hydejack.com/
 
-## Installation
+## Setup
 
-To run locally, 
+Fork this repo and rename your fork to `<your-username>.github.io`. Then on your machine:
 
 ```bash
-git clone https://github.com/donydchen/donydchen.github.io.git
-cd donydchen.github.io
+git clone https://github.com/<your-username>/<your-username>.github.io.git
+cd <your-username>.github.io
 bundle install
 bundle exec jekyll serve
 ```
 
-Then, head to [http://127.0.0.1:4000/](http://127.0.0.1:4000/) to preview your local edits.
+Open <http://127.0.0.1:4000/> to preview locally.
 
-### Preview in production mode
-
-`bundle exec jekyll serve` runs in development mode, which behaves differently from GitHub Pages: critical-CSS inlining (`<style id="_styleInline">`) and HTML minification (`compress_html`) are **off**. To reproduce the deployed site exactly — useful when a change works locally but breaks after pushing — run:
+The folders `matchnerf/`, `mvsplat/`, `mvsplat360/`, and `sem2nerf/` are project pages from my own papers. They have nothing to do with the homepage. Feel free to delete them after cloning.
 
 ```bash
-JEKYLL_ENV=production PAGES_REPO_NWO=donydchen/donydchen.github.io bundle exec jekyll serve
+rm -rf matchnerf mvsplat mvsplat360 sem2nerf
 ```
 
-Notes:
-* HTML minification strips newlines inside `<script>` blocks. Always use `/* … */` block comments inside inline scripts; `//` line comments collapse into one giant comment that swallows the rest of the script.
-* `PAGES_REPO_NWO` satisfies `jekyll-github-metadata` so the build doesn't fail on the canonical-URL lookup.
+## Documentation
+
+The rest of the walkthrough lives in [`/docs/`](https://donydchen.github.io/docs/). It covers the data files you'll edit, the config keys you'll most likely change, and how to add papers, co-authors, projects, talks, and news.
+
+## License
+
+The license terms live in [`/LICENSE/`](https://donydchen.github.io/LICENSE/).
+
+## Credits
+
+The theme is [Hydejack v9.2.1][Hydejack] by Florian Klampfer (GPL-3.0).
+The layout was adapted from [Bo Zhang's homepage](https://bo-zhang.me/).
+The site is hosted on [GitHub Pages](https://pages.github.com/).
 
 ## Troubleshooting
 
-* If you are running this project on a Mac and encounter errors like `nokogiri (>= 1.16.5) was resolved to 1.17.2, which depends on ruby (>= 3.0.0)`, refer to [this guide](https://dev.to/luizgadao/easy-way-to-change-ruby-version-in-mac-m1-m2-and-m3-16hl) to upgrade your Ruby version before proceeding.
+If `bundle install` fails on macOS with something like `nokogiri (>= 1.16.5) was resolved to 1.17.2, which depends on ruby (>= 3.0.0)`, your system Ruby is too old. [This guide][ruby-mac] walks through upgrading via `rbenv` on Apple Silicon.
+
+[ruby-mac]: https://dev.to/luizgadao/easy-way-to-change-ruby-version-in-mac-m1-m2-and-m3-16hl
+
+---
+
+Working on the code itself (overrides, service worker, custom CSS)? See `CLAUDE.md` at the repo root. It documents the architecture, the production-mode preview workflow, and the "before you change anything" checklist.
