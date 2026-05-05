@@ -10,6 +10,32 @@ in `_config.yml`, so it never ships to the rendered site.
 
 ---
 
+## 2026-05 · Restore `&labelColor=555` on the GitHub stars badge
+
+### Why
+Shields.io's flat-square badge with an emoji-only label (`label=⭐`) and
+no explicit `labelColor` hits an obscure validation path that resolves
+inconsistently per repo. After the publications refactor we'd dropped
+`&labelColor=555` from the badge URL on the assumption it was cosmetic.
+The `donydchen/mvsplat` badge then started rendering as `⭐: invalid`
+(56-wide grey-pill) while `ByteDance-Seed/depth-anything-3` still
+worked — same URL template, different shields.io cache path.
+
+### What
+`_includes/publications.html` — restored `&labelColor=555` on the
+stars badge `<img>` URL. Visually identical (the auto-derived color
+on flat-square WAS `#555`), but it routes shields.io through the
+deterministic processing path so any `link.stars` repo renders the
+star count instead of "invalid".
+
+### Watch out
+Don't drop `&labelColor=555` again. The badge looks fine without it
+in local previews because the default flat-square label tint matches,
+so the "is this needed?" instinct will whisper "no". The deterministic
+path matters more than the visible color.
+
+---
+
 ## 2026-05 · Documentation page + footer-credit relocation
 
 ### Why
