@@ -132,6 +132,6 @@
   <div class="pub-title">{{ pub.title }}</div>
   <div class="pub-venue">{{ pub.venue }}</div>
   <div class="pub-authors">{{ authors_html }}</div>
-  <div>{% for link in pub.links %}{% unless forloop.first %}&nbsp;{% endunless %}{% if link.highlight %}[<span class="hl-work"><a href="{{ link.url }}">{{ link.text }}</a></span>]{% else %}[<a href="{{ link.url }}">{{ link.text }}</a>{% if link.stars %} <img class="pub-code-label" src="https://img.shields.io/github/stars/{{ link.stars }}?style=flat-square&label=⭐">{% endif %}]{% endif %}{% endfor %}{% if pub.extra %} {{ pub.extra }}{% endif %}</div>
+  <div>{% for link in pub.links %}{% unless forloop.first %}&nbsp;{% endunless %}{% if link.highlight %}[<span class="hl-work"><a href="{{ link.url }}">{{ link.text }}</a></span>]{% else %}[<a href="{{ link.url }}">{{ link.text }}</a>{% if link.stars %} <img class="pub-code-label" src="https://img.shields.io/github/stars/{{ link.stars }}?style=flat-square&label=⭐&labelColor=555">{% endif %}]{% endif %}{% endfor %}{% if pub.extra %} {{ pub.extra }}{% endif %}</div>
 </div>
 {% endfor -%}
