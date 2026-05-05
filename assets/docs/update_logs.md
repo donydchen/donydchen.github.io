@@ -10,6 +10,70 @@ in `_config.yml`, so it never ships to the rendered site.
 
 ---
 
+## 2026-05 · Pub-link hover colors + license file rename
+
+### Why
+1. Hover behavior on the publication bracket links (arXiv, code,
+   project page) was broken in dark mode — Hydejack pins the hover
+   text-decoration-color to `var(--accent-color)` = `rgb(68,78,83)`
+   (a fixed gray-blue), which disappears against the dark page
+   background. So the hover "color change" looked like nothing
+   happening.
+2. Highlight-link (`hl-work`) underlining was wrong in the
+   `system prefers dark + manual light-toggle` mode combo. The three
+   `@media`-gated rules each had a guard (`body:not(.dark-mode)` /
+   `body:not(.light-mode)`) that excluded that specific path, so the
+   hl-work `<a>` fell through to the generic anchor styling and the
+   underline was shown in `--link-underline-color` instead of the
+   intended `--highlight-color` mix.
+3. GitHub repo sidebar said `GPL-3.0, Unknown licenses found` because
+   Linguist fingerprinted both the bare `LICENSE` file (canonical
+   GPL-3.0, recognized) and the styled `LICENSE.md` page (Hydejack
+   markdown formatting, not recognized). Two license sources
+   confused the detector.
+
+### What
+- `_includes/my-head.html`:
+  - Removed the three `@media`-gated `body:not(...)` blocks that set
+    hl-work text-decoration-color. Replaced with a single
+    UNCONDITIONAL pair of rules (rest + hover) that read
+    `var(--highlight-color)`. The variable itself is mode-aware via
+    the existing CSS-variable definitions, so the hl-work color
+    correctly tracks the active mode in all 6 combos
+    (system × manual-toggle).
+  - Added `.pub div > a:not(.btn):not(.no-hover):not(.no-mark-external):hover`
+    that pins text-decoration-color to `var(--header-color)`
+    (#2452A1 in light, #8ab4f8 in dark). The `> a` direct-child
+    combinator keeps this off hl-work links (which sit inside
+    `<span class="hl-work">`), and `:not(.no-mark-external)` keeps it
+    off co-author links (which carry that class).
+- `LICENSE.md` → `gpl-3.0.md` (renamed via `git mv`). The Jekyll
+  page still renders at `/LICENSE/` because the file's front matter
+  declares `permalink: /LICENSE/`. Linguist no longer fingerprints
+  the file because its name no longer matches the LICENSE / LICENCE /
+  COPYING glob, so the sidebar shows just `GPL-3.0 license` from
+  the bare `LICENSE` file.
+- `_config.yml`: `include:` updated `LICENSE.md` → `gpl-3.0.md`.
+- `CLAUDE.md`: documented that "push one time only" means a critical
+  push — must thoroughly test in production-mode local AND verify
+  the live site post-deploy.
+
+### Watch out
+- Don't put the hl-work `text-decoration-color` rules back inside
+  any `@media (prefers-color-scheme: …)` block. If you do, the
+  `system=dark + toggle=light` (and `system=light + toggle=dark`)
+  paths fall through to the generic anchor underline. The variable
+  is already mode-aware; the rule just needs to USE the variable.
+- The pub-link hover override uses `> a` (direct child). If the
+  publications include is ever rewritten so a bracket link gets
+  wrapped in another element, this rule stops applying. In that
+  case use a class-based selector instead.
+- For any future page that needs a TOC, the `/LICENSE/` page proves
+  out the layout. Only enable a TOC at viewports ≥120 em (1920 px);
+  below that the right-side floating TOC overlaps the article column.
+
+---
+
 ## 2026-05 · License surface cleanup + TOC width tweak
 
 ### Why

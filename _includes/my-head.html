@@ -26,14 +26,6 @@
       --link-underline-color: rgba(36, 82, 161, 0.3);
     }
 
-    /* Highlight work links in light mode (when no explicit mode is set) */
-    body:not(.dark-mode) .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external) {
-      text-decoration-color: color-mix(in srgb, var(--highlight-color) 40%, transparent);
-    }
-
-    body:not(.dark-mode) .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external):hover {
-      text-decoration-color: color-mix(in srgb, var(--highlight-color) 80%, transparent);
-    }
   }
 
   /* =========================== */
@@ -50,15 +42,6 @@
       --link-underline-color: rgba(138, 180, 248, 0.3);
     }
 
-    /* Highlight work links in dark mode */
-    body.dark-mode .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external) {
-      text-decoration-color: color-mix(in srgb, var(--highlight-color) 40%, transparent);
-      transition: text-decoration-color 250ms;
-    }
-
-    body.dark-mode .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external):hover {
-      text-decoration-color: color-mix(in srgb, var(--highlight-color) 80%, transparent);
-    }
   }
 
   /* System preference for dark mode */
@@ -71,14 +54,6 @@
       --link-underline-color: rgba(138, 180, 248, 0.3);
     }
 
-    /* Highlight work links in dark mode (when no explicit mode is set) */
-    body:not(.light-mode) .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external) {
-      text-decoration-color: color-mix(in srgb, var(--highlight-color) 40%, transparent);
-    }
-
-    body:not(.light-mode) .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external):hover {
-      text-decoration-color: color-mix(in srgb, var(--highlight-color) 80%, transparent);
-    }
   }
 
   /* =========================== */
@@ -95,6 +70,19 @@
 
   a:not(.btn):not(.no-hover):not(.no-mark-external):hover {
     text-decoration-color: var(--accent-color);
+  }
+
+  /* Pub bracket-link hover (arXiv, code, project page, …). Hydejack's
+     default uses var(--accent-color) = a fixed gray-blue, which is
+     invisible against the dark-mode background. We pin to
+     var(--header-color) so the hover underline stays visible in both
+     modes (#2452A1 light, #8ab4f8 dark). The `> a` direct-child
+     combinator keeps this off the hl-work links (which sit a level
+     deeper inside `<span class="hl-work">`) and the
+     `:not(.no-mark-external)` keeps it off the co-author links
+     (which carry that class). */
+  .pub div > a:not(.btn):not(.no-hover):not(.no-mark-external):hover {
+    text-decoration-color: var(--header-color);
   }
 
   /* News notes links styling */
@@ -205,14 +193,23 @@
     color: var(--gray-text);
   }
 
-  /* Highlighted work links base styling */
+  /* Highlighted work links base styling. Color comes from
+     `--highlight-color`, which is set by the mode-aware CSS-variable
+     blocks above (light: #FF8C00, dark: #E5BC42). The
+     text-decoration-color rules are intentionally NOT @media-gated:
+     they need to apply for every mode combination, including the
+     awkward "system prefers dark + manual light-toggle" path where
+     none of the @media blocks match. */
   .hl-work,
   .hl-work a {
     color: var(--highlight-color);
   }
-
   .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external) {
+    text-decoration-color: color-mix(in srgb, var(--highlight-color) 40%, transparent);
     transition: text-decoration-color 250ms;
+  }
+  .hl-work a:not(.btn):not(.no-hover):not(.no-mark-external):hover {
+    text-decoration-color: color-mix(in srgb, var(--highlight-color) 80%, transparent);
   }
 
   /* Publication entry styling */

@@ -113,6 +113,20 @@ Run these in order. Skipping is how regressions get shipped.
 5. **Never commit (or push) without an explicit instruction.** Stage the
    diff, update `assets/docs/update_logs.md`, and wait. The owner commits on their
    own cadence — proactive commits are not welcome.
+   - **"push one time only" / "you only have ONE chance to push" is a
+     CRITICAL signal.** Before such a push: rebuild the site in
+     production mode (`JEKYLL_ENV=production` with `PAGES_REPO_NWO=…`),
+     run a full regression — every page (`/`, `/docs/`, `/404.html`,
+     `/LICENSE/`), every viewport (desktop wide / desktop / tablet
+     portrait / mobile), and BOTH light and dark color schemes — using
+     a real headless browser, not just static HTML grep. Verify
+     visually-relevant CSS (hover states, color tokens) by computed
+     style. After the push, re-verify the LIVE site (donydchen.github.io)
+     in an ephemeral / incognito browser context with caches off so
+     you don't read stale state — favicons, manifest, service worker
+     registration, /sw.js, offline navigation, and the specific
+     features the user just shipped. Don't declare the work done
+     until both checks have passed.
 6. **Commit messages stay short and human** — one line, lowercase, present
    tense. Skip the body. The detail belongs in `assets/docs/update_logs.md`, not in
    `git log`.
