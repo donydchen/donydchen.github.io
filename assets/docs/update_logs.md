@@ -10,6 +10,60 @@ in `_config.yml`, so it never ships to the rendered site.
 
 ---
 
+## 2026-05 · License surface cleanup + TOC width tweak
+
+### Why
+GitHub's repo sidebar showed a generic "View license" instead of
+"GPL-3.0" because Linguist's licensee tool couldn't match
+`LICENSE.md` against the canonical GPL-3.0 template — the file had
+a `# LICENSE` heading, Kramdown IAL classes, and other text-decoration
+that drifted the similarity score below the 95% threshold. Two more
+unused fragments were lying around: `_includes/features.md` and
+`_includes/table.md` (Hydejack starter content, unreferenced) and the
+top-level `/licenses/` folder (Hydejack PRO-vs-Free comparison
+licenses, unused since the project's own LICENSE.md covers the actual
+license). And on /LICENSE/ the floating right-side TOC was overlapping
+the article column at typical wide-laptop widths (1664-1900 px).
+
+### What
+- `LICENSE` (no extension, new) — canonical GPL-3.0 plain text
+  fetched from gnu.org. Linguist scans the repo on disk so it picks
+  this up and shows "GPL-3.0" in the sidebar.
+- `_config.yml` — added `LICENSE` to the `exclude:` list so the bare
+  file doesn't get copied into `_site/`. Without that exclusion
+  Jekyll fails the build because `_site/LICENSE/index.html` (from
+  `LICENSE.md` + permalink) and `_site/LICENSE` (from the new file)
+  collide on the same path (file vs directory).
+- `LICENSE.md` — left unchanged (Hydejack-style with TOC + section
+  headings) so the rendered `/LICENSE/` page keeps its styled look.
+- `_includes/features.md`, `_includes/table.md` — deleted (Hydejack
+  starter content, no `{% include %}` reference anywhere).
+- `licenses/` directory (6 files) — deleted. The `legal:` config that
+  could link to those was already commented out, and the project's
+  own `LICENSE.md` is sufficient.
+- `_includes/my-head.html` — tightened the right-side TOC. Below
+  120 em (1920 px) the TOC is hidden (otherwise it overlaps the
+  fixed-width 880-px article). At ≥120 em the width is reduced from
+  `calc(50% - 31rem)` to `calc(50% - 35rem)` and `right` is bumped
+  to `1rem` so the TOC sits comfortably in the right margin.
+
+### Watch out
+- We chose GPL-3.0 (not MIT) because the project's `_layouts/plain.html`,
+  `_layouts/page.html`, `_includes/body/footer.html`, and
+  `_includes/body/index.html` are derivative works of Hydejack's
+  GPL-3.0 layouts. MIT or Apache here would create a license conflict.
+  If you ever rewrite those four files from scratch (no Hydejack
+  derivation), MIT becomes a legitimate option.
+- Don't add LICENSE.md to `exclude:`. The styled `/LICENSE/` page
+  comes from there and visitors hit that URL from the README and the
+  docs page links.
+- The TOC threshold is 120 em (1920 px) on purpose. If you change the
+  article width or sidebar width in my-head.html, recompute the gap
+  with a Puppeteer probe across viewports before lowering the
+  threshold.
+
+---
+
 ## 2026-05 · GitHub stars badge: encode emoji, pin colors
 
 ### Why

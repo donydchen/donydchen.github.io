@@ -117,6 +117,27 @@
     color: var(--header-color);
   }
 
+  /* Right-side floating TOC tweaks (currently shown on /LICENSE/).
+     Hydejack reveals the TOC at 104em (1664px) with width
+     `calc(50% - 31rem)`. At 1664-1900px the TOC box overlaps the
+     fixed-width article column; the user reported this as
+     "collapsing with the contents slightly". We:
+       1. Postpone the breakpoint to 120em (≈1920px) so the TOC only
+          appears when there's enough right-margin room.
+       2. Trim its computed width by 4rem and bump the right inset by
+          1rem so even at 1920px there's a comfortable gap. */
+  @media (min-width: 104em) and (max-width: 119.99em) {
+    body.no-break-layout:not(.no-toc) #markdown-toc {
+      display: none;
+    }
+  }
+  @media (min-width: 120em) {
+    body.no-break-layout:not(.no-toc) #markdown-toc {
+      width: calc(50% - 35rem);
+      right: 1rem;
+    }
+  }
+
   /* Separator between the disclaimer block and the visitor map.
      The visitor map sits right at the bottom of every page above
      the dingbat + copyright, so a default <hr> margin made the two

@@ -328,6 +328,13 @@ exclude:
   # Repo-internal docs (not meant to be served / Liquid-processed):
   - CLAUDE.md
   - assets/docs/
+  # Bare `LICENSE` file (no extension) holds the canonical GPL-3.0
+  # plain text so GitHub's Linguist detects the license name and shows
+  # it in the repo sidebar. Linguist scans the repo on disk (not the
+  # built site), so excluding from the build is fine — and necessary,
+  # because `LICENSE.md` already builds to `_site/LICENSE/index.html`
+  # (a directory), which collides with a same-name file at that path.
+  - LICENSE
 include:
   - .well-known
   - LICENSE.md
