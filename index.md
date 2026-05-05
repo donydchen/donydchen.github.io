@@ -290,27 +290,41 @@ ALL OPINIONS AND VIEWS EXPRESSED ON THIS PAGE ARE SOLELY HIS OWN AND SHALL NOT B
   <div id="visitor-map" style="min-height:200px;width:300px;margin:0 auto;"></div>
 </div>
 <script>
+  /* Load clustrmaps off the critical path so it never blocks HTML parsing,
+     paint, or Hydejack's drawer init (the original sync <script src=...>
+     froze the sidebar while the CDN responded). Still fires once per page
+     load so every visitor is counted. */
   (function () {
-    var slot = document.getElementById('visitor-map');
-    if (!slot) return;
     var SRC = '//cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d=rZHkm--x6O2bEyO0Je3uy1kjPw-mXX0YCKFUg287Tc0&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353';
-    var loaded = false;
     function inject() {
-      if (loaded) return;
-      loaded = true;
+      if (document.getElementById('clustrmaps')) return;
+      var slot = document.getElementById('visitor-map');
+      if (!slot) return;
       var s = document.createElement('script');
       s.id = 'clustrmaps';
       s.async = true;
       s.src = SRC;
+      /* Hide the placeholder if the script never successfully loads —
+         explicit error (uBlock / NextDNS), hang (sinkhole DNS / dropped
+         packets), or slow CDN past 5s. async + the post-load schedule
+         already ensure nothing else on the page is gated on this; the
+         hide is purely cosmetic so visitors who block clustrmaps don't
+         see a blank 300x200 box at the bottom of the page. */
+      var done = false;
+      function hideOnFail() { if (!done) { done = true; slot.style.display = 'none'; } }
+      s.onload = function () { done = true; };
+      s.onerror = hideOnFail;
+      setTimeout(hideOnFail, 5000);
       slot.appendChild(s);
     }
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries, obs) {
-        if (entries[0].isIntersecting) { obs.disconnect(); inject(); }
-      }, { rootMargin: '300px' });
-      io.observe(slot);
-    } else {
-      window.addEventListener('load', inject);
+    function schedule() {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(inject, { timeout: 3000 });
+      } else {
+        setTimeout(inject, 1500);
+      }
     }
+    if (document.readyState === 'complete') schedule();
+    else window.addEventListener('load', schedule);
   })();
 </script>
