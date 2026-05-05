@@ -236,15 +236,15 @@ His academic journey began with the completion of both his MEng and BEng degrees
   </div>
 
   <div class="card">
-    <a href="https://cepoca.cn/lectureHall/lectureRoomDetail/?liveUid=cd40fae9992618669ccf17e09efa7b76" target="_blank">
-      <div><img src="assets/img/talk_szhy.jpeg" /></div>
+    <a href="https://mp.weixin.qq.com/s/SnmqOBkV3N3PVdBmgJ8NzA" target="_blank">
+      <div><img src="assets/img/talk_szhy.png" /></div>
     </a>
     <div class="cdesc">Invited talk at SHUZIHUANYU</div>
   </div>
 
   <div class="card">
     <a href="https://www.bilibili.com/video/BV1sAWhe1ENw/" target="_blank">
-      <div><img src="assets/img/talk_3dcver.jpeg" /></div>
+      <div><img src="assets/img/talk_3dcver.png" /></div>
     </a>
     <div class="cdesc">Invited talk at 3DCVer <span class="icon-youtube"></span></div>
   </div>  
