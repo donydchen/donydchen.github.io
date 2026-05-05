@@ -1,0 +1,83 @@
+# Projects & Talks section.
+#
+# Two lists, rendered by `_includes/projects.html` in this order:
+#
+#   talks  — text-only invited-talk entries displayed as a `<ul>`.
+#            Newest at the top. Each entry:
+#              date  - free-form string (any format, just the literal
+#                      shown before the comma — e.g. "28-01-2025").
+#              type  - what kind of appearance it was, e.g.
+#                      "Invited talk", "Keynote", "Tutorial".
+#              title - the talk title (rendered inside double quotes).
+#              venue - venue + location, italicized in the output.
+#              host  - optional. {name, url} of the host. If omitted,
+#                      the trailing ", hosted by …" is dropped.
+#
+#   cards  — image + description thumbnails inside `.demo-proj-row`.
+#            Newest at the top. Each entry:
+#              href  - URL the whole card links to (opens in new tab).
+#              image - path under assets/img/ (or any URL).
+#              desc  - description shown below the image. Inline HTML
+#                      is allowed (e.g. an `<a>` link, or
+#                      `<span class="icon-youtube"></span>` for the
+#                      red-play badge).
+#              style - OPTIONAL inline style applied to the image
+#                      wrapper `<div>`. Used by the commented-out
+#                      WAYVE entry below to add vertical breathing
+#                      room when the source PNG is unusually tall.
+
+talks:
+  - date: '28-01-2025'
+    type: 'Invited talk'
+    title: "Feed-forward NVS from Sparse Inputs"
+    venue: 'Amazon, Tel Aviv'
+    host:
+      name: 'Lior Fritz'
+      url: 'https://www.linkedin.com/in/lior-fritz-6457a796'
+
+  - date: '08-11-2024'
+    type: 'Invited talk'
+    title: 'Feed-forward Novel View Synthesis'
+    venue: 'Wayve, London'
+    host:
+      name: 'Joe Polin'
+      url: 'https://www.linkedin.com/in/joepolin'
+
+cards:
+  - href:  'https://www.youtube.com/watch?v=noY558thveo'
+    image: 'assets/img/talk_iclr26.png'
+    desc:  'Oral presentation at ICLR 2026 <span class="icon-youtube"></span>'
+
+  - href:  'https://bsky.app/profile/donydchen.bsky.social/post/3lldtgeyitc2h'
+    image: 'assets/img/talk_3dv25.png'
+    desc:  'Invited talk at <a href="https://3dvconf.github.io/2025/call-for-nectar-track" target="_blank">3DV25 Nectar Track</a>'
+
+  - href:  'https://ajcai2024.org/files/AJCAI_Booklet.pdf#page=15.09'
+    image: 'assets/img/talk_ajcai2024.png'
+    desc:  'Invited talk at <a href="https://ajcai2024.org" target="_blank">AJCAI 2024</a>'
+
+  # Hidden — uncomment to surface again. Kept in original list order.
+  # - href:  'https://wayve.ai'
+  #   image: 'assets/img/talk_wayve_uk.png'
+  #   desc:  'Invited talk at WAYVE(London)'
+  #   style: 'margin: 25px 0;'
+
+  - href:  'https://eccv2024.ecva.net/virtual/2024/poster/1231'
+    image: 'assets/img/eccv24_oral.jpeg'
+    desc:  'Oral presentation at ECCV 2024 <span class="icon-youtube"></span>'
+
+  - href:  'https://mp.weixin.qq.com/s/SnmqOBkV3N3PVdBmgJ8NzA'
+    image: 'assets/img/talk_szhy.png'
+    desc:  'Invited talk at SHUZIHUANYU'
+
+  - href:  'https://www.bilibili.com/video/BV1sAWhe1ENw/'
+    image: 'assets/img/talk_3dcver.png'
+    desc:  'Invited talk at 3DCVer <span class="icon-youtube"></span>'
+
+  - href:  'https://github.com/lyndonzheng/Pluralistic-Inpainting#gui'
+    image: 'assets/img/openday22_demo.jpeg'
+    desc:  'Demo at Monash Uni. <a href="https://www.monash.edu/open-day">Open Day 2022</a>'
+
+  - href:  'https://github.com/donydchen/ganimation_replicate'
+    image: 'assets/img/ganimation_proj.png'
+    desc:  'A popular replication of <a href="https://github.com/albertpumarola/GANimation">GANimation</a>'

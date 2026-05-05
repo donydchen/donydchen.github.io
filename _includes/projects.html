@@ -1,0 +1,41 @@
+{% comment %}
+  Renders the "Projects & Talks" section from `_data/projects.yml`.
+  Two parts, in order:
+
+    1. `talks` — text-only invited-talk list. Output mirrors the
+       previous hand-crafted markup exactly:
+         <li>{date}, {type} "{title}" at <i>{venue}</i>, hosted by
+             <a href="{host.url}">{host.name}</a>.</li>
+       The "hosted by …" tail is dropped if the entry has no `host`.
+
+    2. `cards` — image + description thumbnails inside the
+       `.demo-proj-row` grid. Each card is a single image+caption tile
+       linked to the talk page / video / repo. Inline HTML in `desc`
+       is preserved (used for `<span class="icon-youtube">` badges and
+       embedded links).
+
+  To add a talk or a card, edit `_data/projects.yml` only — this file
+  shouldn't need to change.
+{% endcomment %}
+{% if site.data.projects.talks and site.data.projects.talks.size > 0 %}
+<div style="padding-top: 20px; margin-bottom: -15px">
+  <ul>
+    {%- for t in site.data.projects.talks %}
+    <li>{{ t.date }}, {{ t.type }} "{{ t.title }}" at <i>{{ t.venue }}</i>{% if t.host %}, hosted by <a href="{{ t.host.url }}">{{ t.host.name }}</a>{% endif %}.</li>
+    {%- endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{% if site.data.projects.cards and site.data.projects.cards.size > 0 %}
+<div class="demo-proj-row">
+  {% for c in site.data.projects.cards %}
+  <div class="card">
+    <a href="{{ c.href }}" target="_blank">
+      <div{% if c.style %} style="{{ c.style }}"{% endif %}><img src="{{ c.image }}" /></div>
+    </a>
+    <div class="cdesc">{{ c.desc }}</div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}

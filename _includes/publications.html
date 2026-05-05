@@ -1,0 +1,137 @@
+{% comment %}
+  Renders the `.pub` block list for the homepage from `_data/publications.yml`.
+
+  To add a new publication, prepend an entry to that YAML file (newest at
+  the top). The schema is documented in the file's header comment.
+
+  Author handling:
+    The `authors` string is a plain comma-separated list — no "and"
+    before the last name and no <b>…</b> around the homepage owner.
+    Both are added automatically here.
+
+      • Owner detection. Every `name` listed under `site.data.authors`
+        is treated as the homepage owner (currently "Donny Y. Chen" and
+        "Yuedong Chen" via author1/author2). When a token's clean name
+        matches one of those, it is wrapped in <b>…</b> (preserving any
+        annotation suffix like * or †) and not linked.
+      • HTML pass-through. Tokens that already contain a tag — `<b>…</b>`
+        on legacy entries, an intentional `<i>et al.</i>` elision — are
+        emitted verbatim so we never wrap a tag inside an anchor.
+      • Co-author links. Anything else is wrapped in
+        `<a class="coauthor" target="_blank" …>`. The clean name (with
+        * and † stripped) is looked up in `_data/coauthors.yml` and that
+        URL is used if present; otherwise we fall back to a Google
+        search for the name.
+      • "and" conjunction. When the entry has more than one author the
+        last token is automatically prefixed with "and ".
+
+  Link row:
+    Each item in `links` is rendered as one bracketed badge `[<a>…</a>]`
+    separated by a non-breaking space (`&nbsp;`) — a regular space was
+    being clipped by Hydejack's compress_html on the text→tag boundary,
+    and `&nbsp;` is bulletproof against that pass.
+      • `highlight: true` wraps the `<a>` in `<span class="hl-work">`
+        for the colored accent badge.
+      • `stars: 'owner/repo'` appends a GitHub stars shield image right
+        after the link text inside the same `[ ]` pair.
+      • Optional `extra` is appended after the links — it carries its
+        own brackets and may start with `<br>` to push the "also
+        presented at …" callout onto a new visual line.
+{% endcomment %}
+{%- comment -%} Build the list of owner names from authors.yml. {%- endcomment -%}
+{%- assign owner_list = '' -%}
+{%- for author_pair in site.data.authors -%}
+  {%- assign author_name = author_pair[1].name -%}
+  {%- if author_name and author_name != '' -%}
+    {%- if owner_list == '' -%}
+      {%- assign owner_list = author_name -%}
+    {%- else -%}
+      {%- assign owner_list = owner_list | append: '|' | append: author_name -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign owner_names = owner_list | split: '|' -%}
+
+{%- for pub in site.data.publications -%}
+{%- assign tokens = pub.authors | split: ', ' -%}
+{%- assign last_idx = tokens.size | minus: 1 -%}
+{%- assign authors_html = '' -%}
+{%- assign owner_carries_comma = false -%}
+{%- for tok in tokens -%}
+  {%- assign body = tok | strip -%}
+
+  {%- comment -%}
+    Owner check on the cleaned name. We also strip any pre-existing
+    <b>…</b> from clean_name so legacy YAML entries that hand-wrapped
+    the owner (e.g. `<b>Yuedong Chen</b>`) still match against the
+    plain names in `_data/authors.yml`.
+  {%- endcomment -%}
+  {%- assign clean_name = body | replace: '<b>', '' | replace: '</b>', '' | replace: '*', '' | replace: '†', '' | strip -%}
+  {%- assign is_owner = false -%}
+  {%- for owner in owner_names -%}
+    {%- if clean_name == owner -%}{%- assign is_owner = true -%}{%- endif -%}
+  {%- endfor -%}
+
+  {%- assign emitted_comma_inside = false -%}
+  {%- if is_owner -%}
+    {%- comment -%}
+      Build the bolded base. If the body already had <b>…</b> we keep
+      it; otherwise we wrap it now. To make the trailing comma inherit
+      the same color as the owner name (rather than the row's
+      --bright-color), we splice it in before the closing </b> when
+      this isn't the last author.
+    {%- endcomment -%}
+    {%- if body contains '<b>' -%}
+      {%- assign owner_base = body -%}
+    {%- else -%}
+      {%- capture owner_base -%}<b>{{ body }}</b>{%- endcapture -%}
+    {%- endif -%}
+    {%- if forloop.index0 == last_idx -%}
+      {%- assign piece = owner_base -%}
+    {%- else -%}
+      {%- assign piece = owner_base | replace: '</b>', ',</b>' -%}
+      {%- assign emitted_comma_inside = true -%}
+    {%- endif -%}
+  {%- elsif body contains '<' -%}
+    {%- comment -%}
+      Token already carries inline HTML (e.g. <i>et al.</i> elision).
+      Pass through verbatim — never wrap a tag inside an anchor.
+    {%- endcomment -%}
+    {%- assign piece = body -%}
+  {%- else -%}
+    {%- assign suffix = body | remove_first: clean_name -%}
+    {%- assign url = site.data.coauthors[clean_name] -%}
+    {%- if url == nil or url == '' -%}
+      {%- assign q = clean_name | url_encode -%}
+      {%- assign url = 'https://www.google.com/search?q=' | append: q -%}
+    {%- endif -%}
+    {%- capture piece -%}<a class="coauthor no-mark-external" href="{{ url }}" target="_blank" rel="noopener">{{ clean_name }}</a>{{ suffix }}{%- endcapture -%}
+  {%- endif -%}
+
+  {%- comment -%} Auto-prepend "and " to the final token (if >1 authors). {%- endcomment -%}
+  {%- if forloop.index0 == last_idx and tokens.size > 1 -%}
+    {%- assign piece = 'and ' | append: piece -%}
+  {%- endif -%}
+
+  {%- comment -%}
+    Join. The previous iteration may have already baked the trailing
+    comma into its <b> (the owner case), in which case we only need a
+    space here.
+  {%- endcomment -%}
+  {%- if forloop.first -%}
+    {%- assign authors_html = piece -%}
+  {%- elsif owner_carries_comma -%}
+    {%- assign authors_html = authors_html | append: ' ' | append: piece -%}
+  {%- else -%}
+    {%- assign authors_html = authors_html | append: ', ' | append: piece -%}
+  {%- endif -%}
+
+  {%- assign owner_carries_comma = emitted_comma_inside -%}
+{%- endfor %}
+<div class="pub">
+  <div class="pub-title">{{ pub.title }}</div>
+  <div class="pub-venue">{{ pub.venue }}</div>
+  <div class="pub-authors">{{ authors_html }}</div>
+  <div>{% for link in pub.links %}{% unless forloop.first %}&nbsp;{% endunless %}{% if link.highlight %}[<span class="hl-work"><a href="{{ link.url }}">{{ link.text }}</a></span>]{% else %}[<a href="{{ link.url }}">{{ link.text }}</a>{% if link.stars %} <img class="pub-code-label" src="https://img.shields.io/github/stars/{{ link.stars }}?style=flat-square&label=⭐">{% endif %}]{% endif %}{% endfor %}{% if pub.extra %} {{ pub.extra }}{% endif %}</div>
+</div>
+{% endfor -%}

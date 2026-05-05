@@ -1,0 +1,36 @@
+# Time-sensitive news.
+#
+# Rendered above the body-social row by `_includes/news.html`. Use
+# this for short-lived announcements: conferences you'll attend, jobs
+# you're hiring for, talks coming up, etc.
+#
+# Each entry takes:
+#   html    - the message body. Raw HTML is allowed; you can use
+#             `<a class="external" …>`, `<p>`, `<br>`, anything that
+#             renders inline.
+#   expires - OPTIONAL "YYYY-MM-DD" date string (single-quoted so
+#             YAML keeps it as text). The entry is shown up to and
+#             including that date, then hidden automatically. Omit
+#             this field for an open-ended announcement.
+#
+# Two ways to hide an entry:
+#   1. Set `expires` to a past date (or just leave the past date in
+#      place after the event happens) — the include checks against
+#      `site.time` at every build.
+#   2. Comment out the entry by prefixing every line with `#`. Useful
+#      when you want to keep the text around for next year's edition
+#      of the same event.
+
+- html: |
+    I will present <a class="external" href="https://iclr.cc/virtual/2026/oral/10006532" target="_blank">Depth Anything 3</a> and <a class="external" href="https://iclr.cc/virtual/2026/poster/10010908" target="_blank">Trace Anything</a> on-site at ICLR26. See you in Brazil!
+  expires: '2026-05-01'
+
+# - html: |
+#     <p><a class="external" href="https://github.com/DepthAnything" target="_blank">Our team</a> has openings for full time and internship positions from time to time. If you are interested in joining us for 3D/4D vision research, please feel free to reach out to me via my company email after reading the <a href="/#disclaimer">disclaimer</a>.</p>
+
+# - html: |
+#     Actively seeking Research Scientist position (<a href="mailto:donny.chen@outlook.sg">Email</a>, <a href="assets/pdf/Resume_Yuedong_CHEN.pdf">CV</a>)<br /><br />
+
+# - html: |
+#     I will present MVSplat360 on-site at NeurIPS24 (13/12 at Vancouver). Let's connect!
+#   expires: '2024-12-14'
