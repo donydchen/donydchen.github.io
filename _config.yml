@@ -332,12 +332,18 @@ exclude:
   # plain text so GitHub's Linguist detects the license name and shows
   # it in the repo sidebar. Linguist scans the repo on disk (not the
   # built site), so excluding from the build is fine — and necessary,
-  # because `LICENSE.md` already builds to `_site/LICENSE/index.html`
-  # (a directory), which collides with a same-name file at that path.
+  # because the styled license page already builds to
+  # `_site/LICENSE/index.html` (from `gpl-3.0.md` + the `permalink`
+  # front-matter), which would collide with a same-name file there.
   - LICENSE
 include:
   - .well-known
-  - LICENSE.md
+  # Styled license page is now at `gpl-3.0.md` (renamed from
+  # `LICENSE.md`) so Linguist stops fingerprinting it as a second
+  # license source — only the canonical bare `LICENSE` file is used
+  # for the GitHub repo sidebar detection. The page still renders at
+  # `/LICENSE/` because the file has `permalink: /LICENSE/` set.
+  - gpl-3.0.md
 
 # Plugins
 # ----------------------------------------------------------------------------------------
