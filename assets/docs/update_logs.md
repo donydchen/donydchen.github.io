@@ -10,6 +10,55 @@ in `_config.yml`, so it never ships to the rendered site.
 
 ---
 
+## 2026-05 · Project pages moved to their own repos (history rewrite)
+
+### Why
+The four project page directories (`/matchnerf/`, `/mvsplat/`,
+`/mvsplat360/`, `/sem2nerf/`) had nothing to do with the homepage.
+They were ~110 MB of HTML, images, videos, and PDFs that bloated every
+clone of this repo, and they were already excluded from the service
+worker cache for the same reason. They now live on the `gh-pages`
+branch of each paper's own code repo (`donydchen/<slug>`), which is
+the conventional layout for academic project pages and matches how
+projects like `dcharatan/pixelsplat` ship their websites.
+
+The live URLs (`https://donydchen.github.io/<slug>/`) are unchanged.
+GitHub Pages routes them to the project repo automatically once Pages
+is enabled there with `source.branch = gh-pages`.
+
+### What
+- Force-pushed master after `git filter-repo --invert-paths --path
+  sem2nerf --path matchnerf --path mvsplat --path mvsplat360`. Repo
+  shrunk from 198 MB to 40 MB; 45 commits had touched these dirs.
+  Backup of pre-rewrite tip lives on `backup-before-filter-repo` on
+  origin (delete after a few weeks of stable operation).
+- `.gitignore`: added the four directory names so a re-clone or stray
+  copy can't accidentally re-introduce them.
+- `README.md`: removed the "feel free to delete these folders" snippet
+  — there's nothing to delete now.
+- Each new repo's `gh-pages` branch ships an empty `.nojekyll` (these
+  pages are plain HTML/CSS/JS and shouldn't be processed by GitHub's
+  default Jekyll pipeline) and a short human-readable `README.md`
+  pointing back to the paper.
+
+### Watch out
+- `assets/js/sw.js` still has `/matchnerf/`, `/mvsplat/`, `/mvsplat360/`,
+  `/sem2nerf/` in `NEVER_CACHE_PATTERNS` and **that's correct** — the
+  homepage SW has scope `/`, so requests for those paths still hit it
+  even though Pages routes them to a different repo. We still don't
+  want the SW caching ~110 MB of unrelated content.
+- `_data/publications.yml` has hard-coded
+  `https://donydchen.github.io/<slug>/` URLs. Don't touch them — they
+  resolve correctly via Pages routing.
+- Anyone with an old clone needs to `git fetch origin && git reset
+  --hard origin/master` (or re-clone). Old commit SHAs are dead.
+- If `https://donydchen.github.io/<slug>/` ever 404s after this, check
+  Settings → Pages on the corresponding `donydchen/<slug>` repo: it
+  should say `source.branch = gh-pages, source.path = /, status =
+  built`. The `gh-pages` branch must exist or Pages serves nothing.
+
+---
+
 ## 2026-05 · Pub-link hover colors + license file rename
 
 ### Why

@@ -14,3 +14,12 @@ hydejack/
 # Editor / linter configs (per-developer, not part of the published site)
 .vscode/
 .markdownlint.json
+
+# Project pages — moved to gh-pages branches of their own repos
+# (donydchen/sem2nerf, donydchen/matchnerf, donydchen/mvsplat, donydchen/mvsplat360).
+# Same /sem2nerf/, /matchnerf/, /mvsplat/, /mvsplat360/ URLs as before;
+# they just don't live in this repo anymore.
+sem2nerf/
+matchnerf/
+mvsplat/
+mvsplat360/

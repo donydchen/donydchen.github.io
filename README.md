@@ -19,12 +19,6 @@ bundle exec jekyll serve
 
 Open <http://127.0.0.1:4000/> to preview locally.
 
-The folders `matchnerf/`, `mvsplat/`, `mvsplat360/`, and `sem2nerf/` are project pages from my own papers. They have nothing to do with the homepage. Feel free to delete them after cloning.
-
-```bash
-rm -rf matchnerf mvsplat mvsplat360 sem2nerf
-```
-
 ## Documentation
 
 The rest of the walkthrough lives in [`/docs/`](https://donydchen.github.io/docs/). It covers the data files you'll edit, the config keys you'll most likely change, and how to add papers, co-authors, projects, talks, and news.
