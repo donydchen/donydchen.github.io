@@ -48,7 +48,10 @@ const ASSETS_VIDEOS_PREFIX = '{{ "/assets/videos/" | relative_url }}';
    - Live-data files that must always be fresh (sitemap, feed, redirects).
    - The SW source itself.
    - Prohibitively large or unrelated content:
-       - /assets/videos/ — large MP4 demo (~27 MB at last build).
+       - /assets/videos/ — defense pattern for large media. Currently
+         empty after the mvsplat360 demo MP4 was removed, but the
+         pattern stays so any future big asset under this path is
+         skipped automatically.
        - /matchnerf/, /mvsplat/, /mvsplat360/, /sem2nerf/ — separate
          project pages (each 10–50 MB, ~110 MB combined). They're hosted
          under this domain but are NOT part of the homepage and aren't

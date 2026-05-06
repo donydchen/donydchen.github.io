@@ -10,6 +10,37 @@ in `_config.yml`, so it never ships to the rendered site.
 
 ---
 
+## 2026-05 · Removed `assets/videos/mvsplat360_480p.mp4` from history
+
+### Why
+The 28 MB demo MP4 was orphaned — nothing in the rendered site
+referenced it anymore once the mvsplat360 project page moved out
+(see entry below). It was carrying its weight in every clone and
+every push for no payoff. Same surgical-removal story as the four
+project page directories.
+
+### What
+- `git filter-repo --path assets/videos/mvsplat360_480p.mp4
+  --invert-paths --force`. `.git` shrunk from 233 MB to 13 MB.
+- `assets/videos/` no longer exists in the repo (Git doesn't track
+  empty directories); the SW's `/^\/assets\/videos\//` pattern still
+  lives in `assets/js/sw.js` as defense for any future large asset
+  dropped under that path.
+- `sw.js` comment updated to reflect the now-empty state — the prior
+  "(~27 MB at last build)" claim was stale.
+- Backup of pre-rewrite tip lives on `backup-before-video-removal` on
+  origin (delete after a few weeks of stable operation, alongside
+  `backup-before-filter-repo`).
+
+### Watch out
+- If you ever add another large video to `/assets/videos/`, the SW
+  pattern already handles it — don't re-add the file specifically to
+  `NEVER_CACHE_PATTERNS`.
+- Anyone with an old clone needs `git fetch origin && git reset
+  --hard origin/master`. Old commit SHAs are dead.
+
+---
+
 ## 2026-05 · Project pages moved to their own repos (history rewrite)
 
 ### Why
