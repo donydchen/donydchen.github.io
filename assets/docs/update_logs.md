@@ -10,6 +10,64 @@ in `_config.yml`, so it never ships to the rendered site.
 
 ---
 
+## 2026-05 · Mobile cover now closes on touch-scroll
+
+### Why
+On mobile (iPhone 17 Pro reproduced in both Safari and Chrome, normal
+and incognito), opening the homepage shows the cover hero but scrolling
+down does NOT dismiss it — the cover sits visually pinned to the
+viewport while the page scroll bar moves. Hydejack `drawer.js` does
+have a "close cover when user scrolls" feature (`hydejack/_js/src/
+drawer.js:246`), but the listener is bound to **`wheel`** events:
+
+```js
+fromEvent(document, 'wheel', { passive: false }).pipe(
+  subscribeWhen(opened$),
+  filter((e) => e.deltaY > 0),
+  throttleTime(500),
+  tap(() => drawerEl.close()),
+)
+```
+
+`wheel` events are emitted by mouse wheels and trackpads; touch
+scrolling on phones/tablets fires `touchstart`/`touchmove`/`scroll`
+instead. So the upstream feature works on desktop but is silently
+broken on every touch device. Side-by-side Puppeteer probe confirmed
+the same behavior on `hydejack.com` itself — this is upstream Hydejack
+free, not a project regression.
+
+### What
+`_includes/body/index.html` cover-control IIFE: add a `scroll` listener
+that closes the drawer once the user has scrolled past a small
+threshold. Single uniform path for every input — touch, wheel,
+trackpad, keyboard arrows, programmatic scrolling — because `scroll`
+fires for all of them. No device-class gate: desktop already has the
+upstream wheel handler, and the two end at the same `drawer.close()`
+which is idempotent on a drawer already closing.
+
+Conditions:
+- `drawer.hasAttribute('opened')` — only act while the cover is up.
+- `window.scrollY > 24` — deliberate-intent threshold, doesn't fire on
+  micro-scroll bounce.
+- 500 ms throttle — matches `drawer.js` cadence.
+
+### Watch out
+- This handler reads `window.scrollY`. If a future change moves the page
+  from window-scrolling to body-internal scrolling, swap to
+  `document.body.scrollTop`. The bug was that `hy-drawer.cover` content
+  appears to stay at viewport top=0 even as body scrolls — so closing
+  the drawer (translateX off) was the only realistic way to make main
+  content visible without rebuilding the cover layout.
+- Don't switch to `touchstart`/`touchmove`. They fire too early in the
+  gesture and require manual deltaY bookkeeping. `scroll` is the right
+  primitive — it's the moment-of-truth event you actually care about.
+- The upstream wheel handler in `drawer.js` still exists and still
+  runs. That's fine — both end at `drawer.close()` and
+  `subscribeWhen(opened$)` makes the upstream side a no-op once we've
+  started closing.
+
+---
+
 ## 2026-05 · Removed `assets/videos/mvsplat360_480p.mp4` from history
 
 ### Why

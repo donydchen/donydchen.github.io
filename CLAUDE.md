@@ -31,6 +31,20 @@ JEKYLL_ENV=production PAGES_REPO_NWO=donydchen/donydchen.github.io \
 the repo root is a gitignored reference clone of the upstream theme — Jekyll
 does not read it, it's just for browsing the original templates.
 
+If `hydejack/` is missing (fresh clone, never set up locally), grab it once
+with the command below. Keep it strictly local — `.gitignore` already
+blocks it from being committed, so the clone is for your eyes only.
+
+```bash
+git clone --depth=1 https://github.com/hydecorp/hydejack.git hydejack
+```
+
+You'll want it whenever you need to read the upstream SCSS, Liquid
+includes, or `_js/` source to understand a behavior the live site
+inherits from the theme (e.g. the cover-on-wheel close handler in
+`hydejack/_js/src/drawer.js` — the kind of thing you can't fully grep
+without the source on disk).
+
 ## Architecture
 
 - **Theme cascade**: Project files in `_includes/`, `_layouts/`, `_sass/`,

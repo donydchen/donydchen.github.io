@@ -128,6 +128,34 @@
     if (_mq.addEventListener) _mq.addEventListener('change', applyState);
     else if (_mq.addListener) _mq.addListener(applyState);
 
+    /* Scroll-to-close, uniform across input types. Hydejack's drawer.js
+       only listens to `wheel`, which doesn't fire for touch scrolling
+       on phones/tablets — that's why the cover stays put when an
+       iOS/Android user swipes to scroll past it. Use `scroll` instead:
+       it fires regardless of input source (mouse wheel, trackpad,
+       finger swipe, keyboard arrow, programmatic), so the close
+       behavior is identical on every device.
+
+       This runs alongside Hydejack's wheel handler — both end at the
+       same `drawer.close()`, and `subscribeWhen(opened$)` on the wheel
+       side plus `drawer.hasAttribute('opened')` here both no-op once
+       the drawer has started closing, so there's no double-fire harm.
+
+       Threshold 24px gives a hair of deliberate-intent debouncing
+       without feeling sticky; 500ms throttle matches drawer.js so the
+       close cadence is consistent. */
+    var lastScrollClose = 0;
+    function maybeCloseOnScroll() {
+      if (!drawer.hasAttribute('opened')) return;
+      if (window.scrollY <= 24) return;
+      var now = Date.now();
+      if (now - lastScrollClose < 500) return;
+      lastScrollClose = now;
+      if (typeof drawer.close === 'function') drawer.close();
+      else drawer.removeAttribute('opened');
+    }
+    window.addEventListener('scroll', maybeCloseOnScroll, { passive: true });
+
     /* Hydejack removes #_swipe on every transition-to-closed. Re-add it
        afterwards so it's available the next time the user opens the
        cover. setTimeout(0) lets Hydejack's removal run first. */
