@@ -11,7 +11,9 @@ It is built on the [Hydejack] Jekyll theme (free version). I added a few small o
 Fork this repo and rename your fork to `<your-username>.github.io`. Then on your machine:
 
 ```bash
-git clone https://github.com/<your-username>/<your-username>.github.io.git
+# --single-branch --branch master keeps the clone small.
+# It also skips any old backup branches that may still exist on the remote.
+git clone --single-branch --branch master https://github.com/<your-username>/<your-username>.github.io.git
 cd <your-username>.github.io
 bundle install
 bundle exec jekyll serve
