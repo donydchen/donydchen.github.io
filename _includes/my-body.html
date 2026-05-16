@@ -138,7 +138,7 @@ Example code for using Matamo as alternative analytics solution.
         });
         const createdYear = new Date(repo.created_at).getUTCFullYear();
         const currentYear = new Date().getUTCFullYear();
-        const siteTitle = (document.title.split('|')[0] || '').trim() + '.';
+        const siteTitle = '{{ site.data.authors.author1.name }}.';
 
         const html = `
                 <p>&copy; Copyright ${createdYear}-${currentYear} ${siteTitle}</p>
