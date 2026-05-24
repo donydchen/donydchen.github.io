@@ -1,0 +1,32 @@
+---
+permalink: /.well-known/mcp/server-card.json
+sitemap: false
+layout: null
+---
+{%- assign cfg = site.agent_readiness.mcp -%}
+{%- assign name = cfg.name | default: site.title -%}
+{%- assign description = cfg.description | default: site.description | strip_newlines -%}
+{%- assign version = cfg.version | default: '1.0.0' -%}
+{%- assign site_url = site.url | default: site.github.url -%}
+{
+  "serverInfo": {
+    "name": {{ name | jsonify }},
+    "version": {{ version | jsonify }}
+  },
+  "description": {{ description | jsonify }},
+  "url": {{ site_url | jsonify }},
+  "transport": {
+    "type": "webmcp",
+    "note": "Tools are registered client-side via navigator.modelContext.registerTool on every page of this site; this card describes the homepage as a discoverable resource. See https://webmachinelearning.github.io/webmcp/"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true
+  },
+  "resources": [
+    { "name": "llms.txt", "uri": {{ '/llms.txt' | absolute_url | jsonify }}, "mimeType": "text/markdown" },
+    { "name": "llms-full.txt", "uri": {{ '/llms-full.txt' | absolute_url | jsonify }}, "mimeType": "text/markdown" },
+    { "name": "feed.xml", "uri": {{ '/feed.xml' | absolute_url | jsonify }}, "mimeType": "application/atom+xml" },
+    { "name": "sitemap.xml", "uri": {{ '/sitemap.xml' | absolute_url | jsonify }}, "mimeType": "application/xml" }
+  ]
+}

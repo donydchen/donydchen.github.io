@@ -1,0 +1,57 @@
+---
+permalink: /.well-known/agent-card.json
+sitemap: false
+layout: null
+---
+{%- assign cfg = site.agent_readiness.a2a -%}
+{%- assign author = site.data.authors.author1 -%}
+{%- assign name = cfg.name | default: site.title -%}
+{%- assign description = cfg.description | default: site.description | strip_newlines -%}
+{%- assign site_url = site.url | default: site.github.url -%}
+{
+  "$schema": "https://a2a-protocol.org/latest/specification/json/AgentCard.json",
+  "protocolVersion": "0.3.0",
+  "protocolVersions": ["0.3.0"],
+  "name": {{ name | jsonify }},
+  "description": {{ description | jsonify }},
+  "url": {{ site_url | jsonify }},
+  "version": "1.0.0",
+  "provider": {
+    "organization": {{ name | jsonify }},
+    "url": {{ site_url | jsonify }}
+  },
+  "documentationUrl": {{ '/docs/' | absolute_url | jsonify }},
+  "supportedInterfaces": [
+    {
+      "url": {{ site_url | jsonify }},
+      "protocolBinding": "HTTP+JSON",
+      "protocolVersion": "0.3"
+    }
+  ],
+  "additionalInterfaces": [
+    {
+      "url": {{ site_url | jsonify }},
+      "protocolBinding": "HTTP+JSON",
+      "protocolVersion": "0.3"
+    }
+  ],
+  "preferredTransport": "HTTP+JSON",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "defaultInputModes": ["text/plain"],
+  "defaultOutputModes": ["text/plain", "text/markdown", "application/json"],
+  "skills": [
+    {%- for skill in site.agent_readiness.skills %}
+    {
+      "id": {{ skill.name | jsonify }},
+      "name": {{ skill.name | jsonify }},
+      "description": {{ skill.description | jsonify }},
+      "tags": ["read-only", "personal-homepage"],
+      "examples": [{{ skill.url | absolute_url | jsonify }}]
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}

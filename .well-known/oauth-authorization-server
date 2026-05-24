@@ -1,0 +1,17 @@
+---
+permalink: /.well-known/oauth-authorization-server
+sitemap: false
+layout: null
+---
+{%- assign cfg = site.agent_readiness.oauth -%}
+{%- assign site_url = site.url | default: site.github.url -%}
+{%- assign issuer = cfg.issuer | default: site_url -%}
+{
+  "issuer": {{ issuer | jsonify }},
+  "response_types_supported": [],
+  "grant_types_supported": [],
+  "scopes_supported": [],
+  "token_endpoint_auth_methods_supported": [],
+  "service_documentation": {{ '/docs/' | absolute_url | jsonify }},
+  "_note": "This is a static personal homepage, not an OAuth 2.0 authorization server. This RFC 8414 document is published for discovery completeness and explicitly enumerates empty capability sets so agents can detect that no OAuth flow is available here."
+}

@@ -1,0 +1,14 @@
+---
+permalink: /.well-known/oauth-protected-resource
+sitemap: false
+layout: null
+---
+{%- assign site_url = site.url | default: site.github.url -%}
+{
+  "resource": {{ site_url | jsonify }},
+  "authorization_servers": [],
+  "scopes_supported": [],
+  "bearer_methods_supported": [],
+  "resource_documentation": {{ '/docs/' | absolute_url | jsonify }},
+  "_note": "This is a static personal homepage with no protected resources. This RFC 9728 document is published for discovery completeness and declares an empty authorization_servers array so agents can detect that no OAuth resource flow is available here."
+}

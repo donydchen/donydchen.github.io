@@ -1,0 +1,72 @@
+---
+permalink: /llms-full.txt
+sitemap: false
+layout: null
+---
+{%- assign author = site.data.authors.author1 -%}
+{%- assign site_url = site.url | default: site.github.url -%}
+# {{ site.title }}
+
+> {{ site.description | strip_newlines }}
+
+## About
+
+{{ author.about | strip_newlines }}
+
+## Publications
+
+{% for pub in site.data.publications -%}
+{%- if pub.title %}
+### {{ pub.title | strip_html | strip_newlines }}
+
+- Venue: {{ pub.venue }}
+- Authors: {{ pub.authors }}
+{%- if pub.links %}
+- Links:{% for link in pub.links %}
+  - {{ link.text | default: 'link' }}: {{ link.url }}{% endfor %}
+{%- endif %}
+{% endif -%}
+{% endfor %}
+## Projects & Talks
+
+{% if site.data.projects.talks -%}
+### Talks
+{% for talk in site.data.projects.talks -%}
+- {{ talk.title | strip_html | strip_newlines }}{% if talk.host %} — hosted by {{ talk.host.name }}{% endif %}
+{% endfor -%}
+{%- endif %}
+{% if site.data.projects.cards -%}
+### Projects / demos
+{% for card in site.data.projects.cards -%}
+- {{ card.desc | default: card.title | strip_html | strip_newlines }}{% if card.url %} — {{ card.url }}{% endif %}
+{% endfor -%}
+{%- endif %}
+
+## Contact
+
+- Email: {{ author.email }}
+{% for entry in author.social -%}
+{%- assign key = entry[0] -%}
+{%- assign value = entry[1] -%}
+{%- assign meta = site.data.social[key] -%}
+{%- if meta %}
+- {{ meta.name | default: key }}: {{ meta.prepend }}{{ value }}
+{%- endif -%}
+{%- endfor %}
+
+## Surfaces
+
+- Homepage: {{ site_url }}{{ '/' | relative_url }}
+- Documentation / template guide: {{ site_url }}{{ '/docs/' | relative_url }}
+- License: {{ site_url }}{{ '/LICENSE/' | relative_url }}
+- Atom feed: {{ site_url }}{{ '/feed.xml' | relative_url }}
+- Sitemap: {{ site_url }}{{ '/sitemap.xml' | relative_url }}
+
+## Machine-readable resources
+
+- Agent skills index: {{ site_url }}{{ '/.well-known/agent-skills/index.json' | relative_url }}
+- MCP server card: {{ site_url }}{{ '/.well-known/mcp/server-card.json' | relative_url }}
+- A2A agent card: {{ site_url }}{{ '/.well-known/agent-card.json' | relative_url }}
+- API catalog: {{ site_url }}{{ '/.well-known/api-catalog' | relative_url }}
+- OAuth authorization server metadata: {{ site_url }}{{ '/.well-known/oauth-authorization-server' | relative_url }}
+- OAuth protected resource metadata: {{ site_url }}{{ '/.well-known/oauth-protected-resource' | relative_url }}

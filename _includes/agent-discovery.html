@@ -1,0 +1,81 @@
+{% if site.agent_readiness.enabled %}
+{%- comment -%}
+  ========================================================================
+  Agent-readiness surfaces injected into every page's <head>. Renders
+  exactly when `site.agent_readiness.enabled: true` in _config.yml.
+
+  Three things ship from this include:
+
+    1. <link rel> tags for agent-discovery relations (RFC 8288). GitHub
+       Pages can't set HTTP Link response headers, so we expose the
+       equivalent semantics here as a fallback for HTML-aware scanners.
+       Same source of truth as the .well-known files below.
+
+    2. <meta http-equiv="Link"> as a second-best fallback for scanners
+       that look for header-equivalent meta tags. Browsers ignore this
+       for non-whitelisted headers but it's cheap and valid markup.
+
+    3. A tiny inline <script> that registers a WebMCP tool via
+       navigator.modelContext.registerTool when the API is available
+       (https://webmachinelearning.github.io/webmcp/). The tool is
+       read-only and returns identity + bio + social-profile data
+       templated from _config.yml + _data/authors.yml.
+
+  All values come from _config.yml and _data/*, so a forker only needs
+  to edit those files to get their own agent-discovery surfaces.
+  ========================================================================
+{%- endcomment -%}
+
+{%- assign author = site.data.authors.author1 -%}
+{%- assign site_url = site.url | default: site.github.url -%}
+
+<link rel="alternate" type="text/markdown" href="{{ '/llms.txt' | relative_url }}" title="LLM-friendly summary">
+<link rel="alternate" type="text/markdown" href="{{ '/llms-full.txt' | relative_url }}" title="LLM-friendly full content">
+<link rel="api-catalog" href="{{ '/.well-known/api-catalog' | relative_url }}">
+<link rel="service-desc" type="application/json" href="{{ '/.well-known/mcp/server-card.json' | relative_url }}">
+<link rel="describedby" type="application/json" href="{{ '/.well-known/agent-skills/index.json' | relative_url }}">
+<link rel="author" href="{{ '/.well-known/agent-card.json' | relative_url }}">
+
+<meta http-equiv="Link" content="<{{ '/.well-known/api-catalog' | relative_url }}>; rel=&quot;api-catalog&quot;, <{{ '/.well-known/mcp/server-card.json' | relative_url }}>; rel=&quot;service-desc&quot;, <{{ '/.well-known/agent-skills/index.json' | relative_url }}>; rel=&quot;describedby&quot;">
+
+<script>
+  /* WebMCP tool registration — exposes a read-only "get_site_profile"
+     tool to agents that implement the WebMCP browser API. Returns the
+     templated identity / contact / social block at call time so agents
+     can read it without re-parsing the rendered page.
+     Spec: https://webmachinelearning.github.io/webmcp/
+     Block comments (not //) because compress_html in production strips
+     newlines inside <script>. */
+  (function () {
+    var profile = {
+      name: {{ site.title | jsonify }},
+      tagline: {{ site.tagline | jsonify }},
+      description: {{ site.description | strip_newlines | jsonify }},
+      url: {{ site_url | jsonify }},
+      email: {{ author.email | jsonify }},
+      about: {{ author.about | strip_newlines | jsonify }},
+      social: {
+        {%- assign socials = author.social -%}
+        {%- for entry in socials -%}
+        {%- assign key = entry[0] -%}
+        {%- assign value = entry[1] -%}
+        {%- assign meta = site.data.social[key] -%}
+        {%- if meta -%}
+        {{ key | jsonify }}: { handle: {{ value | jsonify }}, url: {{ meta.prepend | append: value | jsonify }} }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endif -%}
+        {%- endfor %}
+      }
+    };
+    var tool = {
+      name: "get_site_profile",
+      description: "Fetch identity (name, tagline, bio), contact email, and social-profile links for this personal homepage.",
+      inputSchema: { type: "object", properties: {}, required: [] },
+      execute: function () { return profile; },
+      annotations: { readOnlyHint: true }
+    };
+    if (typeof navigator !== "undefined" && "modelContext" in navigator && navigator.modelContext && typeof navigator.modelContext.registerTool === "function") {
+      try { navigator.modelContext.registerTool(tool); } catch (e) { /* swallow — WebMCP is optional */ }
+    }
+  })();
+</script>
+{% endif %}

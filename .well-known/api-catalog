@@ -1,0 +1,29 @@
+---
+permalink: /.well-known/api-catalog
+sitemap: false
+layout: null
+---
+{%- assign site_url = site.url | default: site.github.url -%}
+{
+  "linkset": [
+    {
+      "anchor": {{ site_url | jsonify }},
+      "service-doc": [
+        { "href": {{ '/llms-full.txt' | absolute_url | jsonify }}, "type": "text/markdown" },
+        { "href": {{ '/docs/' | absolute_url | jsonify }}, "type": "text/html" }
+      ],
+      "service-desc": [
+        { "href": {{ '/.well-known/mcp/server-card.json' | absolute_url | jsonify }}, "type": "application/json" }
+      ],
+      "service-meta": [
+        { "href": {{ '/.well-known/agent-skills/index.json' | absolute_url | jsonify }}, "type": "application/json" },
+        { "href": {{ '/.well-known/agent-card.json' | absolute_url | jsonify }}, "type": "application/json" }
+      ],
+      "alternate": [
+        { "href": {{ '/sitemap.xml' | absolute_url | jsonify }}, "type": "application/xml", "title": "Sitemap" },
+        { "href": {{ '/feed.xml' | absolute_url | jsonify }}, "type": "application/atom+xml", "title": "Atom feed" },
+        { "href": {{ '/llms.txt' | absolute_url | jsonify }}, "type": "text/markdown", "title": "LLM summary" }
+      ]
+    }
+  ]
+}

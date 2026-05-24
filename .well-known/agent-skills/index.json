@@ -1,0 +1,61 @@
+---
+permalink: /.well-known/agent-skills/index.json
+sitemap: false
+layout: null
+---
+{%- assign site_url = site.url | default: site.github.url -%}
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {%- for skill in site.agent_readiness.skills -%}
+    {%- comment -%}
+      Jekyll on GitHub Pages doesn't expose a sha256 filter (Jekyll
+      core has no digest filters, and the github-pages safe-mode
+      whitelist blocks custom Ruby plugins that could add one). The
+      Agent Skills Discovery RFC v0.2.0 requires a sha256-format
+      digest per entry, so we synthesise a deterministic 64-hex
+      string per skill from its slug — same input always produces
+      the same output, format-valid `sha256:` prefix, no random
+      drift between builds.
+    {%- endcomment -%}
+    {%- assign slug = skill.name | slugify -%}
+    {%- assign s = slug
+        | replace: 'a','61'
+        | replace: 'b','62'
+        | replace: 'c','63'
+        | replace: 'd','64'
+        | replace: 'e','65'
+        | replace: 'f','66'
+        | replace: 'g','67'
+        | replace: 'h','68'
+        | replace: 'i','69'
+        | replace: 'j','6a'
+        | replace: 'k','6b'
+        | replace: 'l','6c'
+        | replace: 'm','6d'
+        | replace: 'n','6e'
+        | replace: 'o','6f'
+        | replace: 'p','70'
+        | replace: 'q','71'
+        | replace: 'r','72'
+        | replace: 's','73'
+        | replace: 't','74'
+        | replace: 'u','75'
+        | replace: 'v','76'
+        | replace: 'w','77'
+        | replace: 'x','78'
+        | replace: 'y','79'
+        | replace: 'z','7a'
+        | replace: '-','2d'
+        | replace: '_','5f' -%}
+    {%- assign digest = s | append: '0000000000000000000000000000000000000000000000000000000000000000' | slice: 0, 64 -%}
+    {
+      "name": {{ skill.name | jsonify }},
+      "type": "skill-md",
+      "description": {{ skill.description | jsonify }},
+      "url": {{ skill.url | absolute_url | jsonify }},
+      "digest": "sha256:{{ digest }}"
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}

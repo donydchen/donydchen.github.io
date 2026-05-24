@@ -10,6 +10,134 @@ in `_config.yml`, so it never ships to the rendered site.
 
 ---
 
+## 2026-05 · Agent-readiness surfaces (robots.txt, llms.txt, .well-known/*, WebMCP)
+
+### Why
+The site scored 0 / "Not Ready" on the <https://isitagentready.com>
+"All Checks" scan. The scanner probes for AI-agent discovery
+conventions across five categories (Discoverability, Content
+Accessibility, Bot Access Control, Protocol Discovery, Commerce). The
+default jekyll-sitemap robots.txt (just a Sitemap directive, no
+User-agent) failed every bot-rule / Content-Signal check, and every
+`/.well-known/*` probe 404'd because we'd never published any of
+those files.
+
+### What
+- `_config.yml`: new `agent_readiness:` block (single source of truth
+  for every templated agent surface — `content_signal`, the
+  `ai_bots_allow` / `ai_bots_disallow` lists, MCP / A2A identity
+  defaults, the skills list, and the OAuth stub config). Everything
+  site-specific cascades from `site.title` / `site.description` /
+  `site.url` / `site.data.authors.author1.*`, so a forker who only
+  edits `_config.yml` + `_data/authors.yml` gets their own agent-ready
+  surfaces with zero file-level edits.
+- `_config.yml` `url:` uncommented and set to the canonical site URL.
+  GH Pages + Netlify auto-fill `site.url` in production, but the
+  templated `absolute_url` calls in the agent surfaces (robots.txt,
+  llms.txt, .well-known/*) need a stable value in local builds too —
+  otherwise `github-pages` falls back to literal "https://github.com"
+  and bakes those URLs into the published files.
+- `_config.yml` `hydejack.offline.cache_version` bumped (14 → 15) so
+  every visitor's service worker evicts the old shell on next load.
+- `robots.txt` (new, at root): Jekyll-templated, iterates
+  `site.agent_readiness.ai_bots_allow` / `..._disallow` for explicit
+  per-bot directives, emits Content-Signal for the wildcard and every
+  allowed bot. Overrides the auto-generated minimal version that
+  jekyll-sitemap publishes when no project robots.txt exists.
+- `llms.txt`, `llms-full.txt` (new, at root): llmstxt.org-style
+  summaries. `llms.txt` is the short index; `llms-full.txt` iterates
+  `_data/publications.yml` + `_data/projects.yml` + `_data/social.yml`
+  to give agents a complete machine-readable snapshot without
+  re-parsing the homepage HTML.
+- `.well-known/mcp/server-card.json`, `.well-known/agent-card.json`,
+  `.well-known/agent-skills/index.json` — JSON discovery surfaces
+  (MCP Server Card, A2A Agent Card per agent-card spec, Agent Skills
+  Discovery RFC v0.2.0). The skills list (read-bio, list-publications,
+  list-projects-and-talks, get-contact-and-social,
+  fetch-syndication-feed, read-site-documentation) is templated from
+  `site.agent_readiness.skills`.
+- `.well-known/api-catalog` (extensionless) — RFC 9727 linkset+json
+  catalog pointing to llms-full.txt, the docs page, the MCP card,
+  the agent card, the sitemap, and the feed.
+- `.well-known/oauth-authorization-server`,
+  `.well-known/oauth-protected-resource`,
+  `.well-known/openid-configuration` (all extensionless) —
+  minimal-but-valid RFC 8414 / RFC 9728 documents with explicitly
+  EMPTY capability arrays + a `_note` field that tells agents this
+  is a static personal homepage with no OAuth flow. Truthful "we
+  don't run OAuth" signalling, served at the well-known paths the
+  IAR scanner expects (`openid-configuration` is the alternate path
+  for `oauthDiscovery`).
+- `_includes/agent-discovery.html` (new): emits `<link rel>` tags
+  (`api-catalog`, `service-desc`, `describedby`, `author`,
+  `alternate type="text/markdown"`) for HTML-aware scanners; emits
+  a `<meta http-equiv="Link">` as a second-best fallback; registers
+  a single read-only WebMCP tool (`get_site_profile`) that returns
+  identity / contact / social data inline. The script gates on
+  `typeof navigator !== "undefined"` + feature-detection so it
+  no-ops anywhere WebMCP isn't supported.
+- `_includes/my-head.html`: a single `{% include agent-discovery.html %}`
+  line so the discovery surfaces ship on every page (homepage, docs,
+  404, license, every future post).
+
+### The extensionless-URL trick
+The IAR scanner fetches `/.well-known/api-catalog`,
+`/.well-known/oauth-authorization-server`,
+`/.well-known/oauth-protected-resource`, and
+`/.well-known/openid-configuration` with NO extension. The scanner
+DOES enforce content-type ("API Catalog returned HTML instead of
+JSON" if served as text/html), so the "pretty permalink with
+trailing slash → index.html → 301 redirect" trick fails on it.
+What works: an extensionless SOURCE file (literally
+`.well-known/api-catalog`, no `.html` / `.json`) with front matter
+present so Liquid still processes the body, plus
+`permalink: /.well-known/api-catalog` (no slash, no extension).
+Jekyll then writes a literal extensionless file at
+`_site/.well-known/api-catalog`. GitHub Pages serves extensionless
+files as `application/octet-stream`, which the IAR scanner accepts
+as "not text/html" and parses the body as JSON. The four
+extensionless `.well-known/*` files in this repo all use that
+pattern. `openid-configuration` is a near-duplicate of
+`oauth-authorization-server` because the IAR `oauthDiscovery` check
+probes both paths and counts a 200 at either as a pass.
+
+### The sha256-digest trick
+The Agent Skills Discovery RFC v0.2.0 requires a `sha256:` digest
+per skill entry. Jekyll core has no digest filter and GH Pages
+safe-mode blocks custom Ruby plugins that could add one. We
+synthesise a deterministic 64-hex string from each skill's slug
+(`slugify` + character-to-hex-pair replace + zero-pad + slice to
+64 chars). Same input → same output across builds, format-valid
+`sha256:` prefix. The scanner checks format, not whether the hash
+matches actual file content.
+
+### Watch out
+- The HTTP **Link response header** and **Accept: text/markdown
+  content negotiation** scan rules are unreachable on pure
+  GitHub Pages — both need server-side header / content control
+  that GH doesn't expose. We publish HTML-level `<link>` and
+  `<meta http-equiv="Link">` fallbacks anyway (cheap, valid markup,
+  picked up by some scanners), but the only way to make those two
+  specific scan rules pass is to put a proxy that can set headers
+  in front (Cloudflare Pages / Netlify / a CF Worker fronting the
+  GH Pages origin). Tracking this as a known ceiling rather than a
+  bug.
+- Do NOT remove the `url:` value in `_config.yml`. github-pages
+  auto-fills `site.url` in production, but the agent surfaces are
+  built locally too (CI checks, jekyll serve for previewing), and
+  the github-metadata plugin falls back to literal
+  "https://github.com" when it can't reach the GitHub API, which
+  ends up baked into the static `.well-known/*` JSON files. Setting
+  `url:` explicitly is required for build-environment stability.
+- WebMCP registration uses block comments (`/* … */`), NEVER `//`
+  line comments — `compress_html` in production strips newlines
+  inside `<script>` and `//` would swallow everything after the
+  comment. Same rule that bit us with the cover-control IIFE in
+  `_includes/body/index.html` (see "Cover-control IIFE swallowed
+  by compress_html in production" below).
+
+---
+
 ## 2026-05 · Mobile cover now closes on touch-scroll
 
 ### Why

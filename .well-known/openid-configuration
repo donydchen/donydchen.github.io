@@ -1,0 +1,19 @@
+---
+permalink: /.well-known/openid-configuration
+sitemap: false
+layout: null
+---
+{%- assign cfg = site.agent_readiness.oauth -%}
+{%- assign site_url = site.url | default: site.github.url -%}
+{%- assign issuer = cfg.issuer | default: site_url -%}
+{
+  "issuer": {{ issuer | jsonify }},
+  "response_types_supported": [],
+  "grant_types_supported": [],
+  "subject_types_supported": [],
+  "id_token_signing_alg_values_supported": [],
+  "scopes_supported": [],
+  "token_endpoint_auth_methods_supported": [],
+  "service_documentation": {{ '/docs/' | absolute_url | jsonify }},
+  "_note": "This is a static personal homepage, not an OpenID Connect provider. This document mirrors /.well-known/oauth-authorization-server and is published for discovery completeness so agents can detect that no OIDC flow is available here."
+}

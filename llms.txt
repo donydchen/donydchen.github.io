@@ -1,0 +1,36 @@
+---
+permalink: /llms.txt
+sitemap: false
+layout: null
+---
+{%- assign author = site.data.authors.author1 -%}
+{%- assign site_url = site.url | default: site.github.url -%}
+# {{ site.title }}
+
+> {{ site.description | strip_newlines }}
+
+## About
+
+{{ author.about | strip_newlines }}
+
+## Surfaces
+
+- [Homepage]({{ site_url }}{{ '/' | relative_url }})
+- [Short bio]({{ site_url }}{{ '/#about' | relative_url }})
+- [Selected publications]({{ site_url }}{{ '/#publications' | relative_url }})
+- [Projects & talks]({{ site_url }}{{ '/#projects' | relative_url }})
+- [Documentation / template guide]({{ site_url }}{{ '/docs/' | relative_url }})
+- [License]({{ site_url }}{{ '/LICENSE/' | relative_url }})
+
+## Machine-readable resources
+
+- [Atom feed]({{ site_url }}{{ '/feed.xml' | relative_url }})
+- [Sitemap]({{ site_url }}{{ '/sitemap.xml' | relative_url }})
+- [Agent skills index]({{ site_url }}{{ '/.well-known/agent-skills/index.json' | relative_url }})
+- [MCP server card]({{ site_url }}{{ '/.well-known/mcp/server-card.json' | relative_url }})
+- [A2A agent card]({{ site_url }}{{ '/.well-known/agent-card.json' | relative_url }})
+- [API catalog]({{ site_url }}{{ '/.well-known/api-catalog' | relative_url }})
+
+## Contact
+
+Email: {{ author.email }}

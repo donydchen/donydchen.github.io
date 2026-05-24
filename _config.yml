@@ -1,9 +1,12 @@
 # Config
 # ========================================================================================
 
-# Uncomment and set the URL of your site (with protocol, e.g. `https://`)
-# NOTE: You don't need to provide this property when hosting on GitHub Pages or Netlify.
-# url: https://donydchen.github.io
+# Set the full URL of your site (with protocol, e.g. `https://`).
+# GitHub Pages and Netlify auto-fill this from the runtime environment so
+# it can be left blank there, BUT the templated agent-readiness surfaces
+# (robots.txt, llms.txt, .well-known/*) embed absolute URLs and need a
+# stable value — including in local builds — so set it explicitly here.
+url: https://donydchen.github.io
 
 # Uncomment and set the "base URL" of your site.
 # When your site is in a subdirectory, set to `/<name of directory>`,
@@ -295,9 +298,118 @@ hydejack:
   # Bumping `cache_version` invalidates every prior cache on next load.
   offline:
     enabled: true
-    cache_version: 14
+    cache_version: 15
     precache_assets:
       - /assets/img/swipe.svg
+
+# Agent Readiness
+# ----------------------------------------------------------------------------------------
+# Configures the AI-agent-readiness surfaces (robots.txt, llms.txt, the
+# .well-known/* discovery files, the WebMCP browser-side tool, and the
+# `<link>` tags in <head>) that get scanned by
+# <https://isitagentready.com>. Everything site-specific is templated
+# from this block (or from _data/authors.yml + the existing site keys)
+# so a forker only needs to edit this section to publish their own
+# agent-ready surfaces.
+#
+# Two infrastructure-level checks — Link response headers (RFC 8288) and
+# Accept: text/markdown content negotiation — require server-side header
+# control that pure GitHub Pages cannot provide. We publish the
+# equivalent HTML-level <link> hints anyway (cheap, valid markup, picked
+# up by some scanners) but those two specific scan-rule passes need a
+# proxy that can mutate response headers (Cloudflare Pages / Netlify /
+# CF Worker in front of GH Pages).
+agent_readiness:
+  enabled: true
+
+  # Content Signals (https://contentsignals.org/) — declares AI usage
+  # policy. Format: "search=<yes|no>, ai-input=<yes|no>, ai-train=<yes|no>".
+  content_signal: "search=yes, ai-input=yes, ai-train=yes"
+
+  # AI crawlers to emit explicit `User-agent: <bot>  Allow: /` blocks
+  # for in robots.txt. The wildcard `User-agent: *  Allow: /` already
+  # covers everything; these per-bot blocks just make the policy
+  # explicit per AI bot (which is what the IAR scanner looks for).
+  ai_bots_allow:
+    - GPTBot
+    - ChatGPT-User
+    - OAI-SearchBot
+    - Claude-Web
+    - ClaudeBot
+    - anthropic-ai
+    - Google-Extended
+    - PerplexityBot
+    - PerplexityUser
+    - CCBot
+    - cohere-ai
+    - Applebot-Extended
+    - Amazonbot
+    - Meta-ExternalAgent
+    - Meta-ExternalFetcher
+    - FacebookBot
+    - omgilibot
+    - Diffbot
+    - Bytespider
+    - YouBot
+
+  # AI crawlers to block entirely. Empty by default to keep the policy
+  # consistent with `content_signal` above — flip individual bots in
+  # here if you want a targeted block while still allowing the rest.
+  ai_bots_disallow: []
+
+  # MCP Server Card metadata (https://modelcontextprotocol.io). This
+  # site does NOT expose a remote MCP transport — the card describes
+  # the homepage as a discoverable resource, with the browser-side
+  # WebMCP tool as the actual interaction surface.
+  mcp:
+    name: ""             # falls back to site.title
+    description: ""      # falls back to site.description
+    version: "1.0.0"
+    transport: webmcp    # informational; the real WebMCP tool registers via JS
+
+  # A2A Agent Card (https://github.com/google/A2A). Same source of
+  # truth as `mcp:` above; the A2A card just shapes the same identity
+  # into the A2A discovery schema.
+  a2a:
+    name: ""             # falls back to site.title
+    description: ""      # falls back to site.description
+
+  # Agent skills exposed via /.well-known/agent-skills/index.json.
+  # Each entry is what an agent can DO on this site — listing the
+  # publications, reading the bio, fetching the syndication feed,
+  # navigating to the docs, etc. URLs are stable site anchors / feeds,
+  # no live server logic needed.
+  skills:
+    - name: read-bio
+      description: "Read the author's short biography and research focus."
+      url: /#about
+    - name: list-publications
+      description: "List the author's selected publications with links to PDFs, code, project pages, and citations."
+      url: /#publications
+    - name: list-projects-and-talks
+      description: "List the author's projects and invited talks."
+      url: /#projects
+    - name: get-contact-and-social
+      description: "Get email and social-profile links (GitHub, Google Scholar, ORCID, LinkedIn, etc.)."
+      url: /#about
+    - name: fetch-syndication-feed
+      description: "Fetch the Atom feed of site updates."
+      url: /feed.xml
+    - name: read-site-documentation
+      description: "Read the site / template documentation."
+      url: /docs/
+
+  # OAuth discovery is published as a minimal valid RFC 8414 /
+  # RFC 9728 document. This site doesn't actually run an OAuth
+  # authorization server — the documents satisfy the scanner's
+  # presence check and explicitly enumerate empty capability sets
+  # so agents can tell there is no OAuth flow available here.
+  oauth:
+    issuer: ""           # falls back to site.url
+    # Keep these empty to truthfully say "no OAuth flow available"
+    # while still serving a valid RFC 8414 document.
+    authorization_endpoint: ""
+    token_endpoint: ""
 
 # Collections
 # ----------------------------------------------------------------------------------------
